@@ -1,0 +1,357 @@
+body {
+	background-color: #ecf0f5;
+}
+
+.fixed-sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+	background-color: #222d32;
+}
+
+.img__logo {
+	height: auto;
+	width: 100%;
+	max-width: 50px;
+	border-radius: 50%;
+}
+
+.user__name {
+	color: #fff;
+	font-weight: 300;
+	font-size: 13px;
+}
+
+.user__state {
+	font-size: 11px;
+	color: #b8c7ce;
+}
+
+.search__input {
+	color: #666 !important;
+	background-color: #374850 !important;
+}
+.search__input:focus {
+	background-color: #fff !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none;
+	border: 1px solid transparent;
+}
+
+.nav-item:hover {
+	background: #1e282c !important;
+}
+.nav-item:hover-link {
+	color: #fff !important;
+}
+
+.nav-header {
+	color: #4b646f;
+	background-color: #1a2226;
+	padding: 10px 25px 10px 15px;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.nav-link {
+	color: #b8c7ce !important;
+}
+
+.nav-active {
+	border-left: 3px solid #3c8dbc;
+	background: #1e282c;
+}
+.nav-active a {
+	color: #fff !important;
+}
+
+.card__icon--1,
+.card__icon--2,
+.card__icon--3 {
+	flex-basis: 100px;
+}
+.card__icon--1 i,
+.card__icon--2 i,
+.card__icon--3 i {
+	font-size: 50px;
+}
+
+.card__sm {
+	height: 150px;
+}
+
+.card__bottom {
+	position: relative;
+}
+
+.card__icon--1 {
+	background-color: #ff8865;
+}
+
+.card__icon--2 {
+	background-color: #56bdde;
+}
+
+.card__icon--3 {
+	background-color: #b198dc;
+}
+
+.card__description {
+	flex: 1;
+}
+
+.card__title--1 {
+	color: #ff8865;
+}
+
+.card__title--2 {
+	color: #56bdde;
+}
+
+.card__title--3 {
+	color: #b198dc;
+}
+
+.card__subtitle {
+	font-weight: 500;
+	color: #4b646f;
+}
+
+.required {
+	color: red;
+}
+
+.btn-normal {
+	border-radius: 0 !important;
+}
+
+.btn-radius {
+	border-radius: 50% !important;
+}
+
+.btn-outline {
+	color: #24292e !important;
+	background-color: #eff3f6 !important;
+	background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%) !important;
+	border: 1px solid rgba(27, 31, 35, 0.2);
+}
+.btn-outline:hover {
+	background-color: #e6ebf1 !important;
+	background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%) !important;
+	background-position: -0.5em !important;
+	border-color: rgba(27, 31, 35, 0.35) !important;
+}
+
+.btn-create {
+	position: absolute;
+	top: -25px;
+	right: 50px;
+	height: 50px;
+	width: 50px;
+}
+
+.paragraph {
+	font-size: 15px;
+}
+
+.login {
+	position: relative;
+}
+.login__back--1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.login__back--2 {
+	position: absolute;
+	top: 0;
+	left: 15%;
+}
+.login__group {
+	position: relative;
+}
+.login__input {
+	border: 0 !important;
+	font-size: 17px !important;
+	height: 60px;
+	box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0) !important;
+}
+.login__input:focus {
+	box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.11) !important;
+}
+.login__input:focus + .login__label,
+.login__input:not(:placeholder-shown) + .login__label {
+	top: -1px;
+	font-size: 15px !important;
+}
+.login__label {
+	position: absolute;
+	top: 10px;
+	left: 17px;
+	transition: all 200ms;
+	font-size: 20px !important;
+	letter-spacing: 0.5px;
+	color: #acacae;
+}
+.login__button {
+	font-size: 20px;
+}
+
+.bg-top {
+	background-image: url(../img/6.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 -100px;
+	height: 280px;
+	width: 100%;
+}
+
+.bg-overlay {
+	height: 280px;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.employee__info {
+	margin-top: -100px;
+}
+
+.nav-item:hover {
+	background: none !important;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+	border: 0 !important;
+	border-bottom: 2px solid #fbb414 !important;
+	font-weight: bold !important;
+	background: 0 !important;
+	color: #24292e !important;
+}
+
+.mt-large {
+	margin-top: 110px;
+}
+
+.positive-margin {
+	margin-top: 10px;
+}
+
+.negative-margin {
+	margin-top: -100px;
+}
+
+.breadcrumb {
+	background-color: transparent !important;
+}
+
+#loader {
+	background: rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transform: -50%, -50%;
+	z-index: 100;
+	display: none;
+}
+
+.sk-folding-cube {
+	margin: 300px auto;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	-webkit-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+	float: left;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fbb414;
+	-webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+	animation: sk-foldCubeAngle 2.4s infinite linear both;
+	-webkit-transform-origin: 100% 100%;
+	-ms-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+	-webkit-transform: scale(1.1) rotateZ(90deg);
+	transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+	-webkit-transform: scale(1.1) rotateZ(180deg);
+	transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+	-webkit-transform: scale(1.1) rotateZ(270deg);
+	transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+	0%,
+	10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+		transform: perspective(140px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+	75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+		transform: perspective(140px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+	100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+		transform: perspective(140px) rotateY(180deg);
+		opacity: 0;
+	}
+}
+
+@keyframes sk-foldCubeAngle {
+	0%,
+	10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+		transform: perspective(140px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+	75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+		transform: perspective(140px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+	100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+		transform: perspective(140px) rotateY(180deg);
+		opacity: 0;
+	}
+}
