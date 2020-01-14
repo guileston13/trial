@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head id="dprint_container">
 	<title>Form11</title>
 	<link href="<?php echo base_url()?>/assets/img/brand/favicon.png" rel="icon" type="image/png">
     <!-- Icons -->
@@ -709,25 +709,38 @@
     </button>
 </div>
 
-  <script>
-      function printData() {
-        var printContents = document.getElementById("print_container")
-          .innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML =
-          "<html><head><title></title></head><body>" +
-          printContents +
-          "</body>";
+<script>
+	function printData() {
+        //var printContents = document.getElementById("print_container")
+		//	.innerHTML;
+		// var dprintContents = document.getElementById("dprint_container")
+		// .innerHTML;
+		// var printContents =  document.documentElement.outerHTML
+		// console.log(printContents);
+        // var originalContents = document.body.innerHTML;
+        // document.body.innerHTML = printContents;
+			// "<html><head><title></title></head><body>" +
+			// printContents +
+			// "</body>";
+	  mywindow.document.write('<link rel="stylesheet" href="css/midday_receipt.css" type="text/css" />');
+      mywindow.document.write('</head><body >');
+      mywindow.document.write(data);
+      mywindow.document.write('</body></html>');
+      mywindow.document.close();
+      mywindow.focus();
+      setTimeout(function(){mywindow.print();},1000);
+      mywindow.close();
+
         window.print();
         document.body.innerHTML = originalContents;
         location.reload();
-      }
+		}
 
-      document
+		document
         .getElementById("print_data")
         .addEventListener("click", function(e) {
-          e.preventDefault();
-          printData();
+			e.preventDefault();
+			printData();
         });
 </script>
 </body>

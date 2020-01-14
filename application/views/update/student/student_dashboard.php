@@ -76,7 +76,18 @@
                                     <div class="tab-pane fade show active" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
                                         <!-- Table Students -->
                                         <div>
-
+                                            <form action="<?php echo base_url();?>student_dashboard" method="POST">
+                                              <div class="col-md-3">
+                                                <label>School Year:</label>
+                                                  <select name="school_year" class="form-control">
+                                                    <?php foreach($school_year as $sy){ ?>
+                                                      <option value="<?php echo $sy->schoolyear_id; ?>"><?php echo $sy->schoolyear_start; ?></option>
+                                                    <?php }?>
+                                                  </select>
+                                                  <br>
+                                                  <input type="submit" class="form-control"><br>
+                                              </div>
+                                            </form>
                                             <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
                                                 <thead>
                                                     <tr>

@@ -33,18 +33,19 @@ class Student extends CI_Model
 		$id = $this->session->userdata('user_id');
 		$student = $this->db->query("SELECT * from tbl_student where user_id = '$id'")->result();
 		$student_id = $student[0]->studentid;
+		$sy = $this->input->post('school_year');
 		$query = $this->db->query("SELECT *,
 		subj_id as sb,section_id as si,
         (SUM(finalgrade)/2) as totalall,
         
         (SELECT finalgrade from tbl_finalgrade where subj_id = sb AND studentid = '$student_id' 
-			AND quarter = 1 ) as quarter1,
+			AND quarter = 1 AND schoolyear_id = '$sy' ) as quarter1,
         (SELECT finalgrade from tbl_finalgrade where subj_id = sb AND studentid = '$student_id' 
-			AND quarter = 2 ) as quarter2,
-		(SELECT subj_code from tbl_subject where subj_id = sb limit 1) as subj_code
+			AND quarter = 2 AND schoolyear_id = '$sy'  ) as quarter2,
+		(SELECT subj_code from tbl_subject where subj_id = sb AND schoolyear_id = '$sy' limit 1) as subj_code
 		
         
-        from tbl_finalgrade where studentid = '$student_id' GROUP by subj_id")->result();
+        from tbl_finalgrade where studentid = '$student_id' AND schoolyear_id = '$sy' GROUP by subj_id")->result();
 		return $query;
 	}
 
