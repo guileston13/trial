@@ -105,8 +105,7 @@ class Manage_Students extends CI_Controller
 			// echo $dat; echo "<br>";
 			// echo $class;echo "<br>";
 			// echo $key;echo "<br>";
-		
-			
+
 			$ss = $this->db->query("SELECT * from tbl_studentunderclass,tbl_class,tbl_section,tbl_student where 
 							tbl_studentunderclass.class_id = '$class'
 							AND tbl_studentunderclass.studentid ='$key'
@@ -114,7 +113,7 @@ class Manage_Students extends CI_Controller
 							AND tbl_class.section_id = tbl_section.section_id
 							AND tbl_studentunderclass.studentid = tbl_student.studentid
 							")->result();
-			$s = $this->db->query("SELECT * from tbl_studentunderclass,tbl_class,tbl_schoolyear where tbl_studentunderclass.class_id = '$class' AND 
+			$s  = $this->db->query("SELECT * from tbl_studentunderclass,tbl_class,tbl_schoolyear where tbl_studentunderclass.class_id = '$class' AND 
 				tbl_studentunderclass.studentid ='$key' AND 
 				tbl_schoolyear.schoolyear_id = tbl_class.schoolyear_id
                     AND 
@@ -128,7 +127,10 @@ class Manage_Students extends CI_Controller
 			AND tbl_class.schoolyear_id = tbl_schoolyear.schoolyear_id
 			AND tbl_schoolyear.schoolyear_start LIKE '%$dat%'
 				");
-
+			var_dump("class=>".$class);
+			var_dump("dat=>".$dat);
+			
+			//exit();
 			$soo = $s->result();
 			var_dump($s->num_rows());echo "<br>";
 			echo "string";
@@ -140,7 +142,7 @@ class Manage_Students extends CI_Controller
 			// if(){
 				
 			// }
-			if($s->num_rows()>=1 || $sad->num_rows()>=1){
+			if($s->num_rows()>=1 && $sad->num_rows()>=1){
 				$note = $sad->result();
 			
 				$nc = $note[0]->section_name;
