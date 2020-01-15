@@ -348,11 +348,8 @@
                                                 </select>
                                                 <input class="btn btn-primary" type="submit" name="" onclick="return confirm('Are you sure Enroll?')" value="Enroll">
                                             </div>
-
                                         </div>
-                                      
-                                        
-                                               
+                                            <input type="hidden" name="school_year_id" value="<?php echo $section?$section[0]->schoolyear_id:""?>">
                                             <table class="table table-bordered table-striped"  id="studentTable" style="text-align: center">
                                                 <thead>
                                                     <tr>
@@ -371,8 +368,8 @@
                                                             <td><?php echo $student->contactnumber; ?> </td>
                                                             <td>
                                                                 <input class="form-control" type="checkbox" name="studentid[]" value="<?php echo $student->studentid?>" >
-                                                             <!-- <a class="btn btn-primary btn-sm mb-3" href="<?php echo base_url();?>Manage_Students/enroll_student/{{ban}}/<?php echo $student->studentid?>">Enroll</a> -->
-                                                               
+                                                                <!-- <a class="btn btn-primary btn-sm mb-3" href="<?php echo base_url();?>Manage_Students/enroll_student/{{ban}}/<?php echo $student->studentid?>">Enroll</a> -->
+                                                                
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?> 

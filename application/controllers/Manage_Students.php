@@ -100,12 +100,13 @@ class Manage_Students extends CI_Controller
 		
 		$stud = $_POST['studentid'];
 		$class = $this->input->post('class_id');
+		$sy_di = $this->input->post("school_year_id");
 		foreach($stud as $key){
 			$dat = date('Y -');
 			// echo $dat; echo "<br>";
 			// echo $class;echo "<br>";
 			// echo $key;echo "<br>";
-
+			
 			$ss = $this->db->query("SELECT * from tbl_studentunderclass,tbl_class,tbl_section,tbl_student where 
 							tbl_studentunderclass.class_id = '$class'
 							AND tbl_studentunderclass.studentid ='$key'
@@ -117,7 +118,7 @@ class Manage_Students extends CI_Controller
 				tbl_studentunderclass.studentid ='$key' AND 
 				tbl_schoolyear.schoolyear_id = tbl_class.schoolyear_id
                     AND 
-				tbl_schoolyear.schoolyear_start LIKE '%$dat%'
+					tbl_schoolyear.schoolyear_id = '$sy_di'
 				");
 			$sad = $this->db->query("SELECT * from tbl_studentunderclass,tbl_class,tbl_schoolyear,tbl_student,tbl_section
 			where tbl_studentunderclass.class_id = tbl_class.class_id 
@@ -125,18 +126,16 @@ class Manage_Students extends CI_Controller
 			AND tbl_student.studentid =  tbl_studentunderclass.studentid
 			AND tbl_class.section_id = tbl_section.section_id
 			AND tbl_class.schoolyear_id = tbl_schoolyear.schoolyear_id
-			AND tbl_schoolyear.schoolyear_start LIKE '%$dat%'
+			AND tbl_schoolyear.schoolyear_id = '$sy_di'
 				");
-			var_dump("class=>".$class);
-			var_dump("dat=>".$dat);
+			// var_dump("class=>".$class);
+			// var_dump("dat=>".$dat);
 			
 			//exit();
 			$soo = $s->result();
-			var_dump($s->num_rows());echo "<br>";
-			echo "string";
-			echo "<br>";
-			echo "string";echo "<br>";
-			var_dump($sad->num_rows());
+			var_dump("S =>".$s->num_rows());echo "<br>";
+
+			var_dump("SAD =>".$sad->num_rows());
 			
 			
 			// if(){
