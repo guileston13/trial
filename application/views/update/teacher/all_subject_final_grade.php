@@ -55,7 +55,7 @@
       </div>
 
     </div>
-        <h1>Final Grade</h1>
+        <h1>Final Grade </h1>
         <a class="btn" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/1">First Quarter</a>
         <a class="btn" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/2">Second Quarter</a>
             <?php if(isset($student[0])){ ?>
@@ -65,10 +65,12 @@
                     <?php 
                     $ss = $student[0]->studentid;
                     $quarter = $this->uri->segment(5);
+                    $sy_id =  $this->uri->segment(5);
                     $stud = $this->db->query("SELECT * from tbl_finalgrade,tbl_subject 
                                                 where tbl_finalgrade.studentid = '$ss'
                                                 AND tbl_subject.subj_id = tbl_finalgrade.subj_id 
                                                 AND tbl_finalgrade.quarter = '$quarter'
+                                                AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                 order by tbl_finalgrade.subj_id")->result();?>
                     <?php foreach($stud as $st){ ?>
                         <td><?php echo $st->subj_code?></td>
@@ -84,6 +86,7 @@
                                                             where tbl_finalgrade.studentid = '$st->studentid'
                                                             AND tbl_student.studentid = tbl_finalgrade.studentid 
                                                             AND tbl_finalgrade.quarter = '$quarter'
+                                                            AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id")->result();
                     foreach($query as $q){ ?>
                     <td><?php echo $q->finalgrade;?></td>

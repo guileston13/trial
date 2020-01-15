@@ -75,7 +75,7 @@
   <thead>
     <tr>
       <th>LRN</th>
-      <th>LEARNERS NAME </th>
+      <th>LEARNERS NAME  </th>
         <th>GENERAL AVERAGE </th>
         <th>ACTION TAKEN: PROMOTED, *IRREGULAR or RETAINED</th>
         <th>INCOMPLETE SUBJECT/S </th>
@@ -110,20 +110,25 @@
     foreach($students as $st){?>
   <tr>
     <td><?php echo $st->lrn;?></td>
-    <td><?php echo $st->firstname;?></td>
+    <td><?php echo $st->firstname;?> </td>
     
     <td>
         <?php $student = $this->db->query("SELECT * from tbl_student where studentid = '$st->studentid'")->result();?>
         
-        <?php $first_quarter = $this->db->query("SELECT * from tbl_finalgrade,tbl_student 
+        <?php 
+        $sy_id = $this->uri->segment(3);
+        
+        $first_quarter = $this->db->query("SELECT * from tbl_finalgrade,tbl_student 
                                                             where tbl_finalgrade.studentid = '$st->studentid'
                                                             AND tbl_student.studentid = tbl_finalgrade.studentid 
                                                             AND tbl_finalgrade.quarter = '1'
+                                                            AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id");
         $second_quarter = $this->db->query("SELECT * from tbl_finalgrade,tbl_student 
                                                             where tbl_finalgrade.studentid = '$st->studentid'
                                                             AND tbl_student.studentid = tbl_finalgrade.studentid 
                                                             AND tbl_finalgrade.quarter = '2'
+                                                            AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id");
         $total_fq = 0;
         $total_sq = 0;
@@ -213,13 +218,13 @@
         if($tot < 74 ){
           $beggining_female++;
           $beggining++;
-        }else if($tot > 75 && $tot < 79){
+        }else if($tot > 75 && $tot < 79.99){
           $developing_female++;
           $developing++;
-        }else if($tot > 80 && $tot < 84){
+        }else if($tot > 80 && $tot < 84.99){
           $approaching_female++;
           $approaching++;
-        }else if($tot > 85 && $tot < 89){
+        }else if($tot > 85 && $tot < 89.99){
           $profocient_female++;
           $profocient++;
         }else if($tot > 90){

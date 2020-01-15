@@ -292,6 +292,7 @@ class Teacher_Dashboard extends CI_Controller
 	public function advisory(){
 		$id = $this->session->userdata('user_id');
 		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear")->result();
+		$data['sy_id'] = $this->input->post('school_year');
 		$user = $this->db->query("SELECT * from tbl_instructor where user_id = '$id' ")->result();
 		$teach  =$user[0]->teacher_id;
 		$qu = $this->db->query("SELECT * from tbl_class where teacher_id = '$teach' ")->result();
