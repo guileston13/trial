@@ -78,9 +78,12 @@
               
               <td></td>
                 <?php 
+                    $subj_id = $this->uri->segment(5);
+                    $section_id = $this->uri->segment(4);
+                    echo $subj_id;
                     $st = $students[0]->studentid;
-                    $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st'")->result();?>
-                <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){?>
+                    $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st' AND subj_id = '$subj_id' AND section_id  ='$section_id' ")->result();?>
+                <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){ ?>
                 <td>
                   <?php echo date("m-d-Y", strtotime(  $key->date_attendance ))?>
                 </td>
@@ -93,7 +96,7 @@
                   <td></td>
                 <?php 
                     $st = $students[0]->studentid;
-                    $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st'")->result();?>
+                    $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st' AND subj_id = '$subj_id' AND section_id  ='$section_id'")->result();?>
                 <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){?>
                 <td>
                   <?php echo date("l", strtotime(  $key->date_attendance ))?>
@@ -105,7 +108,7 @@
               <?php foreach($students as $st){ ?>
               <tr>
                 <td><?php echo $st->firstname.' '.$st->lastname?></td>
-                   <?php $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st->studentid'")->result();?>
+                   <?php $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st->studentid' AND subj_id = '$subj_id' AND section_id  ='$section_id' ")->result();?>
                   <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){?>
                 <td>
                     <?php if($key->status==1){ 
