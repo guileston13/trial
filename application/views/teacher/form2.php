@@ -69,7 +69,7 @@
                 <th rowspan="3">LEARNER'S NAME (Last Name, First Name, Middle Name)</th>
                 <th rowspan="1" colspan="<?php echo $i;?>">(1st row for date, 2nd row for Day: M,T,W,TH,F)</th>    
                 <th rowspan="2" colspan="">Total for the month</th> 
-                <th rowspan="3" colspan="">REMARK/S (If DROPPED OUT, state reason, please refer to legend number 2.</th>
+                <th rowspan="3" colspan="">REMARK/S</th>
             </tr>
         </thead>
   
@@ -122,7 +122,7 @@
                   <?php }?>
                   <td><?php echo $A?></td>
                   <td><?php echo $La?></td> 
-                  <td>a</td>
+                  
               </tr>
              <?php }?> 
         </tbody>

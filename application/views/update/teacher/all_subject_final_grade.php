@@ -56,16 +56,17 @@
 
     </div>
         <h1>Final Grade </h1>
-        <a class="btn" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/1">First Quarter</a>
-        <a class="btn" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/2">Second Quarter</a>
+        <a class="btn" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/1/<?php echo $this->uri->segment(5)?>">First Quarter</a>
+        <a class="btn" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/2/<?php echo $this->uri->segment(5)?>">Second Quarter</a>
             <?php if(isset($student[0])){ ?>
             <table class="my-5 table table-bordered">
                 <tr>
                     <td>Student</td>
                     <?php 
                     $ss = $student[0]->studentid;
-                    $quarter = $this->uri->segment(5);
+                    $quarter = $this->uri->segment(4);
                     $sy_id =  $this->uri->segment(5);
+                    
                     $stud = $this->db->query("SELECT * from tbl_finalgrade,tbl_subject 
                                                 where tbl_finalgrade.studentid = '$ss'
                                                 AND tbl_subject.subj_id = tbl_finalgrade.subj_id 
@@ -89,7 +90,7 @@
                                                             AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id")->result();
                     foreach($query as $q){ ?>
-                    <td><?php echo $q->finalgrade;?></td>
+                    <td><?php echo $q->finalgrade;?> </td>
                     <?php }?>
                 </tr>
                 <?php }?>

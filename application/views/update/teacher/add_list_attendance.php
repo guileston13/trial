@@ -97,6 +97,7 @@
                                             $teacher = $this->db->query("SELECT * from tbl_instructor where user_id = '$teacher'")->result();
                                             $teacher_id = $teacher[0]->teacher_id;
                                             $class_id = $this->uri->segment(3);
+                                            $subj_id_Header = $this->uri->segment(5);
                                             $class = $this->db->query("SELECT * from tbl_class,tbl_assignteacher where tbl_class.class_id = '$class_id' 
                                                                                         AND tbl_assignteacher.class_id = tbl_class.class_id
                                                                                         AND tbl_assignteacher.teacher_id = '$teacher_id' ")->result();
@@ -106,7 +107,7 @@
                                             
                                             $attendance = $this->db->query("SELECT * from tbl_attendance where 
                                                                                 section_id = '$section_id'
-                                                                                AND subj_id = '$subj_id'
+                                                                                AND subj_id = '$subj_id_Header'
                                                                                 AND date_attendance = '$nn'
                                                                                 AND instructorid ='$teacher_id'
                                                                                 AND studentid ='$st->studentid'

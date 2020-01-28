@@ -148,12 +148,12 @@ class Teacher_Dashboard extends CI_Controller
 	}
 
 	public function add_book($class_id){
-		$subj_id = $this->Instructor->list($class_id);
-		$data['book'] = $this->Instructor->specific_book($class_id,$subj_id);
-		$datas = $this->db->query("SELECT * from tbl_subject where subj_id = '$subj_id'")->result();
+		$subj_idHeader = $this->uri->segment(5);
+		$data['book'] = $this->Instructor->specific_book($class_id,$subj_idHeader);
+		$datas = $this->db->query("SELECT * from tbl_subject where subj_id = '$subj_idHeader'")->result();
 		
 		$data['subject'] = $datas[0]->subj_code;
-		$data['list'] = $this->db->query("SELECT * from tbl_book where subj_id = '$subj_id' AND status = 1")->result();
+		$data['list'] = $this->db->query("SELECT * from tbl_book where subj_id = '$subj_idHeader' AND status = 1")->result();
 		
 		$this->load->view('template/latest/header');
 		$this->load->view('update/teacher/book',$data);

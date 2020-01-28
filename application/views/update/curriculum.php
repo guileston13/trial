@@ -178,7 +178,7 @@
                                                         <th style="font-size: 12px">Subject Code</th>
                                                         <th style="font-size: 12px">Description</th>
                                                     </tr>
-                                                    <tr ng-repeat="x in subject | filter : grade_level">
+                                                    <tr ng-repeat="x in subject | filter : { subj_grade_level : grade_level  }">
                                                         <td><input style="width:20px;height:20px;" type="checkbox" name="subjects[]"  value="{{x.subj_id}}"></td>
                                                         <td>{{x.subj_code}}</td>
                                                         <td>{{x.subj_desc}}</td>

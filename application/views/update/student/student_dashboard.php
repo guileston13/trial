@@ -88,6 +88,7 @@
                                                   <input type="submit" class="form-control"><br>
                                               </div>
                                             </form>
+                                            <h2>School Year: <?php echo $display?$display_year[0]->schoolyear_start:'';?></h2><br><br><br>
                                             <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
                                                 <thead>
                                                     <tr>
@@ -117,9 +118,8 @@
                                                     <?php } ?>
                                                     <?php 
                                                     if(isset($con)){ ?>
-                                                      <h3><?php echo "Average Grade: ",$average_grade/$con;?></h3>  
+                                                      <h3><?php echo "Average Grade: ",number_format($average_grade/$con, 2, '.',',');?></h3>  
                                                     <?php }else{ ?>
-
                                                     
                                                   <?php }?>
                                                 </tbody>

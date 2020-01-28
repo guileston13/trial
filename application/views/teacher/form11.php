@@ -21,7 +21,7 @@
 			</div>
 			<?php
 			$quarter = $this->uri->segment(6);
-			echo $quarter;
+			
 			if(!$student){
 		
 			}else{
@@ -67,7 +67,7 @@
 						<thead>
 							<tr>
 								<th class="text-right">Grading Period</th>
-								<th><input class="form-control form-control-sm" value="1" type="text" name=""></th>
+								<th><input class="form-control form-control-sm" value="<?php echo $quarter;?>" type="text" name=""></th>
 								<th class="text-right">Subject</th>
 								<th><input class="form-control form-control-sm" type="text" value="<?php echo $subject[0]->subj_code?>" name=""></th>
 								<th class="text-right">Teacher</th>
