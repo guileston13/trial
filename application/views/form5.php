@@ -116,7 +116,7 @@
         <?php $student = $this->db->query("SELECT * from tbl_student where studentid = '$st->studentid'")->result();?>
         
         <?php 
-        $sy_id = $this->uri->segment(3);
+        $sy_id = $this->uri->segment(4);
         
         $first_quarter = $this->db->query("SELECT * from tbl_finalgrade,tbl_student 
                                                             where tbl_finalgrade.studentid = '$st->studentid'
@@ -154,7 +154,7 @@
             echo $tot = 0;
             
           }else{
-            echo $tot;
+            echo number_format($tot, 2,'.',',');
           }
         }else{
 
@@ -164,7 +164,7 @@
         
         
         ?>
-
+      
     </td>
     <td>
        

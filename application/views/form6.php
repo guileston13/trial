@@ -50,8 +50,8 @@
        </div>
        <div class="col-md-3">
           <div class="input-group form-inline">
-            <label for="" class="form-control-label mr-2">School Year:</label>
-            <input type="text" name="">
+            <label for="" class="form-control-label mr-2">School Year: </label>
+            <input type="text" value="<?php echo $school_year[0]->schoolyear_start; ?>" name="">
           </div> 
        </div>
      </div>

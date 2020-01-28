@@ -266,14 +266,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 	
-	public function male_promoted_seven(){
-		$dat = date('Y -');
+	public function male_promoted_seven($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Male'
 								AND tbl_class.grade_level = '7'
@@ -281,14 +281,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function female_promoted_seven(){
-		$dat = date('Y -');
+	public function female_promoted_seven($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Female'
 								AND tbl_class.grade_level = '7'
@@ -296,14 +296,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function male_promoted_eight(){
-		$dat = date('Y -');
+	public function male_promoted_eight($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Male'
 								AND tbl_class.grade_level = '8'
@@ -311,14 +311,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function female_promoted_eight(){
-		$dat = date('Y -');
+	public function female_promoted_eight($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Female'
 								AND tbl_class.grade_level = '8'
@@ -326,14 +326,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function male_promoted_nine(){
-		$dat = date('Y -');
+	public function male_promoted_nine($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Male'
 								AND tbl_class.grade_level = '9'
@@ -341,14 +341,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function female_promoted_nine(){
-		$dat = date('Y -');
+	public function female_promoted_nine($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Female'
 								AND tbl_class.grade_level = '9'
@@ -356,14 +356,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function male_promoted_ten(){
-		$dat = date('Y -');
+	public function male_promoted_ten($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Male'
 								AND tbl_class.grade_level = '10'
@@ -371,14 +371,14 @@ class Instructor extends CI_Model
 		return $query;
 	}	
 
-	public function female_promoted_ten(){
-		$dat = date('Y -');
+	public function female_promoted_ten($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Female'
 								AND tbl_class.grade_level = '10'
@@ -386,14 +386,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function male_promoted_eleven(){
-		$dat = date('Y -');
+	public function male_promoted_eleven($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Male'
 								AND tbl_class.grade_level = '11'
@@ -401,14 +401,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function female_promoted_eleven(){
-		$dat = date('Y -');
+	public function female_promoted_eleven($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Female'
 								AND tbl_class.grade_level = '11'
@@ -416,14 +416,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function male_promoted_twelve(){
-		$dat = date('Y -');
+	public function male_promoted_twelve($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Male'
 								AND tbl_class.grade_level = '12'
@@ -431,14 +431,14 @@ class Instructor extends CI_Model
 		return $query;
 	}
 
-	public function female_promoted_twelve(){
-		$dat = date('Y -');
+	public function female_promoted_twelve($school_year){
+		
 		$query = $this->db->query("SELECT SUM(finalgrade) as summ, COUNT(tbl_finalgrade.finalgrade_id) as totalnet,
 								(SUM(finalgrade)/COUNT(tbl_finalgrade.finalgrade_id)) as nude
 								from tbl_schoolyear,tbl_finalgrade,tbl_class,tbl_student
 								Where tbl_schoolyear.schoolyear_id = tbl_finalgrade.schoolyear_id
 								AND tbl_finalgrade.section_id = tbl_class.section_id
-								AND tbl_schoolyear.schoolyear_start LIKE  '%$dat%'
+								AND tbl_schoolyear.schoolyear_id = '$school_year'
 								AND tbl_student.studentid = tbl_finalgrade.studentid
 								AND tbl_student.gender = 'Female'
 								AND tbl_class.grade_level = '12'

@@ -423,21 +423,23 @@ class Teacher_Dashboard extends CI_Controller
 	}
 
 	public function form6($classid){
+		$school_year =  $this->uri->segment(4);
+		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear where schoolyear_id = '$school_year'")->result();
 		$data['students'] = $this->Instructor->specific_classes($classid);
 		$data['seven'] = $this->Instructor->specific_classes($classid);
 		$data['form6'] = $this->db->query("SELECT * from tbl_school")->result();
-		$data['male_seven'] = $this->Instructor->male_promoted_seven();
-		$data['female_seven'] = $this->Instructor->female_promoted_seven();
-		$data['male_eight'] = $this->Instructor->male_promoted_eight();
-		$data['female_eight'] = $this->Instructor->female_promoted_eight();
-		$data['male_nine'] = $this->Instructor->male_promoted_nine();
-		$data['female_nine'] = $this->Instructor->female_promoted_nine();
-		$data['male_ten'] = $this->Instructor->male_promoted_ten();
-		$data['female_ten'] = $this->Instructor->female_promoted_ten();
-		$data['male_eleven'] = $this->Instructor->male_promoted_eleven();
-		$data['female_eleven'] = $this->Instructor->female_promoted_eleven();
-		$data['male_twelve'] = $this->Instructor->male_promoted_twelve();
-		$data['female_twelve'] = $this->Instructor->female_promoted_twelve();
+		$data['male_seven'] = $this->Instructor->male_promoted_seven($school_year);
+		$data['female_seven'] = $this->Instructor->female_promoted_seven($school_year);
+		$data['male_eight'] = $this->Instructor->male_promoted_eight($school_year);
+		$data['female_eight'] = $this->Instructor->female_promoted_eight($school_year);
+		$data['male_nine'] = $this->Instructor->male_promoted_nine($school_year);
+		$data['female_nine'] = $this->Instructor->female_promoted_nine($school_year);
+		$data['male_ten'] = $this->Instructor->male_promoted_ten($school_year);
+		$data['female_ten'] = $this->Instructor->female_promoted_ten($school_year);
+		$data['male_eleven'] = $this->Instructor->male_promoted_eleven($school_year);
+		$data['female_eleven'] = $this->Instructor->female_promoted_eleven($school_year);
+		$data['male_twelve'] = $this->Instructor->male_promoted_twelve($school_year);
+		$data['female_twelve'] = $this->Instructor->female_promoted_twelve($school_year);
 
 		
 		$this->load->view('form6',$data);	
