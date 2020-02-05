@@ -218,7 +218,7 @@
                                           <form action="<?php echo base_url()?>assign_subject" method="POST">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <select name="schoolyear" class="form-control">
+                                                    <select name="schoolyear" ng-model="schoolyear_id" class="form-control">
                                                       <?php $school_year = $this->db->query("SELECT * from tbl_schoolyear")->result();
                                                         foreach($school_year as $sy){
                                                       ?>
@@ -226,12 +226,8 @@
                                                         <?php }?>
                                                     </select>
                                                     <hr>
-                                                    <select name="section" class="form-control">
-                                                      <?php $section = $this->db->query("SELECT * from tbl_section")->result();
-                                                        foreach($section as $sec){
-                                                      ?>
-                                                      <option value="<?php echo $sec->section_id;?>"><?php echo $sec->section_name;?></option>
-                                                        <?php }?>
+                                                    <select name="section" class="form-control" >
+                                                      <option  ng-repeat="x in section | filter : { schoolyear_id : schoolyear_id }" value="{{x.section_id}}">{{ x.section_name }}</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -240,9 +236,6 @@
                                                       <input class="form-control" type="submit">
                                                   </div>
                                               </div>  
-                                            <div>
-                                             
-                                            </div>
                                         </div>
                                         <table class="table table-hover text-center">
                                                 <tr>

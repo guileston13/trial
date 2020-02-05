@@ -349,6 +349,7 @@
                                                 <input class="btn btn-primary" type="submit" name="" onclick="return confirm('Are you sure Enroll?')" value="Enroll">
                                             </div>
                                         </div>
+                                            <input type="text" placeholder="Input Student Name ..." ng-model="student_name" class="form-control"> <br>
                                             <input type="hidden" name="school_year_id" value="<?php echo $section?$section[0]->schoolyear_id:""?>">
                                             <table class="table table-bordered table-striped"  id="studentTable" style="text-align: center">
                                                 <thead>
@@ -360,22 +361,17 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php foreach($student_rows as $student): ?>
-                                                        <tr>
+                                                        <tr ng-repeat="x in student | filter : student_name ">
                                                             
-                                                            <td><?php echo $student->lrn; ?></td>
-                                                            <td><?php echo $student->firstname?> <?php echo $student->lastname?>  </td>
-                                                            <td><?php echo $student->contactnumber; ?> </td>
+                                                            <td>{{x.lrn}}</td>
+                                                            <td>{{x.firstname}} {{x.lastname}}  </td>
+                                                            <td>{{x.contactnumber}}</td>
                                                             <td>
-                                                                <input class="form-control" type="checkbox" name="studentid[]" value="<?php echo $student->studentid?>" >
-                                                                <!-- <a class="btn btn-primary btn-sm mb-3" href="<?php echo base_url();?>Manage_Students/enroll_student/{{ban}}/<?php echo $student->studentid?>">Enroll</a> -->
-                                                                
+                                                                <input class="form-control" type="checkbox" name="studentid[]" value="{{x.studentid}}" >
                                                             </td>
                                                         </tr>
-                                                    <?php endforeach; ?> 
                                                 </tbody>
                                             </table>
-                                           
                                         </div>
                                         </form>
                                     </div>

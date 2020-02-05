@@ -18,7 +18,7 @@ class Assign_Subject extends CI_Controller
 		$data['subject']  = $this->db->query("SELECT * from tbl_subject")->result();
 		$data['curriculum']  = $this->db->query("SELECT * from tbl_curriculum,tbl_subject 
 												where tbl_curriculum.subj_id = tbl_subject.subj_id")->result();
-		
+																											
 		$schoolyear = $this->input->post('schoolyear');
 		$section = $this->input->post('section');
 		$data['list_section'] = $this->db->query("SELECT * from tbl_assignteacher,tbl_section,tbl_instructor,tbl_subject where tbl_assignteacher.section_id = tbl_section.section_id

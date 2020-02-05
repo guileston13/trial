@@ -19,9 +19,25 @@ app.controller("alertCtrl", function ($scope, $http) {
 		url: "http://localhost/formgen/Manage_Subjects/view_curriculum/",
 		headers: { "Content-Type": "application/x-www-form-urlencoded" }
 	}).then(function (curriculum) {
-		// location.reload();
 		$scope.curriculum = curriculum["data"][0];
-		// console.log($scope.image);
 		console.log($scope.curriculum);
+	});
+
+	$http({
+		method: "POST",
+		url: "http://localhost/formgen/Manage_Subjects/view_section/",
+		headers: { "Content-Type": "application/x-www-form-urlencoded" }
+	}).then(function (section) {
+		$scope.section = section["data"][0];
+		console.log($scope.section);
+	});
+
+	$http({
+		method: "POST",
+		url: "http://localhost/formgen/Manage_Students/AllStudent/",
+		headers: { "Content-Type": "application/x-www-form-urlencoded" }
+	}).then(function (student) {
+		$scope.student = student["data"][0];
+		console.log($scope.student);
 	});
 });

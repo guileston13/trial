@@ -49,14 +49,20 @@ class Manage_Subjects extends CI_Controller
 	public function view_curriculum(){
 		
 		$query = $this->db->query("SELECT tbl_schoolyear.schoolyear_id, tbl_subject.subj_grade_level,tbl_subject.subj_code,tbl_subject.subj_id
-	
 										from tbl_curriculum,tbl_subject,tbl_schoolyear
-																where tbl_curriculum.subj_id = tbl_subject.subj_id
-																	AND tbl_curriculum.schoolyear_id = tbl_schoolyear.schoolyear_id
-							")->result();
+											where tbl_curriculum.subj_id = tbl_subject.subj_id
+												AND tbl_curriculum.schoolyear_id = tbl_schoolyear.schoolyear_id
+								")->result();
 		$this->output->set_content_type('application/json')
 		->set_output(json_encode(array($query)));
 	}
+
+	public function view_section(){
+		$query = $this->db->query("SELECT tbl_section.section_id ,tbl_section.section_name,tbl_schoolyear.schoolyear_id from tbl_section,tbl_schoolyear where tbl_section.schoolyear_id = tbl_schoolyear.schoolyear_id")->result();
+		$this->output->set_content_type('application/json')
+		->set_output(json_encode(array($query)));
+	}
+
 
 	public function select_latest_school_year(){
 		$query = $this->db->query("SELECT * FROM tbl_schoolyear order by schoolyear_start desc limit 1")->result();
@@ -93,6 +99,7 @@ class Manage_Subjects extends CI_Controller
 
 			$this->db->insert('tbl_curriculum', $que);
 			}
+
 
 
 		redirect('Manage_Subjects');

@@ -94,7 +94,16 @@ class Manage_Students extends CI_Controller
 				$this->load->view('update/enroll',@$data);
 				$this->load->view('template/latest/footer');	
 	}
-
+	public function AllStudent(){
+		$query = $this->db->query("SELECT * from tbl_user,
+												tbl_student 
+											where 
+												tbl_user.user_id = tbl_student.user_id
+												AND tbl_student.status = 1")
+								->result();
+		$this->output->set_content_type('application/json')
+		->set_output(json_encode(array($query)));
+	}
 	public function enroll_student(){
 		
 		
