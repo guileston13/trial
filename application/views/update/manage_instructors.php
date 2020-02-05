@@ -9,7 +9,7 @@
       <div class="px-3">
         <figure class="figure d-flex align-items-center mt-3">
           <div class="user__img">
-            <img class="img__logo" src="<?php echo base_url() ?>assets/img/logo.jpg" alt="logo">
+  
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
             <h6 class="user__name">Superuser</h6>
@@ -81,7 +81,7 @@
         <li class="nav-item py-1">
           <a href="<?php echo base_url()?>student_class" class="nav-link" href="logs.html">
             <i class="far fa-clock"></i>
-            <span class="ml-2">Enrolled</span>
+            <span class="ml-2">List of Enrollees</span>
           </a>
         </li>
         
@@ -205,20 +205,28 @@
                                         <table class="table table-bordered table-striped table-custom" id="instructorTable">
                                             <thead class="text-center">
                                                 <tr>
+                                                    <th style="font-size: 12px">#</th>
+                                                    <th style="font-size: 12px">Username</th>
                                                     <th style="font-size: 12px">Instructor</th>
                                                     <th style="font-size: 12px">Contact</th>
+                                                    <th style="font-size: 12px">Age</th>
+                                                    <th style="font-size: 12px">Gender</th>
                                                     <th style="font-size: 12px">Address</th>
-                                                    <th style="font-size: 12px">Username</th>
+                                                    
                                                     <th style="font-size: 12px">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php foreach($instructor_rows as $instructor): ?>
                                                     <tr>
+                                                        <td></td>
+                                                        <td><?php echo $instructor->username; ?></td>
                                                         <td><?php echo $instructor->firstname?> <?php echo $instructor->lastname?>  </td>
                                                         <td><?php echo $instructor->contactnumber; ?></td>
+                                                        <td><?php echo $instructor->age; ?></td>
+                                                        <td><?php echo $instructor->gender; ?></td>
                                                         <td><?php echo $instructor->address; ?></td>
-                                                        <td><?php echo $instructor->username; ?></td>
+                                                        
                                                         <td>
                                                         <?php if($instructor->status == 1){?>
                                                             <a class="btn btn-danger" href="<?php echo base_url()?>manage_instructors/update_status/<?php echo $instructor->teacher_id?>">Deactivate</a>

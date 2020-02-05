@@ -12,7 +12,10 @@
 
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
-            <h6 class="user__name">Superuser</h6>
+           <span class="user__name">  <h6><?php $it = $this->session->userdata('user_id');
+                    $net = $this->db->query("SELECT * from tbl_instructor where user_id = '$it'")->result();
+                        
+               ?><?php echo $net[0]->firstname?> <?php echo $net[0]->lastname?>!</span></h6>
             <span class="user__state"><i class="fas fa-circle text-success"></i> Online</span>
           </figcaption>
         </figure>
@@ -56,7 +59,6 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -90,7 +92,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Section Code</th> 
+                                <th>Section</th> 
                                 <th>Subject Code</th> 
                                 <th>View Students</th> 
                                 <th>Add Attendance</th>
@@ -105,7 +107,7 @@
                                     <td><?php echo $class->subj_code?></td>
                                     <td><a target = "_blank" class="btn btn-primary btn-block" href="<?php echo base_url()?>teacher_dashboard/teacher_specific_classes/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">View</a> </td>
                                     <td><a target = "_blank" class="btn btn-info btn-block" href="<?php echo base_url()?>teacher_dashboard/add_list_attendance/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">Daily Attendance</a></td>
-                                    <td><a target = "_blank" class="btn btn-info btn-block" href="<?php echo base_url()?>teacher_dashboard/form2/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">Attendance</a></td>
+                                    <td><a target = "_blank" class="btn btn-info btn-block" href="<?php echo base_url()?>teacher_dashboard/form2/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">School Form 2</a></td>
                                     <td><a target = "_blank" class="btn" style="background-color: #29dc27; color: white" href="<?php echo base_url()?>teacher_dashboard/add_book/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>"> Add Book</a></td>
                                 </tr>
                             <?php }?>

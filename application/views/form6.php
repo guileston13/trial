@@ -136,7 +136,7 @@
             if($prom->nude <= 100 && $prom->nude >= 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
-              $male_total_promoted_eight++;
+              $female_total_promoted_eight++;
             }
           } echo $female_total_promoted_eight; ?>
       </td>

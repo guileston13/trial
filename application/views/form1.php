@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>School form 5</title>
+    <title>School form 1</title>
    <link href="<?php echo base_url(); ?>/assets/img/brand/favicon.png" rel="icon" type="image/png">
     <!-- Icons -->
     <link href="<?php echo base_url(); ?>/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
@@ -12,7 +12,7 @@
 </head>
     <body>
         <div class="container-fluid" id="print_container">
-            <h3 class="text-center">School Form 5(SF5) Report on Promotion & Level of Proficiency</h3>
+            <h3 class="text-center">School Form 1(SF1)School Register</h3>
             
             <div class="row">
             <div class="col-md-3 offset-2">
@@ -74,6 +74,7 @@
             <table class="my-5 table table-bordered">
                 <thead>
                     <tr>
+                        <th style="padding: 15px">#</th>
                         <th style="padding: 15px">LRN</th>
                         <th style="padding: 15px">Name</th>
                         <th style="padding: 15px">Sex</th>
@@ -98,8 +99,9 @@
                 <tbody>
                     <?php foreach($form1 as $key) {?>
                     <tr>
+                        <td style="padding: 15px"></td>
                         <td style="padding: 15px"><?php echo $key->lrn?></td>
-                        <td style="padding: 15px"><?php echo $key->firstname?></td>
+                        <td style="padding: 15px"><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
                         <td style="padding: 15px"><?php echo $key->gender?></td>
                         <td style="padding: 15px"><?php echo $key->birthdate?></td>
                         <td style="padding: 15px"><?php echo $key->age?></td>
@@ -115,7 +117,7 @@
                         <td style="padding: 15px"><?php echo $key->mothersname?></td>
                         <td style="padding: 15px"><?php echo $key->guardiansname?></td>
                         <td style="padding: 15px"><?php echo $key->relationship?></td>
-                        <td style="padding: 15px"><?php echo $key->remarks?></td>
+                        <td style="padding: 15px"><?php echo $key->contactnumber?></td>
                         <td style="padding: 15px"><?php echo $key->remarks?></td>
                     </tr>
                     <?php }?>

@@ -9,10 +9,13 @@
       <div class="px-3">
         <figure class="figure d-flex align-items-center mt-3">
           <div class="user__img">
-            <img class="img__logo" src="<?php echo base_url() ?>assets/img/logo.jpg" alt="logo">
+     
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
-            <h6 class="user__name">Superuser</h6>
+            <span class="user__name">  <h6><?php $it = $this->session->userdata('user_id');
+                    $net = $this->db->query("SELECT * from tbl_instructor where user_id = '$it'")->result();
+                        
+               ?><?php echo $net[0]->firstname?> <?php echo $net[0]->lastname?>!</span></h6>
             <span class="user__state"><i class="fas fa-circle text-success"></i> Online</span>
           </figcaption>
         </figure>
@@ -59,7 +62,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+        
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -117,11 +120,11 @@
                                     <tr>
                                         <td><?php echo $class->section_name?></td>
                                         <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/teacher_specific_classes/<?php echo $class->class_id?>"><button class="btn btn-primary btn-block">View</button></a></td>
-                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form1/<?php echo $class->class_id?>"><button class="btn" style="background-color: #f24a59 ; color:white">Form 1</button></a></td>
-                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form3/<?php echo $class->class_id?>"><button class="btn" style="background-color: #7dd33c; color:white">Form 3</button></a></td>
-                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form5/<?php echo $class->class_id?>/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #f8313a; color:white">Form 5</button></a></td>
-                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form6/<?php echo $class->class_id?>/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #f62705; color:white">Form 6</button></a></td>
-                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/all_subject_final_grade/<?php echo $class->class_id?>/1/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #b198dc; color:white">Subject  </button></a></td>
+                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form1/<?php echo $class->class_id?>"><button class="btn" style="background-color: #f24a59 ; color:white">School Form 1</button></a></td>
+                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form3/<?php echo $class->class_id?>"><button class="btn" style="background-color: #3CB371; color:white">School Form 3</button></a></td>
+                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form5/<?php echo $class->class_id?>/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #778899; color:white">School Form 5</button></a></td>
+                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form6/<?php echo $class->class_id?>/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #A9A9A9; color:white">School Form 6</button></a></td>
+                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/all_subject_final_grade/<?php echo $class->class_id?>/1/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #b198dc; color:white">All Subect Grades </button></a></td>
                                     </tr> 
                                   <?php }?>
                                 <?}else { ?>

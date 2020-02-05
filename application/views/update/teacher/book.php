@@ -9,10 +9,13 @@
       <div class="px-3">
         <figure class="figure d-flex align-items-center mt-3">
           <div class="user__img">
-            <img class="img__logo" src="<?php echo base_url() ?>assets/img/logo.jpg" alt="logo">
+      
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
-            <h6 class="user__name">Superuser</h6>
+            <span class="user__name">  <h6><?php $it = $this->session->userdata('user_id');
+                    $net = $this->db->query("SELECT * from tbl_instructor where user_id = '$it'")->result();
+                        
+               ?><?php echo $net[0]->firstname?> <?php echo $net[0]->lastname?>!</span></h6>
             <span class="user__state"><i class="fas fa-circle text-success"></i> Online</span>
           </figcaption>
         </figure>

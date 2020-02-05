@@ -9,10 +9,13 @@
       <div class="px-3">
         <figure class="figure d-flex align-items-center mt-3">
           <div class="user__img">
-            <img class="img__logo" src="<?php echo base_url() ?>assets/img/logo.jpg" alt="logo">
+            
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
-            <h6 class="user__name">Superuser</h6>
+            <span class="user__name">  <h6><?php $it = $this->session->userdata('user_id');
+                    $net = $this->db->query("SELECT * from tbl_instructor where user_id = '$it'")->result();
+                        
+               ?><?php echo $net[0]->firstname?> <?php echo $net[0]->lastname?>!</span></h6>
             <span class="user__state"><i class="fas fa-circle text-success"></i> Online</span>
           </figcaption>
         </figure>
@@ -59,7 +62,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+       
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -98,9 +101,9 @@
                         <table class="table table-bordered"> 
                             <thead>
                                 <tr>
-                                    <th>School Year</th> 
+                                    <th>#</th> 
                                     <th>Section </th> 
-                                    <th>Subject </th> 
+                                    <th>Subject Code</th> 
                                     <th>View Students</th> 
                                     <th colspan="2" class="text-center">Actions</th>
                                 </tr> 
@@ -109,7 +112,7 @@
                                 <?php foreach($classes as $class){?>
                                     <?php if($c->schoolyear_start == $class->schoolyear_start ){?>
                                         <tr>
-                                            <td><?php echo $class->schoolyear_start?></td>
+                                            <td></td>
                                             <td><?php echo $class->section_name?></td>
                                             <td><?php echo $class->subj_code?></td>
                                             <td><?php echo $class->subj_id?></td>

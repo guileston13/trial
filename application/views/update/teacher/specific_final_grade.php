@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>School form 3</title>
+  <title>Final Grade</title>
 
     <link href="<?php echo base_url(); ?>/assets/img/brand/favicon.png" rel="icon" type="image/png">
     <!-- Icons -->
@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="container-fluid" id="print_container">
-     <h3 class="text-center">School Form 3 (SF3) Books Issued and Returned</h3>
+     <h3 class="text-center">Final Grade</h3>
     
     <div class="row">
 
@@ -56,8 +56,8 @@
 
     </div>
         <h1>Final Grade</h1>
-        <a class="btn" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/1">First Quarter</a>
-        <a class="btn" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/2">Second Quarter</a>
+        <a class="btn" style = "background-color: #2F4F4F; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/1">First Quarter</a>
+        <a class="btn" style = "background-color: #696969; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/2">Second Quarter</a>
         <?php if($student){?>
             <table class="my-5 table table-bordered">
                 <tr>

@@ -9,7 +9,7 @@
       <div class="px-3">
         <figure class="figure d-flex align-items-center mt-3">
           <div class="user__img">
-            <img class="img__logo" src="<?php echo base_url() ?>assets/img/logo.jpg" alt="logo">
+
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
             <h6 class="user__name">Superuser</h6>
@@ -101,7 +101,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+        
       </footer>
     </aside>
     <main class="col-md-10 offset-2">

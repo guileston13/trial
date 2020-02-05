@@ -9,7 +9,7 @@
       <div class="px-3">
         <figure class="figure d-flex align-items-center mt-3">
           <div class="user__img">
-            <img class="img__logo" src="<?php echo base_url() ?>assets/img/logo.jpg" alt="logo">
+
           </div>
           <figcaption class="user__status ml-3 d-flex flex-column justify-content-between">
             <span class="user__name">  <h6><?php $it = $this->session->userdata('user_id');
@@ -54,7 +54,7 @@
         </li>
     </ul>
     <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+       
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -93,7 +93,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Subjects</th>
-                                                        <th>Teacher</th>
+                                                      
                                                         <th>1ST QUARTER</th>
                                                         <th>2ND QUARTER</th>
                                                         <th>Final Grade</th>
@@ -106,7 +106,7 @@
                                                     foreach($display as $key){?>
                                                     <tr>
                                                         <td><?php echo $key->subj_code?></td>
-                                                        <td><?php echo $key->subj_code?></td>
+                                                        
                                                         <td><?php echo $key->quarter1?></td>
                                                         <td><?php echo $key->quarter2?></td>
                                                         <td><?php echo $key->totalall?></td>
