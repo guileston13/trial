@@ -9,44 +9,64 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
     <body>
-        <div class="container-fluid" id="print_container">
+        <div class="container-fluid" id="print_container" >
             <h3 class="text-center">School Form 1(SF1)School Register</h3>
+            <br><br>
             
             <div class="row">
             <div class="col-md-3 offset-2">
                 <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">Region:</label>
-                <input type="text" name="" value="<?php echo $form[0]->region?>">
-                </div> 
+                <label  for="" class="form-control-label mr-2">School ID:</label>
+                <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->school_id?>">
+                </div>
+                
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">Division:</label>
-                        <input type="text" name="" value="<?php echo $form[0]->division?>" >
+                        <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->division?>" >
                     </div> 
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">District:</label>
-                        <input type="text" name="" value="<?php echo $form[0]->district?>">
+                        <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->district?>">
                     </div> 
                 </div>
             </div>
 
             <div class="row mt-3">
             <div class="col-md-3 offset-3">
+                
                 <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">School ID:</label>
-                <input type="text" name="" value="<?php echo $form[0]->school_id?>">
-                </div> 
+                <label for="" class="form-control-label mr-2">Region:</label>
+                <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->region?>">
+                </div>  
             </div>
             <div class="col-md-3">
                 <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">School Year:</label>
-                <input type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
-                </div> 
+                <label for="" class="form-control-label mr-2">Grade Level:</label>
+                <input  class = "form-control-sm" type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
+                </div>
             </div>
             </div>
 
@@ -54,19 +74,20 @@
             <div class="col-md-3 offset-2">
                 <div class="input-group form-inline">
                 <label for="" class="form-control-label mr-2">School Name:</label>
-                <input type="text" name="" value="<?php echo $form[0]->school_name?>">
+                <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->school_name?>">
                 </div> 
             </div>
             <div class="col-md-3">
+                
                 <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">Grade Level:</label>
-                <input type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
-                </div> 
+                <label for="" class="form-control-label mr-2">School Year:</label>
+                <input  class = "form-control-sm" type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
+                </div>  
             </div>
             <div class="col-md-3">
                 <div class="input-group form-inline">
                 <label for="" class="form-control-label mr-2">Section:</label>
-                <input type="text" name="" value="<?php echo $infos[0]->section_name?>">
+                <input  class = "form-control-sm" type="text" name="" value="<?php echo $infos[0]->section_name?>">
                 </div> 
             </div>
             </div>
@@ -74,26 +95,26 @@
             <table class="my-5 table table-bordered">
                 <thead>
                     <tr>
-                        <th style="padding: 15px">#</th>
-                        <th style="padding: 15px">LRN</th>
-                        <th style="padding: 15px">Name</th>
-                        <th style="padding: 15px">Sex</th>
-                        <th style="padding: 15px">Birth Date</th>
-                        <th style="padding: 15px">Age</th>
-                        <th style="padding: 15px">Birth Place</th>
-                        <th style="padding: 15px">Mother Tongue</th>
-                        <th style="padding: 15px">IP</th>
-                        <th style="padding: 15px">Religion</th>
-                        <th style="padding: 15px">House# / Street / Sitio / Purok</th>
-                        <th style="padding: 15px">Barangay</th>
-                        <th style="padding: 15px">Municipal / City</th>
-                        <th style="padding: 15px">Province</th>
-                        <th style="padding: 15px">Father</th>
-                        <th style="padding: 15px">Mother</th>
-                        <th style="padding: 15px">Guardian</th>
-                        <th style="padding: 15px">Relationship</th>
-                        <th style="padding: 15px">Contact No.</th>
-                        <th style="padding: 15px">REMARKS</th>
+                        <th style="padding: 15px"><h5>#</th></h5>
+                        <th style="padding: 15px"><h5>LRN</th></h5>
+                        <th style="padding: 15px"><h5>Name</th></h5>
+                        <th style="padding: 15px"><h5>Sex</th></h5>
+                        <th style="padding: 15px"><h5>Birth Date</th></h5>
+                        <th style="padding: 15px"><h5>Age</th></h5>
+                        <th style="padding: 15px"><h5>Birth Place</th></h5>
+                        <th style="padding: 15px"><h5>Mother Tongue</th></h5>
+                        <th style="padding: 15px"><h5>IP</th></h5>
+                        <th style="padding: 15px"><h5>Religion</th></h5>
+                        <th style="padding: 15px"><h5>House# / Street / Sitio / Purok</th></h5>
+                        <th style="padding: 15px"><h5>Barangay</th></h5>
+                        <th style="padding: 15px"><h5>Municipal / City</th></h5>
+                        <th style="padding: 15px"><h5>Province</th></h5>
+                        <th style="padding: 15px"><h5>Father</th></h5>
+                        <th style="padding: 15px"><h5>Mother</th></h5>
+                        <th style="padding: 15px"><h5>Guardian</th></h5>
+                        <th style="padding: 15px"><h5>Relationship</th></h5>
+                        <th style="padding: 15px"><h5>Contact No.</th></h5>
+                        <th style="padding: 15px"><h5>REMARKS</th></h5>
                     </tr>
                 </thead>
                 <tbody>
@@ -123,21 +144,74 @@
                     <?php }?>
                 </tbody>
             </table>
-                <div class="row">
+            <br><br><br><br>
+                
+            <table>
+                <tr>   
+                    <th>Indicator</th>
+                    <th>Code</th>
+                    <th>Required Information</th>
+                    <th>Indicator</th>
+                    <th>Code</th>
+                    <th>Required Information</th>
+                </tr>
+                <tr>
+                    <td>Transferred Out</td>
+                    <td>T/O</td>
+                    <td>Name of  Public (P) Private (PR) School  & Effectivity Date</td>
+                    <td>CCT Recipient</td>
+                    <td>CCT</td>
+                    <td>CCT Control/reference number & Effectivity Date</td>
+                </tr>
+                <tr>
+                    <td>Transferred IN</td>
+                    <td>T/I</td>
+                    <td>Name of  Public (P) Private (PR) School  & Effectivity Date</td>
+                    <td>Balik-Aral</td>
+                    <td>B/A</td>
+                    <td>Name of school last attended & Year</td>
+                </tr>
+                <tr>
+                    <td>Dropped</td>
+                    <td>DRP</td>
+                    <td>Reason  and Effectivity Date</td>
+                    <td>Learner With Dissability</td>
+                    <td>LWD</td>
+                    <td>Specify</td>
+                </tr>
+                <tr>
+                    <td>Late Enrollment</td>
+                    <td>LE</td>
+                    <td>Reason (Enrollment beyond 1st Friday of June)</td>
+                    <td>Accelarated</td>
+                    <td>ACL</td>
+                    <td>Specify Level & Effectivity Data</td>
+                </tr>
+            </table>
+
+            <br><br><br>
+            <div class="row">
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-5">
-                                <label for="" class="form-control-label mr-2">Noted by:</label>
+                                <label for="" class="form-control-label mr-2">Prepared by:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="text" name="" class="w-100">
+                                <input  class = "form-control" type="text" name="" >
                             </div>
+                            <div class="col-md-10" style="margin-left: 305px">
+                                (Signature of Adviser Over Printed Name)
+                            </div>
+
                         </div>  
                     </div>
-                </div>
+                </div>    
+
+            <br><br><br>
                 <button id="print_data" class="btn btn-success btn-print btn-rounded">
                 <i class="fas fa-print"></i>
                 </button>
+                
         </div>
 
         <script>

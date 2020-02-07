@@ -9,28 +9,46 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
      <h3 class="text-center">School Form 6 (SF6) Summarized Report on Promotion <br> and Level of Proficiency</h3>
+     <br><br>
 
      <div class="row mb-3">
        <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School ID:</label>
-            <input type="text" name="" value="<?php echo $form6[0]->school_id?>">
+            <input class="form-control-sm" type="text" name="" value="<?php echo $form6[0]->school_id?>">
           </div> 
        </div>
        <div class="col-md-3">
            <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Region:</label>
-            <input type="text" name="" value="<?php echo $form6[0]->region?>" >
+            <input class="form-control-sm" type="text" name="" value="<?php echo $form6[0]->region?>" >
           </div> 
        </div>
        <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Division:</label>
-            <input type="text" name="" value="<?php echo $form6[0]->division?>" >
+            <input class="form-control-sm" type="text" name="" value="<?php echo $form6[0]->division?>" >
           </div> 
        </div>
      </div>
@@ -39,19 +57,19 @@
        <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School Name:</label>
-            <input type="text" name="" value="<?php echo $form6[0]->school_name?>">
+            <input class="form-control-sm" type="text" name="" value="<?php echo $form6[0]->school_name?>">
           </div> 
        </div>
        <div class="col-md-3">
            <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">District:</label>
-            <input type="text" name="" value="<?php echo $form6[0]->district?>" >
-          </div> 
+            <input class="form-control-sm" type="text" name="" value="<?php echo $form6[0]->district?>" >
+          </div>  
        </div>
        <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School Year: </label>
-            <input type="text" value="<?php echo $school_year[0]->schoolyear_start; ?>" name="">
+            <input class="form-control-sm" type="text" value="<?php echo $school_year[0]->schoolyear_start; ?>" name="">
           </div> 
        </div>
      </div>
@@ -59,13 +77,13 @@
 <table class="my-5 table table-bordered">
   <thead>
   <tr>
-    <th>SUMMARY TABLE</th>
-    <th colspan="3">Grade 7</th>  
-    <th colspan="3">Grade 8</th>  
-    <th colspan="3 ">Grade 9</th> 
-    <th colspan="3 ">Grade 10</th> 
-    <th colspan="3 ">Grade 11</th> 
-    <th colspan="3 ">Grade 12</th> 
+    <th><h5>SUMMARY TABLE</th></h5>
+    <th colspan="3"><h5>Grade 7</th></h5>  
+    <th colspan="3"><h5>Grade 8</th></h5>  
+    <th colspan="3 "><h5>Grade 9</th></h5> 
+    <th colspan="3 "><h5>Grade 10</th></h5> 
+    <th colspan="3 "><h5>Grade 11</th></h5> 
+    <th colspan="3 "><h5>Grade 12</th></h5>
   </tr>
 
   <tr>
@@ -1343,45 +1361,43 @@
   </tr>
 </tbody>
   </table>
+  <br><br>
 
-<div class="row mb-3">
-        <div class="col-md-6">
+
+
+    <div class="row mb-3">
+        <div class="col-md-3">
             <div class="row">
-                <div class="col-md-5">
-                     <label for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
+                <div class="col-md-3">
+                     <label for="" class="form-control-label mr-2">Prepared by:</label>
                 </div>
-                <div class="col-md-5">
-                    <input type="text" name="" class="w-100">
+                <div class="col-md-8">
+                    <input class="form-control" type="text" name="" class="w-100">
                 </div>
             </div>
         </div> 
-    </div>
-
-    <div class="row mb-3">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="row">
-                <div class="col-md-5">
-                    <label for="" class="form-control-label mr-2">Reviewed & Validated by:</label>
+                <div class="col-md-3">
+                    <label for="" class="form-control-label mr-2">Certified Correct and Submitted:</label>
                 </div>
-                <div class="col-md-5">
-                    <input type="text" name="" class="w-100">
+                <div class="col-md-8">
+                    <input class="form-control" type="text" name="" class="w-100">
                 </div>
             </div> 
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="row">
-                <div class="col-md-5">
-                    <label for="" class="form-control-label mr-2">Noted by:</label>
+                <div class="col-md-3">
+                    <label for="" class="form-control-label mr-2">Reviewed by:</label>
                 </div>
-                <div class="col-md-5">
-                    <input type="text" name="" class="w-100">
+                <div class="col-md-8">
+                    <input class="form-control" type="text" name="" class="w-100">
                 </div>
             </div>  
         </div>
     </div>
+    <br>
     <button id="print_data" class="btn btn-success btn-print btn-rounded">
       <i class="fas fa-print"></i>
     </button>

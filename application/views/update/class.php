@@ -142,6 +142,7 @@
                                                     <option value="<?php echo $sy->schoolyear_id?>"><?php echo $sy->schoolyear_start?></option>
                                                   <?php }?>
                                                 </select>
+                                                <br>
                                                 <button class="form-control" type="submit">Search</button>
                                               </div>
                                             </form>

@@ -10,23 +10,41 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+   <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
      <h3 class="text-center">School Form 3 (SF3) Books Issued and Returned</h3>
+     <br><br>
     
     <div class="row">
 
       <div class="col-md-3 offset-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School ID:</label>
-            <input type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
+            <input class="form-control-sm" type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
           </div> 
       </div>
       <div class="col-md-4">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School Year:</label>
-            <input type="text" name="" value="<?php echo $info?$info[0]->schoolyear_start:null?>">
+            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->schoolyear_start:null?>">
           </div> 
       </div>
 
@@ -36,21 +54,21 @@
       
       <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
-            <label for="" class="form-control-label mr-2">Name of School:</label>
-           <input type="text" name="" value="<?php echo $form3?$form3[0]->school_name:null?>">
+            <label for="" class="form-control-label mr-2">School Name:</label>
+           <input class="form-control-sm" type="text" name="" value="<?php echo $form3?$form3[0]->school_name:null?>">
           </div> 
       </div>
       <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Grade Level:</label>
-            <input type="text" name="" value="<?php echo $info?$info[0]->grade_level:null?>">
+            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->grade_level:null?>">
           </div> 
       </div>
       
       <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Section:</label>
-            <input type="text" name="" value="<?php echo $info?$info[0]->section_name:null?>">
+            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->section_name:null?>">
         </div> 
       </div>
 
@@ -107,28 +125,26 @@
       </tbody>
     </table> -->
     <table class="my-5 table table-bordered">
-      <tr>
-          <td></td>
-          <td colspan=2>Subject</td>
-      </tr> 
+
     
       <tr>
-          
-              <td></td>
+              <td style="text-align: center" rowspan="2" >#</td>
+              <td style="text-align: center;" rowspan="2" ><h5>Learner's Name</td></h5>
           <?php foreach($subjects as $subj){?> 
-              <td colspan=2><?php echo $subj->subj_code?></td>
+              <td colspan=2 style="text-align: center;"><h5><?php echo $subj->subj_code?></td></h5>
           <?php }?>
       </tr>
     
       <tr>
-              <td>Full Name</td>
+              
           <?php foreach($subjects as $subj){?> 
-              <td>Borrowed</td>
-              <td>Return</td>
+              <td><h5>Issued</td></h5>
+              <td><h5>Returned</td></h5>
           <?php }?>
       </tr> 
         <?php foreach($students as $st){ ?>
-      <tr>
+      <tr>    
+              <td></td>
               <td><?php echo $st->firstname ?> <?php echo $st->lastname ?></td>
           <?php foreach($subjects as $subj){?>
           <?php $select_borrowed_id = $this->db->query("SELECT * from tbl_bookborrowed where subj_id = '$subj->subj_id' AND student_id = '$st->studentid' ")->result();?>
@@ -144,40 +160,17 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-5">
-                     <label for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
+                     <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" name="" class="w-100">
+                    <input class="form-control " type="text" name="" class="w-100">
                 </div>
             </div>
         </div> 
     </div>
 
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-5">
-                    <label for="" class="form-control-label mr-2">Reviewed & Validated by:</label>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" name="" class="w-100">
-                </div>
-            </div> 
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-5">
-                    <label for="" class="form-control-label mr-2">Noted by:</label>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" name="" class="w-100">
-                </div>
-            </div>  
-        </div>
-    </div>
+
     <button id="print_data" class="btn btn-success btn-print btn-rounded">
       <i class="fas fa-print"></i>
     </button>
