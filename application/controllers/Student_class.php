@@ -7,7 +7,7 @@ class Student_class extends CI_Controller
 		$data['s'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_id desc")->result();
 		$sch = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_id desc")->result();
 		$new_ss =$sch?$sch[0]->schoolyear_id:null; //must change
-		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear")->result();
+		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 		$data['section']     = $this->db->query("SELECT * from tbl_section")->result();
 
 		$gl	 = $this->input->post('grade_level');

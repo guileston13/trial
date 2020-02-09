@@ -254,15 +254,15 @@ tr:nth-child(even) {
             echo $ret->subj_code;
           }
           else{
-
+            
           }
         }
         }else{  
           if($tot >=75){
-            
+             
           }else{echo "No Final Grade";}
         }?>
-      
+        
     </td>    
   </tr>
   <?php } ?>

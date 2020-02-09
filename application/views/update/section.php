@@ -219,7 +219,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <select name="schoolyear" ng-model="schoolyear_id" class="form-control">
-                                                      <?php $school_year = $this->db->query("SELECT * from tbl_schoolyear")->result();
+                                                      <?php $school_year = $this->db->query("SELECT * FROM tbl_schoolyear order by schoolyear_start desc ")->result();
                                                         foreach($school_year as $sy){
                                                       ?>
                                                       <option value="<?php echo $sy->schoolyear_id;?>"><?php echo $sy->schoolyear_start;?></option>

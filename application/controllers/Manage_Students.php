@@ -82,7 +82,7 @@ class Manage_Students extends CI_Controller
 				// $sch = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_id desc limit 1")->result();
 				// $new_ss =$sch?$sch[0]->schoolyear_id:null;
 				//var_dump($new_ss);
-				$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear")->result();
+				$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 				$sy = $this->input->post('school_year');
 				echo $sy;
 				$data['section'] = $this->db->query("SELECT * from tbl_section,tbl_class,tbl_schoolyear where tbl_section.section_id = tbl_class.section_id

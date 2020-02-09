@@ -131,9 +131,9 @@ tr:nth-child(even) {
               <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5>Returned</td></h5>
           <?php }?>
       </tr> 
-        <?php foreach($students as $st){ ?>
+        <?php $num = 1; foreach($students as $st){ ?>
       <tr>    
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"></td>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"> <?php echo $num; $num++;?></td>
               <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $st->firstname ?> <?php echo $st->lastname ?></td>
           <?php foreach($subjects as $subj){?>
           <?php $select_borrowed_id = $this->db->query("SELECT * from tbl_bookborrowed where subj_id = '$subj->subj_id' AND student_id = '$st->studentid' ")->result();?>

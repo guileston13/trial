@@ -160,7 +160,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <?php foreach($classes as $class){ ?>
-                                                    <tr>
+                                                    <tr>  
                                                         
                                                         <td><?php echo $class->subj_grade_level?></td>
                                                         <td><?php echo $class->section_name?></td>

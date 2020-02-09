@@ -72,8 +72,7 @@ tr:nth-child(even) {
     <th colspan="3" style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 8</th></h5>  
     <th colspan="3 " style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 9</th></h5> 
     <th colspan="3 " style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 10</th></h5> 
-    <th colspan="3 " style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 11</th></h5> 
-    <th colspan="3 " style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 12</th></h5>
+ 
   </tr>
 
   <tr>
@@ -90,12 +89,7 @@ tr:nth-child(even) {
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">FEMALE</th>
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">TOTAL</th>
-    <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
-    <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">FEMALE</th>
-    <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">TOTAL</th>
-    <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
-    <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">FEMALE</th>
-    <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">TOTAL</th>
+
  </tr>
 </thead>
 <tbody>
@@ -200,55 +194,7 @@ tr:nth-child(even) {
       </td>
       <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
       <!-- PROMOTED -->
-      <!-- PROMOTED Grade 11-->
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_eleven = 0;
-          foreach($male_eleven as $prom){
-            if($prom->nude <= 100 && $prom->nude >= 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_eleven++;
-            }
-          } echo $male_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_eleven = 0;
-          foreach($female_eleven as $prom){
-            if($prom->nude <= 100 && $prom->nude >= 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_eleven++;
-            }
-          } echo $female_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- PROMOTED Grade 12-->
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_twelve = 0;
-          foreach($male_twelve as $prom){
-            if($prom->nude <= 100 && $prom->nude >= 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_twelve++;
-            }
-          } echo $male_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_twelve = 0;
-          foreach($female_twelve as $prom){
-            if($prom->nude <= 100 && $prom->nude >= 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_twelve++;
-            }
-          } echo $female_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
-      <!-- PROMOTED -->
+   
     </tr>
     <tr>
       <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">IRREGULAR</td>
@@ -351,56 +297,6 @@ tr:nth-child(even) {
           } echo $female_total_promoted_ten; ?>
       </td>
       <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
-      <!-- IRREGULAR -->
-      <!-- IRREGULAR Grade 11 -->
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_eleven = 0;
-          foreach($male_eleven as $prom){
-            if($prom->nude <= 74 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_eleven++;
-            }
-          } echo $male_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_eleven = 0;
-          foreach($female_eleven as $prom){
-            if($prom->nude <= 74 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_eleven++;
-            }
-          } echo $female_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- IRREGULAR -->
-      <!-- IRREGULAR Grade 12 -->
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_twelve = 0;
-          foreach($male_twelve as $prom){
-            if($prom->nude <= 74 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_twelve++;
-            }
-          } echo $male_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_twelve = 0;
-          foreach($female_twelve as $prom){
-            if($prom->nude <= 74 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_twelve++;
-            }
-          } echo $female_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
       <!-- IRREGULAR -->
       
     </tr>
@@ -506,57 +402,6 @@ tr:nth-child(even) {
       </td>
       <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
       <!-- RETAINED -->
-      <!-- RETAINED Grade 11 -->
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_eleven = 0;
-          foreach($male_eleven as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_eleven++;
-            }
-          } echo $male_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_eleven = 0;
-          foreach($female_eleven as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_eleven++;
-            }
-          } echo $female_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- RETAINED -->
-      <!-- RETAINED Grade 12 -->
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_twelve = 0;
-          foreach($male_twelve as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_twelve++;
-            }
-          } echo $male_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_twelve = 0;
-          foreach($female_twelve as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_twelve++;
-            }
-          } echo $female_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
-      <!-- RETAINED -->
-      
     </tr>
 
    <tr>
@@ -684,56 +529,8 @@ tr:nth-child(even) {
           } echo $female_total_promoted_ten; ?>
       </td>
       <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
-      <!-- IRREGULAR -->
-      <!-- NO of Begginning Grade 11 -->
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_eleven = 0;
-          foreach($male_eleven as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_eleven++;
-            }
-          } echo $male_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_eleven = 0;
-          foreach($female_eleven as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_eleven++;
-            }
-          } echo $female_total_promoted_eleven; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- IRREGULAR -->
-      <!-- NO of Begginning Grade 12 -->
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_twelve = 0;
-          foreach($male_twelve as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_twelve++;
-            }
-          } echo $male_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_twelve = 0;
-          foreach($female_twelve as $prom){
-            if($prom->nude < 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_twelve++;
-            }
-          } echo $female_total_promoted_twelve; ?>
-      </td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
+    
+      
       <!-- IRREGULAR -->
       
   </tr>
@@ -839,56 +636,6 @@ tr:nth-child(even) {
     </td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
       <!-- IRREGULAR -->
-    <!--Nos. of DEVELOPING Grade 11 -->
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_eleven = 0;
-          foreach($male_eleven as $prom){
-            if($prom->nude <= 79.99 && $prom->nude >= 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_eleven++;
-            }
-          } echo $male_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_eleven = 0;
-          foreach($female_eleven as $prom){
-            if($prom->nude <= 84 && $prom->nude >= 80 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_eleven++;
-            }
-          } echo $female_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- IRREGULAR -->
-  <!--Nos. of DEVELOPING Grade 12 -->
-  <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $male_total_promoted_twelve = 0;
-          foreach($male_twelve as $prom){
-            if($prom->nude <= 79.99 && $prom->nude >= 75 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $male_total_promoted_twelve++;
-            }
-          } echo $male_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-        <?php 
-          $female_total_promoted_twelve = 0;
-          foreach($female_twelve as $prom){
-            if($prom->nude <= 84 && $prom->nude >= 80 ){
-              $prom->nude;
-              // $re =  count($prom->nude);
-              $female_total_promoted_twelve++;
-            }
-          } echo $female_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
-      <!-- IRREGULAR -->
   </tr>
   <tr>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">Nos. of APPROACHING PROFICIENCY                         (AP: 80%-84%)</td>
@@ -991,56 +738,6 @@ tr:nth-child(even) {
         } echo $female_total_promoted_ten; ?>
     </td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
-      <!-- IRREGULAR -->
-   <!--Nos. of APPROACHING PROFICIENCY Grade 11-->
-   <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $male_total_promoted_eleven = 0;
-        foreach($male_eleven as $prom){
-          if($prom->nude <= 84 && $prom->nude >= 80 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $male_total_promoted_eleven++;
-          }
-        } echo $male_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $female_total_promoted_eleven = 0;
-        foreach($female_eleven as $prom){
-          if($prom->nude <= 84 && $prom->nude >= 80 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $female_total_promoted_eleven++;
-          }
-        } echo $female_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- IRREGULAR -->
-    <!--Nos. of APPROACHING PROFICIENCY Grade 12 -->
-   <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $male_total_promoted_twelve = 0;
-        foreach($male_twelve as $prom){
-          if($prom->nude <= 84 && $prom->nude >= 80 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $male_total_promoted_twelve++;
-          }
-        } echo $male_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $female_total_promoted_twelve = 0;
-        foreach($female_twelve as $prom){
-          if($prom->nude <= 84 && $prom->nude >= 80 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $female_total_promoted_twelve++;
-          }
-        } echo $female_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
       <!-- IRREGULAR -->
   </tr>
   <tr>
@@ -1145,56 +842,6 @@ tr:nth-child(even) {
     </td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
       <!-- IRREGULAR -->
-    <!--Nos. of PROFICIENT P: 85% -89% Grade 11 -->
-   <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $male_total_promoted_eleven = 0;
-        foreach($male_eleven as $prom){
-          if($prom->nude <= 89 && $prom->nude >= 85 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $male_total_promoted_eleven++;
-          }
-        } echo $male_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $female_total_promoted_eleven = 0;
-        foreach($female_eleven as $prom){
-          if($prom->nude <= 89 && $prom->nude >= 85 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $female_total_promoted_eleven++;
-          }
-        } echo $female_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- IRREGULAR -->
-    <!--Nos. of PROFICIENT P: 85% -89% Grade 12 -->
-   <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $male_total_promoted_twelve = 0;
-        foreach($male_twelve as $prom){
-          if($prom->nude <= 89 && $prom->nude >= 85 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $male_total_promoted_twelve++;
-          }
-        } echo $male_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $female_total_promoted_twelve = 0;
-        foreach($female_twelve as $prom){
-          if($prom->nude <= 89 && $prom->nude >= 85 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $female_total_promoted_twelve++;
-          }
-        } echo $female_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
-      <!-- IRREGULAR -->
   </tr>
   <tr>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">Nos. of ADVANCED                (A: 90%  and above) </td>
@@ -1298,56 +945,7 @@ tr:nth-child(even) {
     </td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
       <!-- IRREGULAR -->
-     <!--Nos. of ADVANCED  P: 90% Grade 11 -->
-     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $male_total_promoted_eleven = 0;
-        foreach($male_eleven as $prom){
-          if($prom->nude >= 90 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $male_total_promoted_eleven++;
-          }
-        } echo $male_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $female_total_promoted_eleven = 0;
-        foreach($female_eleven as $prom){
-          if($prom->nude <= 90 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $female_total_promoted_eleven++;
-          }
-        } echo $female_total_promoted_eleven; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_eleven + $male_total_promoted_eleven;?></td>
-      <!-- IRREGULAR -->
-    <!--Nos. of ADVANCED  P: 90% Grade 12 -->
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $male_total_promoted_twelve = 0;
-        foreach($male_twelve as $prom){
-          if($prom->nude >= 90 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $male_total_promoted_twelve++;
-          }
-        } echo $male_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php 
-        $female_total_promoted_twelve = 0;
-        foreach($female_twelve as $prom){
-          if($prom->nude <= 90 ){
-            $prom->nude;
-            // $re =  count($prom->nude);
-            $female_total_promoted_twelve++;
-          }
-        } echo $female_total_promoted_twelve; ?>
-    </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_twelve + $male_total_promoted_twelve;?></td>
-      <!-- IRREGULAR -->
+   
   </tr>
 </tbody>
   </table>

@@ -26,13 +26,13 @@ class Manage_Subjects extends CI_Controller
 		$subject = $this->input->post('grade_level');
 		$data["schoolyear_rows"] = $this->schoolyear->getAllSchoolYear($subject);
 		$data["subject_rows"] = $this->subject->getAllSubjects();
-		$data['schoolyear']  = $this->db->query("SELECT * from tbl_schoolyear")->result();
+		$data['schoolyear']  = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 		$data['subject']  = $this->db->query("SELECT * from tbl_subject")->result();
 		$data['curriculum_rows'] = $this->db->query("SELECT * from tbl_curriculum,tbl_schoolyear,tbl_subject  
 													where tbl_curriculum.schoolyear_id = tbl_schoolyear.schoolyear_id
 														and tbl_curriculum.subj_id = tbl_subject.subj_id
 				")->result();	
-		$data["sy"] = $this->db->query("SELECT * from tbl_schoolyear")->result();
+		$data["sy"] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 		
 		$this->load->view('template/latest/header');
 		$this->load->view("update/curriculum",$data);

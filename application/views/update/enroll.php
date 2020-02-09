@@ -361,8 +361,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                        <?php $num = 1; ?>
                                                         <tr ng-repeat="x in student | filter : student_name ">
-                                                            
+                                                            <td>{{$index + 1}}</td>
                                                             <td>{{x.lrn}}</td>
                                                             <td>{{x.firstname}} {{x.lastname}}  </td>
                                                             <td>{{x.contactnumber}}</td>

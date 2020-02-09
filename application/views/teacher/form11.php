@@ -509,11 +509,12 @@
 									<td>
 												<?php echo $qe->exam_score;
 												$exam_s = $exam_s + $qe->exam_score;
+											
 												$need_exam = $need_exam + $qe->exam_item;
 												$count_exam++; 
 											?></td>
 								<?php }?>		
-								<td><?php echo $need_exam ;?> </td>
+								<td><?php echo $exam_s ;?> </td>
 								<td><?php 
 									if($need_exam){
 										$total_PS = $exam_s / $need_exam * 100; 

@@ -217,9 +217,9 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach($instructor_rows as $instructor): ?>
+                                                <?php $num = 1; foreach($instructor_rows as $instructor): ?>
                                                     <tr>
-                                                        <td></td>
+                                                        <td> <?php echo $num; $num++;?></td>
                                                         <td><?php echo $instructor->username; ?></td>
                                                         <td><?php echo $instructor->firstname?> <?php echo $instructor->lastname?>  </td>
                                                         <td><?php echo $instructor->contactnumber; ?></td>

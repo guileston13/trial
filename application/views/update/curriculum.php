@@ -233,14 +233,21 @@
                                                 <table class="table table-bordered table-striped"  id="subjectTable" style="text-align: center">
                                                   <thead>
                                                     <tr>
+                                                      <th style="font-size: 12px">#</th>
                                                       <th style="font-size: 12px">Subject Code</th>
                                                       <th style="font-size: 12px">Description</th>
                                                       <th style="font-size: 12px">Action</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
-                                                    <?php foreach($trial as $key){  ?>
+                                                    <?php $num = 1; foreach($trial as $key){   ?>
                                                         <tr>
+                                                          <td>
+                                                              <?php  
+                                                                echo $num;
+                                                                $num++;
+                                                              ?>
+                                                          </td>
                                                           <td><?php echo $key->subj_code;?></td>
                                                           <td><?php echo $key->subj_desc?></td>
                                                           <td>

@@ -570,7 +570,7 @@ class Teacher_Dashboard extends CI_Controller
 		public function return_book($id,$four,$five,$six){
 			$data = array(
 				'book_status' => 0,
-				'date_return' => date('Y-m-d')
+				'date_return' => date('Y-m-d H:i:s')
 			);
 			$this->db->where('book_id',$id);
 			$this->db->update('tbl_bookborrowed',$data);
