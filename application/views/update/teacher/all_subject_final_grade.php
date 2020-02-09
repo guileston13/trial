@@ -11,17 +11,7 @@
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
    <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
 
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -79,7 +69,7 @@ tr:nth-child(even) {
             <?php if(isset($student[0])){ ?>
             <table class="my-5 table table-bordered">
                 <tr>
-                    <td><h4>Student</td></h4>
+                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h4>Student</td></h4>
                     <?php 
                     $ss = $student[0]->studentid;
                     $quarter = $this->uri->segment(4);
@@ -92,12 +82,12 @@ tr:nth-child(even) {
                                                 AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                 order by tbl_finalgrade.subj_id")->result();?>
                     <?php foreach($stud as $st){ ?>
-                        <td><h4><?php echo $st->subj_code?></h4></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h4><?php echo $st->subj_code?></h4></td>
                     <?php }?>
                 </tr>
                 <?php foreach($student as $st) { ?>
                 <tr>
-                    <td><?php
+                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php
                         $student_f = $this->db->query("SELECT * from tbl_student where studentid = '$st->studentid'")->result();
                     echo $student_f[0]->firstname.' '.$student_f[0]->lastname?></td>
                     <?php
@@ -108,7 +98,7 @@ tr:nth-child(even) {
                                                             AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id")->result();
                     foreach($query as $q){ ?>
-                    <td><?php echo $q->finalgrade;?> </td>
+                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $q->finalgrade;?> </td>
                     <?php }?>
                 </tr>
                 <?php }?>

@@ -17,7 +17,7 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid #1e4f8e;
   text-align: left;
   padding: 8px;
 }
@@ -95,51 +95,51 @@ tr:nth-child(even) {
             <table class="my-5 table table-bordered">
                 <thead>
                     <tr>
-                        <th style="padding: 15px"><h5>#</th></h5>
-                        <th style="padding: 15px"><h5>LRN</th></h5>
-                        <th style="padding: 15px"><h5>Name</th></h5>
-                        <th style="padding: 15px"><h5>Sex</th></h5>
-                        <th style="padding: 15px"><h5>Birth Date</th></h5>
-                        <th style="padding: 15px"><h5>Age</th></h5>
-                        <th style="padding: 15px"><h5>Birth Place</th></h5>
-                        <th style="padding: 15px"><h5>Mother Tongue</th></h5>
-                        <th style="padding: 15px"><h5>IP</th></h5>
-                        <th style="padding: 15px"><h5>Religion</th></h5>
-                        <th style="padding: 15px"><h5>House# / Street / Sitio / Purok</th></h5>
-                        <th style="padding: 15px"><h5>Barangay</th></h5>
-                        <th style="padding: 15px"><h5>Municipal / City</th></h5>
-                        <th style="padding: 15px"><h5>Province</th></h5>
-                        <th style="padding: 15px"><h5>Father</th></h5>
-                        <th style="padding: 15px"><h5>Mother</th></h5>
-                        <th style="padding: 15px"><h5>Guardian</th></h5>
-                        <th style="padding: 15px"><h5>Relationship</th></h5>
-                        <th style="padding: 15px"><h5>Contact No.</th></h5>
-                        <th style="padding: 15px"><h5>REMARKS</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>#</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>LRN</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Name</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Sex</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Birth Date</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Age</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Birth Place</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Mother Tongue</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>IP</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Religion</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>House# / Street / Sitio / Purok</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Barangay</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Municipal / City</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Province</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Father</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Mother</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Guardian</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Relationship</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Contact No.</th></h5>
+                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>REMARKS</th></h5>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($form1 as $key) {?>
                     <tr>
-                        <td style="padding: 15px"></td>
-                        <td style="padding: 15px"><?php echo $key->lrn?></td>
-                        <td style="padding: 15px"><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
-                        <td style="padding: 15px"><?php echo $key->gender?></td>
-                        <td style="padding: 15px"><?php echo $key->birthdate?></td>
-                        <td style="padding: 15px"><?php echo $key->age?></td>
-                        <td style="padding: 15px"><?php echo $key->birthplace?></td>
-                        <td style="padding: 15px"><?php echo $key->mothertongue?></td>
-                        <td style="padding: 15px"><?php echo $key->ip?></td>
-                        <td style="padding: 15px"><?php echo $key->religion?></td>
-                        <td style="padding: 15px"><?php echo $key->house?></td>
-                        <td style="padding: 15px"><?php echo $key->barangay?></td>
-                        <td style="padding: 15px"><?php echo $key->city?></td>
-                        <td style="padding: 15px"><?php echo $key->province?></td>
-                        <td style="padding: 15px"><?php echo $key->fathersname?></td>
-                        <td style="padding: 15px"><?php echo $key->mothersname?></td>
-                        <td style="padding: 15px"><?php echo $key->guardiansname?></td>
-                        <td style="padding: 15px"><?php echo $key->relationship?></td>
-                        <td style="padding: 15px"><?php echo $key->contactnumber?></td>
-                        <td style="padding: 15px"><?php echo $key->remarks?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->lrn?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->gender?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->birthdate?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->age?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->birthplace?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->mothertongue?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->ip?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->religion?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->house?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->barangay?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->city?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->province?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->fathersname?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->mothersname?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->guardiansname?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->relationship?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->contactnumber?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->remarks?></td>
                     </tr>
                     <?php }?>
                 </tbody>

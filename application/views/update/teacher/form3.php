@@ -11,17 +11,6 @@
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
    <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
 
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -128,28 +117,28 @@ tr:nth-child(even) {
 
     
       <tr>
-              <td style="text-align: center" rowspan="2" >#</td>
-              <td style="text-align: center;" rowspan="2" ><h5>Learner's Name</td></h5>
+              <td style="text-align: center;border: 1px solid #1e4f8e;text-align: left;padding: 8px" rowspan="2" >#</td>
+              <td style="text-align: center;border: 1px solid #1e4f8e;text-align: left;padding: 8px" rowspan="2" ><h5>Learner's Name</td></h5>
           <?php foreach($subjects as $subj){?> 
-              <td colspan=2 style="text-align: center;"><h5><?php echo $subj->subj_code?></td></h5>
+              <td colspan=2 style="text-align: center;border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5><?php echo $subj->subj_code?></td></h5>
           <?php }?>
       </tr>
     
       <tr>
               
           <?php foreach($subjects as $subj){?> 
-              <td><h5>Issued</td></h5>
-              <td><h5>Returned</td></h5>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5>Issued</td></h5>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5>Returned</td></h5>
           <?php }?>
       </tr> 
         <?php foreach($students as $st){ ?>
       <tr>    
-              <td></td>
-              <td><?php echo $st->firstname ?> <?php echo $st->lastname ?></td>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"></td>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $st->firstname ?> <?php echo $st->lastname ?></td>
           <?php foreach($subjects as $subj){?>
           <?php $select_borrowed_id = $this->db->query("SELECT * from tbl_bookborrowed where subj_id = '$subj->subj_id' AND student_id = '$st->studentid' ")->result();?>
-              <td><?php echo $select_borrowed_id?$select_borrowed_id[0]->date:null; ?></td>
-              <td><?php echo $select_borrowed_id?$select_borrowed_id[0]->date_return:null; ?></td>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $select_borrowed_id?$select_borrowed_id[0]->date:null; ?></td>
+              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $select_borrowed_id?$select_borrowed_id[0]->date_return:null; ?></td>
           <?php }?>
       </tr>
         <?php }?>
