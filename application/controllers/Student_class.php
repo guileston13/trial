@@ -28,6 +28,8 @@ class Student_class extends CI_Controller
 		//$this->load->view('template/footer_admin');
 	}
 
+
+
 	public function change_section($id){
 		$dat = date('Y -');
 		

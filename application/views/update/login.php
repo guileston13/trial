@@ -35,7 +35,7 @@
             <h2 class="main-title">
                 Login
             </h2>
-
+            <span style="color:red"><?php echo $this->session->flashdata('chiro');?></span>
             <div class="row">
               <div class="col-md-5">
                 <form class="mt-4" action="<?php  echo site_url('login/verify')?>" method="POST">

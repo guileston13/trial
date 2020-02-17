@@ -149,6 +149,7 @@ class Teacher_Dashboard extends CI_Controller
 
 	public function add_book($class_id){
 		$subj_idHeader = $this->uri->segment(5);
+		$data['sy'] = $this->uri->segment(6);
 		$data['book'] = $this->Instructor->specific_book($class_id,$subj_idHeader);
 		$datas = $this->db->query("SELECT * from tbl_subject where subj_id = '$subj_idHeader'")->result();
 		
@@ -575,9 +576,9 @@ class Teacher_Dashboard extends CI_Controller
 			$this->db->where('book_id',$id);
 			$this->db->update('tbl_bookborrowed',$data);
 
-			$data2 = array('status'=>1);
-			$this->db->where('book_id',$id);
-			$this->db->update('tbl_book',$data2);
+			// $data2 = array('status'=>1);
+			// $this->db->where('book_id',$id);
+			// $this->db->update('tbl_book',$data2);
 			//redirect('teacher_dashboard/add_book/'.$four.'/'.$five."/".$six);
 		}
 

@@ -57,13 +57,23 @@ class Curriculum extends CI_Controller
 	public function create_school_year(){
 		$start = $this->input->post('start');
 		$end   = $this->input->post('end');
-		$data = array(
-			'schoolyear_start' => "$start - $end",
-			'schoolyear_status'=> 1
-		);
-		$this->db->insert('tbl_schoolyear',$data);
-		$this->session->set_flashdata('success','This student: '.$firstname.' '.$lastname.' is current enrolled '.$nc.' ');
-		redirect('curriculum');
+		$ee = $end - $start;
+		$ea = "$start - $end";
+		$qu = $this->db->query("SELECT * from tbl_schoolyear where schoolyear_start = '$ea'")->num_rows();
+		if($start>=$end || $ee > 1 || $qu >= 1){
+			$this->session->set_flashdata('fail','Invalid School Year');
+			redirect('curriculum');
+		}else{
+			$data = array(
+				'schoolyear_start' => "$start - $end",
+				'schoolyear_status'=> 1
+			);
+			//$this->db->insert('tbl_schoolyear',$data);
+			$this->session->set_flashdata('success','This School Year Successfully Created');
+			redirect('curriculum');
+		}
+	
+		
 	}
 	public function api()
 	{

@@ -33,7 +33,7 @@
         </li>
         <!-- <-------------------Setting-------------------- -->
         <li class="nav-header">
-         Component Settings
+          Component Settings
         </li>
         <li class="nav-item py-1 ">
           <a href="<?php echo base_url()?>curriculum" class="nav-link" href="logs.html">

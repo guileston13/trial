@@ -139,6 +139,11 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <!-- School Year Start -->
+                                                    <div>
+                                                      <span style="color:red"><?php echo $this->session->flashdata('fail');?> </span style="color:red">
+                                                      <span style="color:green"><?php echo $this->session->flashdata('success');?> </span style="color:red">
+
+                                                    </div>
                                                     <div class="form-group">
                                                         <label class="form-control-label">Start Year</label>
                                                         <input class="form-control" type="number" name="start" min="1900" max="2099" step="1" value="2019" />
