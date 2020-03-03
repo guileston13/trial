@@ -28,6 +28,24 @@ class Student_class extends CI_Controller
 		//$this->load->view('template/footer_admin');
 	}
 
+	public function school_year(){
+		$grade_level = $this->input->post('grade_level');
+		$year_level = $this->input->post('year_level');
+		$result = $this->db->query("SELECT * from tbl_section where subj_grade_level = '$grade_level'
+			AND schoolyear_id = '$year_level'
+		")->result();
+		// $result_html = '';
+		// $i = 0;
+		// foreach($result as $res){
+			
+		// 	//var_dump($res->section_id);
+		// 	$result_html[$i] = '<option value=' . $res->section_id . '>' . $res->section_name . '</option>';
+		// 	// var_dump($result_html);
+		// }
+		//var_dump($result_html);
+		echo json_encode($result);
+	}	
+
 
 
 	public function change_section($id){

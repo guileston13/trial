@@ -14,7 +14,7 @@ class Teacher_Dashboard extends CI_Controller
 	{
 		$data['classes'] = $this->Instructor->display_under_classes();
 
-		$data['class'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start asc")->result();
+		$data['class'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 		$this->load->view('template/latest/header');
 		$this->load->view('update/teacher/teacher_dashboard',$data);
 		$this->load->view('template/latest/footer');
@@ -122,6 +122,19 @@ class Teacher_Dashboard extends CI_Controller
 			'subj_id'	=> $this->input->post('subj_id'),
 		);
 		$this->db->insert('tbl_quiz',$data);
+	}
+
+	public function quiz_counter(){
+		$event = $this->input->post('event');
+		//var_dump($event);
+		$subject_id = $this->input->post('subject_id');
+		$quarter_id = $this->input->post('quarter_id');
+		$user_id = $this->session->userdata('user_id');
+		$new_event = 'tbl_'.$event;
+		$result = $this->db->query("SELECT * from $new_event where 
+			quarter_id = '$quarter_id' AND teacher_id = '$user_id' AND subj_id ='$subject_id'
+		")->num_rows();
+		echo json_encode($result);
 	}
 
 	public function create_quiz($id,$section_id){
@@ -457,7 +470,8 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'quiz_item' =>  $this->input->post('quiz_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id')
+					'quarter_id'=> $this->input->post('quarter_id'),
+					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_quiz',$data_quiz);
 				$id = $this->db->insert_id();
@@ -470,7 +484,7 @@ class Teacher_Dashboard extends CI_Controller
 						'user_id'	=> $need[$c],
 						'quiz_id' 	=> $id,
 						'quiz_score'=> $grades,
-					
+						
 					);
 					$this->db->insert('tbl_student_quiz',$data);
 					$c++;
@@ -480,7 +494,8 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'assignment_item' =>  $this->input->post('assignment_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id')
+					'quarter_id'=> $this->input->post('quarter_id'),
+					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_assignment',$data_quiz);
 				$id = $this->db->insert_id();
@@ -502,7 +517,8 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'project_item' =>  $this->input->post('project_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id')
+					'quarter_id'=> $this->input->post('quarter_id'),
+					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_project',$data_quiz);
 				$id = $this->db->insert_id();
@@ -524,7 +540,8 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'exam_item' =>  $this->input->post('exam_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id')
+					'quarter_id'=> $this->input->post('quarter_id'),
+					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_exam',$data_quiz);
 				$id = $this->db->insert_id();
@@ -546,7 +563,8 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'recitation_item' =>  $this->input->post('recitation_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id')
+					'quarter_id'=> $this->input->post('quarter_id'),
+					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_recitation',$data_quiz);
 				$id = $this->db->insert_id();
@@ -567,7 +585,6 @@ class Teacher_Dashboard extends CI_Controller
 			
 		redirect('teacher_dashboard');
 		}
-
 		public function return_book($id,$four,$five,$six){
 			$data = array(
 				'book_status' => 0,
@@ -581,7 +598,11 @@ class Teacher_Dashboard extends CI_Controller
 			// $this->db->update('tbl_book',$data2);
 			//redirect('teacher_dashboard/add_book/'.$four.'/'.$five."/".$six);
 		}
-
+		public function form137(){
+			$this->load->view('update/teacher/form137');
+		}
 		
-
+		public function form9(){
+			$this->load->view('update/teacher/form9');
+		}
 }

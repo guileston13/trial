@@ -125,7 +125,14 @@ tr:nth-child(even) {
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->gender?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->birthdate?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->age?></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php  
+                            $from = new DateTime($key->birthdate);
+                            $to   = new DateTime('today');
+                            echo $from->diff($to)->y;
+                            
+                            # procedural
+                            //echo date_diff(date_create($key->birthdate), date_create('today'))->y;
+                        ?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->birthplace?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->mothertongue?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->ip?></td>

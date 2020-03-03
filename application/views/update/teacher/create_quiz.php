@@ -80,8 +80,11 @@
             <div class="card col-md-12">
                 <div class="card-body">
                 <h3>
-                    <?php $class_id = $this->uri->segment(4);
-                        $q = $this->db->query("SELECT * from tbl_section")->result();
+                    <?php   $class_id = $this->uri->segment(3);
+                        $q = $this->db->query("SELECT * from tbl_class,tbl_section 
+                        where tbl_section.section_id = tbl_class.section_id
+                        AND tbl_class.class_id = '$class_id' ")->result();
+                          
                         echo $q[0]->section_name;
                         $user = $this->session->userdata('user_id');
                         $people = $this->db->query("SELECT * from tbl_instructor where user_id = '$user'")->result();
@@ -93,10 +96,19 @@
                 <label>Quarter</label>
                 <div class="row">
                     <div class="col-md-4">
-                        <select name="quarter_id" id="querter_id" class="form-control" >  
+                        <select name="quarter_id2" id="querter_id2" class="form-control" >  
                             <option value="1">1</option>
                             <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                          <h3>Quiz #: <span class="hide" id="subject_id"><?php echo $this->uri->segment(5);?></span>
+                                      <span class="hide" id="event"><?php echo $this->uri->segment(4);?></span>
+                                      <span id="quiz_nu">1</span></h3>
+                        </div>
                     </div>
                 </div>
                 

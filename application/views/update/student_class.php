@@ -1,3 +1,5 @@
+<script src="<?php echo base_url(); ?>assets/js/student_class.js"></script>
+
 <body ng-app="starter">
   <div class="row no-gutters">
     <aside class="col-md-2 fixed-sidebar p-0 d-flex flex-column">
@@ -130,7 +132,7 @@
                                           <div class="row">
                                             <div class="col-md-3">
                                               <label for="">School Year</label>
-                                              <select name="school_year" id="school_year" class="form-control">
+                                              <select name="school_year" id="school_year1" class="form-control">
                                                 <?php foreach($school_year as $sy) {?>
                                                   <option value="<?php echo $sy->schoolyear_id?>"><?php echo $sy->schoolyear_start?></option>
                                                 <?php }?>
@@ -138,7 +140,7 @@
                                             </div>
                                             <div class="col-md-3">
                                               <label for="">Grade Level</label>
-                                              <select name="grade_level" id="grade_level" class="form-control">
+                                              <select name="grade_level" id="grade_level1" class="form-control">
                                                 <option value="7">7</option>
                                                 <option value="8">8</option>
                                                 <option value="9">9</option>
@@ -149,10 +151,8 @@
                                             </div>
                                             <div class="col-md-3">
                                               <label for="">Section</label>
-                                              <select name="section" id="section" class="form-control">
-                                                  <?php foreach($section as $sec){?>
-                                                    <option value="<?php echo $sec->section_id ?>"><?php echo $sec->section_name ?></option>
-                                                  <?php }?>
+                                              <select name="section" id="section1" class="form-control">
+                                                  <option></option>
                                               </select>
                                             </div>
                                             <div class="col-md-3">
