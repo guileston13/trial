@@ -145,16 +145,18 @@
                 <table class="table table-bordered mt-4"> 
                     <thead> 
                         <tr>
-                            <th>Student #</th> 
+                            <th>#</th> 
+                            <th>LRN</th> 
                             <th>First Name</th> 
                             <th>Last Name</th>
                             <th>Grade</th>
                         </tr> 
                     </thead>
                     <tbody> 
-                        <?php foreach($quiz as $key){ ?>   
+                        <?php $num = 1; foreach($quiz as $key){ ?>   
                         <tr>
-                            <td><?php echo $key->studentid?></td>
+                            <td><?php echo $num; $num++;?></td>
+                            <td><?php echo $key->lrn?></td>
                             <td><?php echo $key->firstname?></td>
                         
                             <td><?php echo $key->lastname?></td>

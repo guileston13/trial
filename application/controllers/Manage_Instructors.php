@@ -22,6 +22,7 @@ class Manage_Instructors extends CI_Controller
 			$middlename=$this->input->post('middlename');
 			$lastname=$this->input->post('lastname');	
 			$gender=$this->input->post('gender');
+			$birthdate=$this->input->post('birthdate');
 			$address=$this->input->post('address');
 		
 				$que=$this->db->query("select * from tbl_user where username='".$username."'");
@@ -46,6 +47,7 @@ class Manage_Instructors extends CI_Controller
 					'middlename'=> $middlename,
 					'contactnumber'=> $contactnumber,
 					'gender' 	=> $gender,
+					'birthdate' 	=> $birthdate,
 					'address'	=> $address
 				);	
 				$this->db->insert('tbl_instructor',$data);

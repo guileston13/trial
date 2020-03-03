@@ -85,7 +85,7 @@
                                     <table class="table table-bordered"> 
                                 <thead> 
                                     <tr>
-                                        <th>Student ID</th> 
+                                        <th>#</th> 
                                         <th>First Name</th> 
                                         <th>Last Name</th> 
                                         <th>Own Book</th>
@@ -96,10 +96,11 @@
                                 <tbody> 
                                         <?php 
                                             $i = 0;
+                                            $num = 1;
                                         foreach($book as $st){?>
                                         
                                         <tr>
-                                            <td><?php echo $st->st;?>  </td>
+                                            <td><?php echo $num; $num++;?></td>
                                             <td><?php echo $st->firstname?></td>
                                             <td><?php echo $st->lastname?></td>
                                             <td><?php 

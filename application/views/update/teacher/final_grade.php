@@ -100,22 +100,20 @@
                         <?php foreach($year_level as $c){ ?>
                         <table class="table table-bordered"> 
                             <thead>
-                                <tr>
+                                <tr style="text-align: center;">
                                     <th>#</th> 
                                     <th>Section </th> 
-                                    <th>Subject Code</th> 
-                                    <th>View Students</th> 
+                                    <th>Subject Code</th>                                    
                                     <th colspan="2" class="text-center">Actions</th>
                                 </tr> 
                             </thead>
-                            <tbody> 
-                                <?php foreach($classes as $class){?>
+                            <tbody style="text-align: center;"> 
+                                <?php $num = 1; foreach($classes as $class){?>
                                     <?php if($c->schoolyear_start == $class->schoolyear_start ){?>
                                         <tr>
-                                            <td></td>
+                                            <td><?php echo $num; $num++;?></td>
                                             <td><?php echo $class->section_name?></td>
                                             <td><?php echo $class->subj_code?></td>
-                                            <td><?php echo $class->subj_id?></td>
                                             <td><a target = "_blank" class="btn btn-block btn-primary" href="<?php echo base_url();?>teacher_dashboard/trial/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>/1">Class Record</a></td>
                                             <td><a target = "_blank" class="btn btn-block btn-danger" href="<?php echo base_url();?>teacher_dashboard/specific_final_grade/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">Final Grades</a></td>
                                         </tr> 

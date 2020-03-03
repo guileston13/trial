@@ -101,7 +101,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+        
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -139,7 +139,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Username</h3>
+                                                        <label class="form-control-label">Username</h3><div style="color:red"> *required</div>
                                                         <input class="form-control" type="text" name="username" required> 
                                                     </div>
                                                 </div>
@@ -148,21 +148,21 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">First Name</label>
+                                                        <label class="form-control-label">First Name</label><div style="color:red"> *required</div>
                                                         <input class="form-control" type="text" name="firstname" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Middle Name</label>
-                                                        <input class="form-control" type="text" name="middlename" required>
+                                                        <label class="form-control-label">Middle Name</label><br><br>
+                                                        <input class="form-control" type="text" name="middlename" >
                                                     </div>
                                                 </div>
 
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Last Name</label>
+                                                        <label class="form-control-label">Last Name</label><div style="color:red"> *required</div>
                                                         <input class="form-control" type="text" name="lastname" required>
                                                     </div>
                                                 </div>
@@ -171,25 +171,25 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">LRN</label>
-                                                        <input class="form-control" type="text" name="lrn" required>
+                                                        <label class="form-control-label">LRN</label><div style="color:red"> *required</div>
+                                                        <input class="form-control" type="number" name="lrn" required>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Birth Date</label>
+                                                        <label class="form-control-label">Birth Date</label><div style="color:red"> *required</div>
                                                         <input class="form-control" type="date" name="birthdate" required>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Age</label>
-                                                        <input class="form-control" type="number" name="age" required>
+                                                        <label class="form-control-label">Age</label><br><br>
+                                                        <input class="form-control" type="number" name="age" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Sex</label>
+                                                        <label class="form-control-label">Sex</label><div style="color:red"> *required</div>
                                                         <select class="form-control" name="gender">
                                                             <option value="male">Male</option>
                                                             <option value="femail">Female</option>
@@ -203,19 +203,19 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Fathers Name</label>
-                                                        <input class="form-control" type="text" name="fathersname" required>
+                                                        <input class="form-control" type="text" name="fathersname" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Mothers Name</label>
-                                                        <input class="form-control" type="text" name="mothersname" required>
+                                                        <input class="form-control" type="text" name="mothersname" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Guardians Name</label>
-                                                        <input class="form-control" type="text" name="guardiansname" required>
+                                                        <input class="form-control" type="text" name="guardiansname" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -224,19 +224,19 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Relationship of Guardian</label>
-                                                        <input class="form-control" type="text" name="relationship" required>
+                                                        <input class="form-control" type="text" name="relationship" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Contact Number(Parent/Guardian)</label>
-                                                        <input class="form-control" type="text" name="contactnumber" required>
+                                                        <input class="form-control" type="number" name="contactnumber" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Birth Place</label>
-                                                        <input class="form-control" type="text" name="birthplace" required>
+                                                        <input class="form-control" type="text" name="birthplace" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -245,19 +245,19 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Mother Tongue</label>
-                                                        <input class="form-control" type="text" name="mothertongue" required>
+                                                        <input class="form-control" type="text" name="mothertongue" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">IP(Specify Ethnic Group)</label>
-                                                        <input class="form-control" type="text" name="ip" required>
+                                                        <input class="form-control" type="text" name="ip" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Religion</label>
-                                                        <input class="form-control" type="text" name="religion" required>
+                                                        <input class="form-control" type="text" name="religion" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -266,25 +266,25 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">House#/Street/Sitio/Purok</label>
-                                                        <input class="form-control" type="text" name="house" required>
+                                                        <input class="form-control" type="text" name="house" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Barangay</label>
-                                                        <input class="form-control" type="text" name="barangay" required>
+                                                        <input class="form-control" type="text" name="barangay" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Municipality/City</label>
-                                                        <input class="form-control" type="text" name="city" required>
+                                                        <input class="form-control" type="text" name="city" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Province</label>
-                                                        <input class="form-control" type="text" name="province" required>
+                                                        <input class="form-control" type="text" name="province" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -354,10 +354,11 @@
                                             <table class="table table-bordered table-striped"  id="studentTable" style="text-align: center">
                                                 <thead>
                                                     <tr>
-                                                        <th style="font-size: 12px">LRN</th>
-                                                        <th style="font-size: 12px">Students Name</th>
-                                                        <th style="font-size: 12px">Contact Number</th>
-                                                        <th style="font-size: 12px">Action</th>
+                                                        <th style="font-size: 18px">#</th>
+                                                        <th style="font-size: 18px">LRN</th>
+                                                        <th style="font-size: 18px">Students Name</th>
+                                                        <th style="font-size: 18px">Contact Number</th>
+                                                        <th style="font-size: 18px">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

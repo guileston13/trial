@@ -91,7 +91,7 @@
                     <h3><?php echo $classes?$classes[0]->schoolyear_start:null;?></h3>
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th>Section</th> 
                                 <th>Subject Code</th> 
                                 <th>View Students</th> 

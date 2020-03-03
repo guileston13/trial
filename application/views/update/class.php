@@ -101,7 +101,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+        
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -152,9 +152,9 @@
                                                 <thead>
                                                     <tr>
                                                     
-                                                        <th style="font-size: 12px">Grade Level</th>
-                                                        <th style="font-size: 12px">Section</th>
-                                                        <th style="font-size: 12px">Adviser</th>
+                                                        <th style="font-size: 15px">Grade Level</th>
+                                                        <th style="font-size: 15px">Section</th>
+                                                        <th style="font-size: 15px">Adviser</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -165,7 +165,7 @@
                                                         <td><?php echo $class->subj_grade_level?></td>
                                                         <td><?php echo $class->section_name?></td>
                                                         <td><?php echo $class->firstname.' '.$class->lastname?></td>
-                                                        <td><a href="<?php echo base_url()?>add_class/view_classes/<?php echo $class->class_id?>">View</a></td>
+                                                        <td><a  href="<?php echo base_url()?>add_class/view_classes/<?php echo $class->class_id?>"><button class="btn btn-success">View</button></a></td>
                                                     </tr>
                                                     <?php }?>
                                                 </tbody>
@@ -178,7 +178,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th style="font-size: 12px">Subject Code</th>
-                                                        <th style="font-size: 12px">Section</th>
+                                                        <th style="font-size: 12px">Description</th>
                                                         <th style="font-size: 12px">GradeLevel</th>
                                                      
                                                     </tr>
@@ -186,7 +186,7 @@
                                                 <tbody>
                                                     <?php foreach($query as $q):?>
                                                     <tr>
-                                                        <th><?php echo $q->subj_code?></th>
+                                                        <td><?php echo $q->subj_code?></td>
                                                         <td><?php echo $q->subj_desc?></td>
                                                         <td><?php echo $q->subj_grade_level?></td>
                                                     </tr>

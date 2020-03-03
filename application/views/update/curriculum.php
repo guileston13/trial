@@ -101,7 +101,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+    
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -155,8 +155,7 @@
                                                             <option value="8">8</option>
                                                             <option value="9">9</option>
                                                             <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
+                                                          
                                                         </select>
                                                     </div>
                                                 </div>
@@ -174,7 +173,7 @@
                                               <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
                                                 <thead>
                                                     <tr>
-                                                        <th style="font-size: 12px">#</th>
+                                                        <th style="font-size: 12px">Action</th>
                                                         <th style="font-size: 12px">Subject Code</th>
                                                         <th style="font-size: 12px">Description</th>
                                                     </tr>

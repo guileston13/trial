@@ -111,18 +111,20 @@
                             class="table table-bordered"> 
                                 <thead> 
                                     <tr>
-                                        <th>Student ID</th> 
+                                        <th>#</th>
+                                        <th>LRN</th> 
                                         <th>Firstname </th> 
-                                        <th>MiddleNAme</th> 
-                                        <th>LastName</th> 
+                                        <th>Middle NAme</th> 
+                                        <th>Last Name</th> 
                                         
                                     </tr> 
                                 </thead>
                                 <tbody> 
-                                        <?php foreach($students as $class){?>
+                                        <?php $num = 1; foreach($students as $class){?>
                                         
                                         <tr>
-                                            <td><?php echo $class->studentid?></td>
+                                            <td><?php echo $num; $num++;?></td>
+                                            <td><?php echo $class->lrn?></td>
                                             <td><?php echo $class->firstname?></td>
                                             <td><?php echo $class->middlename?></td>
                                             <td><?php echo $class->lastname?></td>

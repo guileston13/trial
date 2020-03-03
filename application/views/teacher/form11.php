@@ -37,6 +37,8 @@
 				<input type="submit" class="btn btn-primary btn-print">
 				<a class="btn btn-info btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/1">First</a>
 				<a class="btn btn-warning btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/2">Second</a>
+				<a class="btn btn-success btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/3">Third</a>
+				<a class="btn btn-light btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/4">Fourth</a>
 				
 					<table class="table table-record">
 						<thead>

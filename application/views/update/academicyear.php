@@ -146,9 +146,9 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="form-control-label">Start Year</label>
-                                                        <input class="form-control" type="number" name="start" min="1900" max="2099" step="1" value="2019" />
+                                                        <input class="form-control" type="number" name="start" min="2020" max="2099" step="1" value="" placeholder="start" />
                                                         <label class="form-control-label">End  Year</label>
-                                                        <input class="form-control" type="number" name="end" min="1900" max="2099" step="1" value="2019" />
+                                                        <input class="form-control" type="number" name="end" min="2020" max="2099" step="1" value="" placeholder="end" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,8 +184,6 @@
                                                             <option value="8">8</option>
                                                             <option value="9">9</option>
                                                             <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
                                                         </select>
                                                     </div>
                                                 </div>

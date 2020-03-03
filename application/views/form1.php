@@ -118,9 +118,9 @@ tr:nth-child(even) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($form1 as $key) {?>
+                    <?php $num = 1; foreach($form1 as $key) {?>
                     <tr>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
+                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $num; $num++;?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->lrn?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
                         <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->gender?></td>

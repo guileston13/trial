@@ -80,6 +80,7 @@ tr:nth-child(even) {
     <table class="my-5 table table-bordered">
   <thead>
     <tr>
+      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>#</th></h5>
       <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>LRN</th></h5>
       <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>LEARNERS NAME  </th></h5>
       <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>GENERAL AVERAGE </th></h5>
@@ -113,8 +114,10 @@ tr:nth-child(even) {
       $profocient_female = 0;
       $advanced_male = 0;
       $advanced_female = 0;
+      $num = 1;
     foreach($students as $st){?>
   <tr>
+    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $num; $num++;?></td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $st->lrn;?></td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $st->firstname;?><?php echo $st->middlename;?><?php echo " "?><?php echo $st->lastname;?> </td>
     
@@ -269,6 +272,7 @@ tr:nth-child(even) {
   
   
     <tr>
+    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>  
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
@@ -276,6 +280,7 @@ tr:nth-child(even) {
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
     </tr> 
     <tr>
+      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
@@ -283,6 +288,7 @@ tr:nth-child(even) {
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
   </tr> 
     <tr>
+      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
     
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>

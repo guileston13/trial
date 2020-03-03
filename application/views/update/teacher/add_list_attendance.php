@@ -82,20 +82,20 @@
                         <input class="btn btn-primary mb-3" type="submit">
                             <table class="table table-bordered"> 
                                 <thead> 
-                                    <tr>
-                                        <th>School Year</th> 
-                                        <th>Section Code</th> 
-                                        <th>Subject Code</th> 
+                                    <tr style="text-align: center;">
+                                        <th>#</th> 
+                                        <th>First Name</th> 
+                                        <th>Last Name</th> 
                                         <th>Present</th> 
                                         <th>Absent</th>
                                         <th>Late</th>
                                     </tr> 
                                 </thead>
                                 <tbody> 
-                                        <?php foreach($student as $st){?>
+                                        <?php $num = 1; foreach($student as $st){?>
                                         
-                                        <tr>
-                                            <td><?php echo $st->studentid;
+                                        <tr style="text-align: center;">
+                                            <td><?php echo $num; $num++;
                                             $teacher = $this->session->userdata('user_id');
                                             $teacher = $this->db->query("SELECT * from tbl_instructor where user_id = '$teacher'")->result();
                                             $teacher_id = $teacher[0]->teacher_id;

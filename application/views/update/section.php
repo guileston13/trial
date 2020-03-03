@@ -101,7 +101,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+      
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -141,7 +141,7 @@
                                           <div class="row">
                                               <div class="col-md-3">
                                                   <div class="form-group">
-                                                      <label class="form-control-label">School Year</label>
+                                                      <h5><label class="form-control-label">School Year</label></h5>
                                                       
                                                       <select name="schoolyear_id" ng-model="schoolyear_id" class="form-control">
                                                           <?php  foreach($schoolyear as $sy){?>
@@ -152,20 +152,18 @@
                                               </div>
                                               <div class="col-md-3">
                                                   <div class="form-group">
-                                                      <label class="form-control-label">Grade Level</label>
+                                                      <h5><label class="form-control-label">Grade Level</label></h5>
                                                       <select ng-model="subj_grade_level" name="subj_grade_level" class="form-control">
                                                           <option value="7">7</option>
                                                           <option value="8">8</option>
                                                           <option value="9">9</option>
                                                           <option value="10">10</option>
-                                                          <option value="11">11</option>
-                                                          <option value="12">12</option>
                                                       </select>
                                                   </div>
                                               </div>
                                               <div class="col-md-3">
                                                   <div class="form-group">
-                                                      <label class="form-control-label">Adviser</label>
+                                                      <h5><label class="form-control-label">Adviser</label></h5>
                                                       <select class="form-control" name="adviser" style="padding: 3px;">
                                                           <?php foreach($teacher as $adviser){ ?>
                                                               <option value="<?php echo $adviser->teacher_id; ?>"><?php echo $adviser->firstname?> <?php echo $adviser->lastname?></option>
@@ -175,7 +173,7 @@
                                               </div>
                                               <div class="col-md-3">
                                                   <div class="form-group">
-                                                      <label class="form-control-label">Section Name</label>
+                                                      <h5><label class="form-control-label">Section Name</label></h5>
                                                       <input type="text" name="section_naming" class="form-control">
                                                   </div>
                                               </div>
@@ -186,8 +184,8 @@
                                           <table class="table table-hover text-center">
                                               <thead>
                                                   <tr>
-                                                      <th>Subject</th>
-                                                      <th>Teacher</th>
+                                                      <th style="font-size: 20px;color: black">Subject</th>
+                                                      <th style="font-size: 20px;color: black">Teacher</th>
                                                   </tr>
                                               </thead>
                                               <tbody>
@@ -239,12 +237,14 @@
                                         </div>
                                         <table class="table table-hover text-center">
                                                 <tr>
-                                                  <td>Subject</td>
-                                                  <td>Teacher</td>
+                                                  <td style="font-size: 20px;color: black"><b>Subject Code</b></td>
+                                                  <td style="font-size: 20px;color: black"><b>Description</b></td>
+                                                  <td style="font-size: 20px;color: black"><b>Teacher</b></td>
                                                 </tr>
                                                   <?php foreach($list_section as $ls){?>
                                                 <tr>
                                                   <td><?php echo $ls->subj_code?></td>
+                                                  <td><?php echo $ls->subj_desc?></td>
                                                   <td><?php echo $ls->lastname?>, <?php echo $ls->firstname?></td>
                                                 </tr>
                                                   <?php }?>

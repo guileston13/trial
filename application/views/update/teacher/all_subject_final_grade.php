@@ -66,6 +66,8 @@ tr:nth-child(even) {
         <h1>Final Grade </h1>
         <a class="btn" style = "background-color: #2F4F4F; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/1/<?php echo $this->uri->segment(5)?>">First Quarter</a>
         <a class="btn" style = "background-color: #696969; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/2/<?php echo $this->uri->segment(5)?>">Second Quarter</a>
+        <a class="btn" style = "background-color: #C0C0C0; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/3/<?php echo $this->uri->segment(5)?>">Third Quarter</a>
+        <a class="btn" style = "background-color: #3CB371; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/4/<?php echo $this->uri->segment(5)?>">Fourth Quarter</a>
             <?php if(isset($student[0])){ ?>
             <table class="my-5 table table-bordered">
                 <tr>

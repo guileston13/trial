@@ -1,3 +1,4 @@
+
 <body ng-app="starter">
   <div class="row no-gutters">
     <aside class="col-md-2 fixed-sidebar p-0 d-flex flex-column">
@@ -101,7 +102,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+     
       </footer>
     </aside>
     <main class="col-md-10 offset-2">
@@ -144,11 +145,16 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="firstname" class="form-control-label">Firstname</label>
                                                         <input class="form-control" type="text" name="firstname" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lastname" class="form-control-label">Birthdate</label>
+                                                        <input class="form-control" type="date" name="birthdate" min="" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -209,6 +215,7 @@
                                                     <th style="font-size: 12px">Username</th>
                                                     <th style="font-size: 12px">Instructor</th>
                                                     <th style="font-size: 12px">Contact</th>
+                                                    <th style="font-size: 12px">Birthdate</th>
                                                     <th style="font-size: 12px">Age</th>
                                                     <th style="font-size: 12px">Gender</th>
                                                     <th style="font-size: 12px">Address</th>
@@ -223,7 +230,15 @@
                                                         <td><?php echo $instructor->username; ?></td>
                                                         <td><?php echo $instructor->firstname?> <?php echo $instructor->lastname?>  </td>
                                                         <td><?php echo $instructor->contactnumber; ?></td>
-                                                        <td><?php echo $instructor->age; ?></td>
+                                                        <td><?php echo $instructor->birthdate; ?></td>
+                                                        <td><?php  
+                                                            $from = new DateTime($instructor->birthdate);
+                                                            $to   = new DateTime('today');
+                                                            echo $from->diff($to)->y;
+                                                            
+                                                            # procedural
+                                                            //echo date_diff(date_create($key->birthdate), date_create('today'))->y;
+                                                        ?></td>
                                                         <td><?php echo $instructor->gender; ?></td>
                                                         <td><?php echo $instructor->address; ?></td>
                                                         
