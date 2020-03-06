@@ -13,6 +13,9 @@ class Student_class extends CI_Controller
 		$gl	 = $this->input->post('grade_level');
 		$sy  = $this->input->post('school_year');
 		$sec = $this->input->post('section');
+		var_dump("gRade_level =>".$gl);
+		var_dump("school_year =>".$sy);
+		var_dump("section =>".$sec);
  		$data['class'] = $this->db->query("SELECT * from tbl_studentunderclass,tbl_student,tbl_class ,tbl_schoolyear,tbl_section
 		where tbl_studentunderclass.studentid = tbl_student.studentid
 		AND tbl_class.class_id = tbl_studentunderclass.class_id
@@ -34,15 +37,10 @@ class Student_class extends CI_Controller
 		$result = $this->db->query("SELECT * from tbl_section where subj_grade_level = '$grade_level'
 			AND schoolyear_id = '$year_level'
 		")->result();
-		// $result_html = '';
-		// $i = 0;
-		// foreach($result as $res){
-			
-		// 	//var_dump($res->section_id);
-		// 	$result_html[$i] = '<option value=' . $res->section_id . '>' . $res->section_name . '</option>';
-		// 	// var_dump($result_html);
-		// }
-		//var_dump($result_html);
+		var_dump("Grade LEvel =>".$grade_level);
+		var_dump("Year LEvel =>".$year_level);
+
+		var_dump($result);
 		echo json_encode($result);
 	}	
 

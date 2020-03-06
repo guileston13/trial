@@ -21,9 +21,12 @@ class Assign_Subject extends CI_Controller
 																											
 		$schoolyear = $this->input->post('schoolyear');
 		$section = $this->input->post('section');
-		$data['list_section'] = $this->db->query("SELECT * from tbl_assignteacher,tbl_section,tbl_instructor,tbl_subject where tbl_assignteacher.section_id = tbl_section.section_id
+		$data['schoolyear'] = $this->input->post('schoolyear');
+		$data['section'] = $this->input->post('section');
+		$data['list_section'] = $this->db->query("SELECT * from tbl_assignteacher,tbl_section,tbl_instructor,tbl_subject,tbl_schoolyear where tbl_assignteacher.section_id = tbl_section.section_id
 		AND tbl_section.section_id = '$section' AND tbl_instructor.teacher_id = tbl_assignteacher.teacher_id
 		AND tbl_subject.subj_id	 = tbl_assignteacher.subj_id
+		AND tbl_schoolyear.schoolyear_id = tbl_section.schoolyear_id
 		AND tbl_section.schoolyear_id = '$schoolyear'
 		")->result();
 		$this->load->view('template/latest/header');

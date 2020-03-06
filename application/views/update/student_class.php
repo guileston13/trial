@@ -121,7 +121,7 @@
                 <div class="card col-md-12">
                 <div class="card-body">
                         <!-- Instructor Body -->
-                        <h1 class="text-muted">Enrolled Student</h1>
+                        <h1 class="text-muted">Enrolled Student </h1>
                         <hr>
                         <div class="card shadow">
                             <div class="card-body">

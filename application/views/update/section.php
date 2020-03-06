@@ -235,6 +235,9 @@
                                                   </div>
                                               </div>  
                                         </div>
+                                        <h2 class="text-center">School Year: <?php echo $list_section?$list_section[0]->schoolyear_start:null ?></h2>
+                                        <h3 class="text-center">Section: <?php echo $list_section?$list_section[0]->section_name:null ?></h3>
+
                                         <table class="table table-hover text-center">
                                                 <tr>
                                                   <td style="font-size: 20px;color: black"><b>Subject Code</b></td>

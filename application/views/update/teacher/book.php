@@ -119,11 +119,12 @@
                                                         </td>
                                                         <td>
                                                             <?php 
-                                                                $four = $this->uri->segment(3);
-                                                                $five = $this->uri->segment(4);
-                                                                $six = $this->uri->segment(5);
+                                                                $third = $this->uri->segment(3);
+                                                                $four = $this->uri->segment(4);
+                                                                $five = $this->uri->segment(5);
+                                                                $six = $this->uri->segment(6);
                                                             ?>
-                                                            <a class="btn btn-warning" href="<?php echo base_url();?>teacher_dashboard/return_book/<?php echo $q?$q[0]->book_id:null?>/<?php echo $four."/"; echo $five."/"; echo $six?>">Return</a>
+                                                            <a class="btn btn-warning" href="<?php echo base_url();?>teacher_dashboard/return_book/<?php echo $q?$q[0]->book_id:null?>/<?php echo $third."/"; echo $four."/"; echo $five."/"; echo $six?>">Return</a>
                                                         </td>
                                                     <?php }else{?>
                                                         <td> 

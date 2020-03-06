@@ -9,7 +9,7 @@ class Add_Class extends CI_Controller
 			$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_id desc")->result();
 			$sch = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_id desc")->result();
 			$new_ss = $this->input->post('school_year');
-			
+			$data['new_ss'] = $this->input->post('school_year');
 			$data['classes'] = $this->db->query("SELECT tbl_section.subj_grade_level,tbl_class.section_id,tbl_section.section_name,tbl_schoolyear.schoolyear_start,tbl_instructor.firstname,tbl_instructor.lastname,tbl_class.class_id
 			from tbl_class,tbl_section,tbl_schoolyear,tbl_instructor
 					where tbl_class.section_id = tbl_section.section_id
@@ -33,8 +33,8 @@ class Add_Class extends CI_Controller
 		$data['query'] = $this->db->query("SELECT * from tbl_subject")->result();
 		$data['classes'] = $this->db->query("
 				SELECT * FROM tbl_class,tbl_assignteacher,tbl_instructor,tbl_subject
-				where 
-						tbl_class.class_id = tbl_assignteacher.class_id
+				where
+					tbl_class.class_id = tbl_assignteacher.class_id
 				AND tbl_instructor.teacher_id = tbl_assignteacher.teacher_id
 				AND tbl_subject.subj_id = tbl_assignteacher.subj_id
 				AND tbl_class.class_id = $id
@@ -43,12 +43,6 @@ class Add_Class extends CI_Controller
 		$this->load->view('template/latest/header');
 		$this->load->view("update/view_section_2",$data);
 		$this->load->view('template/latest/footer');
-		// "SELECT * from tbl_class,tbl_assignteacher,tbl_section,tbl_instructor,tbl_subject
-		// 		where tbl_class.section_id = tbl_assignteacher.section_id
-		// 		AND tbl_assignteacher.section_id = tbl_section.section_id
-		// 		AND tbl_assignteacher.teacher_id = tbl_instructor.teacher_id
-		// 		AND tbl_class.class_id = '$id'
-		// 		AND tbl_assignteacher.subj_id = tbl_subject.subj_id"
 	}
 
 

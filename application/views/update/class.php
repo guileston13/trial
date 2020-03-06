@@ -148,10 +148,20 @@
                                             </form>
                                           </div>
                                             <h2 class="text-center">School Year: <?php echo $school_year_display?$school_year_display[0]->schoolyear_start:null ?></h2>
-                                             <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
+                                            <?php if($new_ss!=0){
+                                              for($i=7;$i<=10;$i++){ ?>
+                                                Grade <?php echo $i;
+                                                  $trial = $this->db->query("SELECT tbl_section.subj_grade_level,tbl_class.section_id,tbl_section.section_name,tbl_schoolyear.schoolyear_start,tbl_instructor.firstname,tbl_instructor.lastname,tbl_class.class_id
+                                                  from tbl_class,tbl_section,tbl_schoolyear,tbl_instructor
+                                                      where tbl_class.section_id = tbl_section.section_id
+                                                      AND tbl_class.schoolyear_id = tbl_schoolyear.schoolyear_id
+                                                      AND tbl_instructor.teacher_id = tbl_class.teacher_id
+                                                      AND tbl_section.subj_grade_level = '$i'
+                                                      AND tbl_schoolyear.schoolyear_id = '$new_ss'")->result();
+                                                ?>
+                                            <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
                                                 <thead>
                                                     <tr>
-                                                    
                                                         <th style="font-size: 15px">Grade Level</th>
                                                         <th style="font-size: 15px">Section</th>
                                                         <th style="font-size: 15px">Adviser</th>
@@ -159,9 +169,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php foreach($classes as $class){ ?>
-                                                    <tr>  
-                                                        
+                                                    <?php foreach($trial as $class){ ?>
+                                                    <tr>
                                                         <td><?php echo $class->subj_grade_level?></td>
                                                         <td><?php echo $class->section_name?></td>
                                                         <td><?php echo $class->firstname.' '.$class->lastname?></td>
@@ -170,6 +179,9 @@
                                                     <?php }?>
                                                 </tbody>
                                             </table>
+
+                                                    <?php }
+                                                  }?>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">

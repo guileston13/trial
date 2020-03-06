@@ -218,7 +218,7 @@
                                             if($school_year_row != 0){
                                               
                                             
-                                            for($i=7;$i<=12;$i++){ ?>
+                                            for($i=7;$i<=10;$i++){ ?>
                                               Grade <?php echo $i;
                                                  $trial = $this->db->query("SELECT * from tbl_curriculum,tbl_schoolyear,tbl_subject  
                                                   where tbl_curriculum.schoolyear_id = tbl_schoolyear.schoolyear_id

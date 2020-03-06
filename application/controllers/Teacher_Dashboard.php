@@ -305,7 +305,7 @@ class Teacher_Dashboard extends CI_Controller
 
 	public function advisory(){
 		$id = $this->session->userdata('user_id');
-		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear")->result();
+		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 		$data['sy_id'] = $this->input->post('school_year');
 		$user = $this->db->query("SELECT * from tbl_instructor where user_id = '$id' ")->result();
 		$teach  =$user[0]->teacher_id;
@@ -324,7 +324,7 @@ class Teacher_Dashboard extends CI_Controller
 	}
 
 	public function final_grade(){
-		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear")->result();
+		$data['school_year'] = $this->db->query("SELECT * from tbl_schoolyear order by schoolyear_start desc")->result();
 		$data['classes'] = $this->Instructor->display_under_classes();
 		$data['year_level'] = $this->Instructor->display_all_year_level();
 		
@@ -585,7 +585,7 @@ class Teacher_Dashboard extends CI_Controller
 			
 		redirect('teacher_dashboard');
 		}
-		public function return_book($id,$four,$five,$six){
+		public function return_book($id,$third,$four,$five,$six){
 			$data = array(
 				'book_status' => 0,
 				'date_return' => date('Y-m-d H:i:s')
@@ -596,7 +596,7 @@ class Teacher_Dashboard extends CI_Controller
 			// $data2 = array('status'=>1);
 			// $this->db->where('book_id',$id);
 			// $this->db->update('tbl_book',$data2);
-			//redirect('teacher_dashboard/add_book/'.$four.'/'.$five."/".$six);
+			redirect('teacher_dashboard/add_book/'.$third.'/'.$four.'/'.$five."/".$six);
 		}
 		public function form137(){
 			$this->load->view('update/teacher/form137');

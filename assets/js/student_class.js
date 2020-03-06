@@ -12,7 +12,7 @@ $.ajax({
     dataType: 'json',
     success: function (data) {
 
-        $("#section").empty();
+        $("#section1").empty();
         html = [];
         for (var i = 0; i <= data.length; i++) {
             if (data[i]) {
@@ -49,6 +49,33 @@ $('#querter_id2').change(function () {
     });
 });
 
+$("#school_year1").change(function () {
+    var grade_level = $('#grade_level1').val();
+    var year_level = $('#school_year1').val();
+
+    $.ajax({
+        type: "POST",
+        cache: false,
+        url: 'http://localhost/formgen/student_class/school_year',
+        data: {
+            grade_level: grade_level,
+            year_level: year_level
+        },
+        dataType: 'json',
+        success: function (data) {
+
+            $("#section1").empty();
+            html = [];
+            for (var i = 0; i <= data.length; i++) {
+                if (data[i]) {
+                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_id + data[i].section_name + "</option>";
+                }
+            }
+            $("#section1").append(html);
+        },
+    });
+});
+
 $("#grade_level1").change(function () {
     var grade_level = $('#grade_level1').val();
     var year_level = $('#school_year1').val();
@@ -64,15 +91,14 @@ $("#grade_level1").change(function () {
         dataType: 'json',
         success: function (data) {
 
-            $("#section").empty();
+            $("#section1").empty();
             html = [];
             for (var i = 0; i <= data.length; i++) {
                 if (data[i]) {
-                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_name + "</option>";
+                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_id + data[i].section_name + "</option>";
                 }
             }
             $("#section1").append(html);
         },
-
     });
 });

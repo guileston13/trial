@@ -68,7 +68,7 @@ class Curriculum extends CI_Controller
 				'schoolyear_start' => "$start - $end",
 				'schoolyear_status'=> 1
 			);
-			//$this->db->insert('tbl_schoolyear',$data);
+			$this->db->insert('tbl_schoolyear',$data);
 			$this->session->set_flashdata('success','This School Year Successfully Created');
 			redirect('curriculum');
 		}

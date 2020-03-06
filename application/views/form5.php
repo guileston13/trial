@@ -207,16 +207,16 @@ tr:nth-child(even) {
       
       
       if( $student[0]->gender == 'male'){
-        if($tot < 74 ){
+        if($tot < 74.99 ){
           $beggining_male++;
           $beggining++;
-        }else if($tot > 75 && $tot < 79){
+        }else if($tot > 75 && $tot < 79.99){
           $developing_male++;
           $developing++;
-        }else if($tot > 80 && $tot < 84){
+        }else if($tot > 80 && $tot < 84.99){
           $approaching_male++;
           $approaching++;
-        }else if($tot > 85 && $tot < 89){
+        }else if($tot > 85 && $tot < 89.99){
           $profocient_male++;
           $profocient++;
         }else if($tot > 90){
@@ -224,7 +224,7 @@ tr:nth-child(even) {
           $advanced++;
         }
       }else{
-        if($tot < 74 ){
+        if($tot < 74.99 ){
           $beggining_female++;
           $beggining++;
         }else if($tot > 75 && $tot < 79.99){
@@ -248,7 +248,7 @@ tr:nth-child(even) {
       ?>
     </td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-      <?php $retaines =  $this->db->query("SELECT (SUM(finalgrade)/2) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$st->studentid' AND tbl_subject.subj_id = tbl_finalgrade.subj_id")->result();
+      <?php $retaines =  $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$st->studentid' AND tbl_subject.subj_id = tbl_finalgrade.subj_id")->result();
         
        if($retaines){
         foreach($retaines as $ret){
