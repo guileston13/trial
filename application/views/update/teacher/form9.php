@@ -21,6 +21,24 @@ td, th{
 
 </style>
 	<body>
+		<?php foreach($form9 as $form){ 
+			$query = $this->db->query("SELECT *,
+			subj_id as sb,section_id as si,
+			(SUM(finalgrade)/4) as totalall,
+			
+			(SELECT finalgrade from tbl_finalgrade where subj_id = sb AND studentid = '$form->studentid' 
+				AND quarter = 1 AND schoolyear_id = '$form->schoolyear_id' ) as quarter1,
+			(SELECT finalgrade from tbl_finalgrade where subj_id = sb AND studentid = '$form->studentid' 
+				AND quarter = 2 AND schoolyear_id = '$form->schoolyear_id'  ) as quarter2,
+			(SELECT finalgrade from tbl_finalgrade where subj_id = sb AND studentid = '$form->studentid' 
+				AND quarter = 3 AND schoolyear_id = '$form->schoolyear_id'  ) as quarter3,
+			(SELECT finalgrade from tbl_finalgrade where subj_id = sb AND studentid = '$form->studentid' 
+				AND quarter = 4 AND schoolyear_id = '$form->schoolyear_id'  ) as quarter4,
+			(SELECT subj_code from tbl_subject where subj_id = sb AND schoolyear_id = '$form->schoolyear_id' limit 1) as subj_code
+			from tbl_finalgrade where studentid = '$form->studentid' AND schoolyear_id = '$form->schoolyear_id' GROUP by subj_id")->result();
+		
+		?>
+
 		<div class="container-fluid" id="print_container" style="text-align: center;">
 
 			<div class="row">
@@ -42,7 +60,7 @@ td, th{
 					<div class="row">
 						<div class="col-md-6">
 							<b>Name:</b>
-							<input class="form-control-sm" type="text" name="">									
+							<input class="form-control-sm" type="text" name="" value="<?php echo $form->firstname?>">									
 						</div>
 					<br><br>
 					</div>
@@ -288,7 +306,7 @@ td, th{
 							<br>
 							<table align="center">
 							
-							
+						
 						<tr>
 							<th>Learning Areas</th>
 							<th>1</th>
@@ -297,22 +315,24 @@ td, th{
 							<th>4</th>
 							<th>Final Rating</th>
 						</tr>
+						<?php 
+						$average_grade = 0;
+						$count = 1;
+						foreach($query as $key){?>
 						<tr>
-							<td>Filipino</td>
-							<td>a</td>
-							<td>b</td>
-							<td>a</td>
-							<td>b</td>
-							<td>b</td>
+							<td><?php echo $key->subj_code?></td>
+							<td><?php echo $key->quarter1?></td>
+							<td><?php echo $key->quarter2?></td>
+							<td><?php echo $key->quarter3?></td>
+							<td><?php echo $key->quarter4?></td>
+							<td><?php echo $key->totalall?></td>
 						</tr>
-						<tr>
-							 <td>English</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-							 <td>b</td>
-						  </tr>						
+
+						<?php $average_grade += $key->totalall;
+								$con = $count++;
+						?>
+						<?php } ?>
+
 							</table>
 							<br>
 							<br>
@@ -348,5 +368,6 @@ td, th{
 				</div>
 			</div>
 		</div>
+		<?php }?>
 </body>
 </html>

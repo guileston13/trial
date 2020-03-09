@@ -37,8 +37,17 @@ class User extends CI_Model
 		$query = $this->db->query("SELECT * FROM `tbl_user`WHERE `user_type` = ".$userType);
 		return $query->num_rows();
 	}
-	
 
+	public function percentage(){
+		$query = $this->db->query("SELECT * from tbl_percentage")->result();
+		return $query;
+	}
+
+	public function school(){
+		$query = $this->db->query("SELECT * from tbl_school")->result();
+		return $query;
+	}
+	
 	public function getUser($userID)
 	{
 		return $this->db->select("*")->from("tbl_user")->where("user_id", $userID)->get()->row();

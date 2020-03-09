@@ -96,7 +96,7 @@ class Manage_Students extends CI_Controller
 	}
 	public function AllStudent(){
 		$query = $this->db->query("SELECT * from tbl_user,
-												tbl_student 
+												tbl_student
 											where 
 												tbl_user.user_id = tbl_student.user_id
 												AND tbl_student.status = 1")

@@ -470,7 +470,7 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'quiz_item' =>  $this->input->post('quiz_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id'),
+					'quarter_id'=> $this->input->post('quarter_id2'),
 					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_quiz',$data_quiz);
@@ -602,7 +602,10 @@ class Teacher_Dashboard extends CI_Controller
 			$this->load->view('update/teacher/form137');
 		}
 		
-		public function form9(){
-			$this->load->view('update/teacher/form9');
+		public function form9($id){
+			$data['form9']  = $this->db->query("SELECT * from tbl_studentunderclass,tbl_student,tbl_class 
+			where tbl_class.class_id = tbl_studentunderclass.class_id  AND  tbl_studentunderclass.class_id = '$id' 
+			AND tbl_studentunderclass.studentid  = tbl_student.studentid")->result();
+			$this->load->view('update/teacher/form9',$data);
 		}
 }

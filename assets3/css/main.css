@@ -11,6 +11,16 @@ body {
 	background-color: #222d32;
 }
 
+.input-trans
+{
+    background-color: transparent  !important;
+    border: 0px solid  !important;
+    height: 20px  !important;
+    width: 160px  !important;
+	color: #141313  !important;
+	text-align:center
+}
+
 .img__logo {
 	height: auto;
 	width: 100%;

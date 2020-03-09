@@ -149,12 +149,74 @@
                 <h3 class="card__subtitle"><?php echo $subjects; ?></h3>
               </div>
             </div>
-          </div>
+          </div> 
+          <div class="card-body p-5">
+          <form action="<?php base_url()?>dashboard/update_school" method="POST">
+            <div class="card align-items-center">
+                <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
+                  <thead>
+                      <tr>
+                        <th style="font-size: 12px">School Name</th>
+                        <th style="font-size: 12px">Region</th>
+                        <th style="font-size: 12px">Division</th>
+                        <th style="font-size: 12px">District</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <?php foreach($school as $perc){?>
+                      <tr>
+                        <td><input type="hidden" name="id[]" value="<?php echo $perc->school_id?>"><input class="input-trans" name="schoolname[]" type="text" value="<?php echo $perc->school_name?>"></td>
+                        <td><input class="input-trans" name="region[]" type="text" value="<?php echo $perc->region?>"></td>
+                        <td><input class="input-trans" name="division[]" type="text" value="<?php echo $perc->division?>"></td>
+                        <td><input class="input-trans" name="district[]" type="text" value="<?php echo $perc->district?>"></td>
+                      </tr>
+                    <?php }?>
+                  </tbody>
+                </table>
+              
+              <button type="submit" class="btn">
+                Update
+              </button>
+            </div>
+          </form>
+          </div>        
+          <div class="card-body p-5">
+          <form action="<?php base_url()?>dashboard/update_weight" method="POST">
+            <div class="card align-items-center">
+                <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
+                  <thead>
+                      <tr>
+                        <th style="font-size: 12px">Academic Name</th>
+                        <th style="font-size: 12px">Written Works</th>
+                        <th style="font-size: 12px">Performance Task</th>
+                        <th style="font-size: 12px">Quarterly Assestment</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <?php foreach($percentage as $perc){?>
+                      <tr>
+                        <td><input type="hidden" name="id[]" value="<?php echo $perc->acad_id?>"><input class="input-trans" name="acadname[]" type="text" value="<?php echo $perc->acad_name?>"></td>
+                        <td><input class="input-trans" name="written[]" type="text" value="<?php echo $perc->written?>"></td>
+                        <td><input class="input-trans" name="performance[]" type="text" value="<?php echo $perc->performance_task?>"></td>
+                        <td><input class="input-trans" name="quarter[]" type="text" value="<?php echo $perc->quarterly_assessment?>"></td>
+                      </tr>
+                    <?php }?>
+                  </tbody>
+                </table>
+              
+              <button type="submit" class="btn">
+                Update
+              </button>
+            </div>
+          </form>
+          </div>         
         </div>
         <!-- Content End -->
     </main>
+    
   </div>
-
+  
   <!-- Create Subject -->
   <div class="modal fade" id="createSubject" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">

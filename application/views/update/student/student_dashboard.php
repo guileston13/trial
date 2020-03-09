@@ -96,6 +96,8 @@
                                                       
                                                         <th>1ST QUARTER</th>
                                                         <th>2ND QUARTER</th>
+                                                        <th>3RD QUARTER</th>
+                                                        <th>4TH QUARTER</th>
                                                         <th>Final Grade</th>
                                                     </tr>
                                                 </thead>
@@ -106,9 +108,10 @@
                                                     foreach($display as $key){?>
                                                     <tr>
                                                         <td><?php echo $key->subj_code?></td>
-                                                        
                                                         <td><?php echo $key->quarter1?></td>
                                                         <td><?php echo $key->quarter2?></td>
+                                                        <td><?php echo $key->quarter3?></td>
+                                                        <td><?php echo $key->quarter4?></td>
                                                         <td><?php echo $key->totalall?></td>
                                                     </tr>
 
