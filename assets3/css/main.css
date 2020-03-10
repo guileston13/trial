@@ -364,4 +364,8 @@ body {
 		transform: perspective(140px) rotateY(180deg);
 		opacity: 0;
 	}
+td, th {
+	color: red
 }
+}
+

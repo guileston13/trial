@@ -156,10 +156,11 @@
                 <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
                   <thead>
                       <tr>
-                        <th style="font-size: 12px">School Name</th>
-                        <th style="font-size: 12px">Region</th>
-                        <th style="font-size: 12px">Division</th>
-                        <th style="font-size: 12px">District</th>
+                        <th style="font-size: 12px"><h4>School Name</th></h4>
+                        <th style="font-size: 12px"><h4>Region</th></h4>
+                        <th style="font-size: 12px"><h4>Division</th></h4>
+                        <th style="font-size: 12px"><h4>District</th></h4>
+                        <th style="font-size: 12px"><h4>School ID</th></h4>
                       </tr>
                   </thead>
                   <tbody>
@@ -169,14 +170,16 @@
                         <td><input class="input-trans" name="region[]" type="text" value="<?php echo $perc->region?>"></td>
                         <td><input class="input-trans" name="division[]" type="text" value="<?php echo $perc->division?>"></td>
                         <td><input class="input-trans" name="district[]" type="text" value="<?php echo $perc->district?>"></td>
+                        <td><input class="input-trans" name="school_id[]" type="text" value="<?php echo $perc->school_id?>"></td>
                       </tr>
                     <?php }?>
                   </tbody>
                 </table>
               
-              <button type="submit" class="btn">
+              <button type="submit" class="btn btn-success">
                 Update
               </button>
+              <br>
             </div>
           </form>
           </div>        
@@ -186,10 +189,10 @@
                 <table class="table table-bordered table-striped" id="instructorTable" style="text-align: center">
                   <thead>
                       <tr>
-                        <th style="font-size: 12px">Academic Name</th>
-                        <th style="font-size: 12px">Written Works</th>
-                        <th style="font-size: 12px">Performance Task</th>
-                        <th style="font-size: 12px">Quarterly Assestment</th>
+                        <th style="font-size: 12px"><h4>Academic Name</th></h4>
+                        <th style="font-size: 12px"><h4>Written Works</th></h4>
+                        <th style="font-size: 12px"><h4>Performance Task</th></h4>
+                        <th style="font-size: 12px"><h4>Quarterly Assestment</th></h4>
 
                       </tr>
                   </thead>
@@ -205,9 +208,10 @@
                   </tbody>
                 </table>
               
-              <button type="submit" class="btn">
+              <button type="submit" class="btn btn-success">
                 Update
               </button>
+              <br>
             </div>
           </form>
           </div>         

@@ -10,7 +10,22 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+   <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 100px;
+}
+
+td, th {
+  border: 1px solid #1e4f8e;
+  text-align: left;
+  padding: 8px;
+  color: black;
+
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -27,7 +42,7 @@ tr:nth-child(even) {
       <div class="col-md-3 offset-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School ID:</label>
-            <input class="form-control-sm" type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
+            <input class="form-control-sm" type="hidden" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
           </div> 
       </div>
       <div class="col-md-4">
@@ -113,50 +128,52 @@ tr:nth-child(even) {
       <?php }?>
       </tbody>
     </table> -->
-    <table class="my-5 table table-bordered">
+    <br><br>
+    <table>
 
     
       <tr>
-              <td style="text-align: center;border: 1px solid #1e4f8e;text-align: left;padding: 8px" rowspan="2" >#</td>
-              <td style="text-align: center;border: 1px solid #1e4f8e;text-align: left;padding: 8px" rowspan="2" ><h5>Learner's Name</td></h5>
+              <th  rowspan="2" >#</th>
+              <th  rowspan="2" >Learner's Name</th>
           <?php foreach($subjects as $subj){?> 
-              <td colspan=2 style="text-align: center;border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5><?php echo $subj->subj_code?></td></h5>
+              <th colspan=2 ><?php echo $subj->subj_code?></th>
           <?php }?>
       </tr>
     
       <tr>
               
           <?php foreach($subjects as $subj){?> 
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5>Issued</td></h5>
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><h5>Returned</td></h5>
+              <th >Issued</th>
+              <th >Returned</th>
           <?php }?>
       </tr> 
         <?php $num = 1; foreach($students as $st){ ?>
       <tr>    
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"> <?php echo $num; $num++;?></td>
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $st->firstname ?> <?php echo $st->lastname ?></td>
+              <td > <?php echo $num; $num++;?></td>
+              <td ><?php echo $st->firstname ?> <?php echo $st->lastname ?></td>
           <?php foreach($subjects as $subj){?>
           <?php $select_borrowed_id = $this->db->query("SELECT * from tbl_bookborrowed where subj_id = '$subj->subj_id' AND student_id = '$st->studentid' ")->result();?>
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $select_borrowed_id?$select_borrowed_id[0]->date:null; ?></td>
-              <td style="border: 1px solid #1e4f8e;text-align: left;padding: 8px"><?php echo $select_borrowed_id?$select_borrowed_id[0]->date_return:null; ?></td>
+              <td ><?php echo $select_borrowed_id?$select_borrowed_id[0]->date:null; ?></td>
+              <td ><?php echo $select_borrowed_id?$select_borrowed_id[0]->date_return:null; ?></td>
           <?php }?>
       </tr>
         <?php }?>
 
     </table>
+    <br><br>
 
-  <div class="row mb-3">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-5">
-                     <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
-                </div>
-                <div class="col-md-5">
-                    <input class="form-control " type="text" name="" class="w-100">
-                </div>
-            </div>
-        </div> 
-    </div>
+              <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                 <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input style="text-decoration: underline; color: black" class="form-control " type="text" name="" class="w-100">
+                            </div>
+                        </div>
+                    </div> 
+              </div> 
 
 
 

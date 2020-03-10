@@ -11,6 +11,7 @@
 		<link type="text/css" href="<?php echo base_url()?>/assets/css/custom_css.css" rel="stylesheet">
 		<script src="<?php echo base_url(); ?>assets/js/angular-1.6.4/angular.min.js"></script>
 	  <script src="<?php echo base_url(); ?>assets/js/angularjs/main.js?"></script>
+
 	
 </head>
 <body>
@@ -54,7 +55,7 @@
 							</tr>
 							<tr>
 								<th class="text-right">School Name</th>
-								<th><input class="form-control form-control-sm" type="text" value="Carmen National High School" name=""></th>
+								<th><input class="form-control form-control-sm" value="<?php echo $school_info?$school_info[0]->school_name:null?>" type="text" name=""></th>
 								<th class="text-right">School Year</th>
 								<th><input class="form-control form-control-sm" type="text" value="<?php echo $infos[0]->schoolyear_start?>" name=""></th>
 								<th class="text-right">Grade Level</th>

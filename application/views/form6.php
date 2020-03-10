@@ -9,6 +9,7 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <style>
 
 
@@ -20,8 +21,6 @@ tr:nth-child(even) {
 <body>
   <div class="container-fluid" id="print_container">
      <h3 class="text-center">School Form 6 (SF6) Summarized Report on Promotion <br> and Level of Proficiency</h3>
-     <br><br>
-
      <div class="row mb-3">
        <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
@@ -42,7 +41,6 @@ tr:nth-child(even) {
           </div> 
        </div>
      </div>
-
      <div class="row mb-3">
        <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
@@ -63,8 +61,7 @@ tr:nth-child(even) {
           </div> 
        </div>
      </div>
-
-<table class="my-5 table table-bordered" >
+<table class="my-5 table table-bordered" style="width: 100%">
   <thead>
   <tr >
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>SUMMARY TABLE</th></h5>
@@ -72,9 +69,7 @@ tr:nth-child(even) {
     <th colspan="3" style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 8</th></h5>  
     <th colspan="3 " style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 9</th></h5> 
     <th colspan="3 " style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Grade 10</th></h5> 
- 
   </tr>
-
   <tr>
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">SUMMARY TABLE</th>
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
@@ -89,7 +84,6 @@ tr:nth-child(even) {
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">FEMALE</th>
     <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">TOTAL</th>
-
  </tr>
 </thead>
 <tbody>
@@ -945,14 +939,9 @@ tr:nth-child(even) {
     </td>
     <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $female_total_promoted_ten + $male_total_promoted_ten;?></td>
       <!-- IRREGULAR -->
-   
   </tr>
 </tbody>
   </table>
-  <br><br>
-
-
-
     <div class="row mb-3">
         <div class="col-md-3">
             <div class="row">
@@ -964,12 +953,12 @@ tr:nth-child(even) {
                 </div>
             </div>
         </div> 
-        <div class="col-md-3">
+        <div class="col-md-5">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-5">
                     <label for="" class="form-control-label mr-2">Certified Correct and Submitted:</label>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <input class="form-control" type="text" name="" class="w-100">
                 </div>
             </div> 

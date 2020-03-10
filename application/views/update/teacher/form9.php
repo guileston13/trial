@@ -10,6 +10,7 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+   <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
 
 tr:nth-child(even) {
@@ -18,6 +19,13 @@ tr:nth-child(even) {
 td, th{
 	border: 1px solid #1e4f8e;text-align: left;padding: 8px;
 }
+body , h2 , h1 {
+	color:black;
+}
+input{
+	text-decoration: underline;
+}
+
 
 </style>
 	<body>
@@ -50,102 +58,124 @@ td, th{
 				<div class="col-md-8">
 					<b><h2>Republic of the Philippines</h2></b>		
 					<b><h2>Department of Education</h2></b>
-					<br>
-					<center><input class="form-control-sm" type="text" name=""></center>
-						<label for="" class="form-control-label mr-2">District</label>
-					<center><input class="form-control-sm" type="text" name=""></center>
-						<label for="" class="form-control-label mr-2">School</label>
-					<center><input class="form-control-sm" type="text" name=""></center>
-						<label for="" class="form-control-label mr-2">School Year</label>
-					<div class="row">
-						<div class="col-md-6">
-							<b>Name:</b>
-							<input class="form-control-sm" type="text" name="" value="<?php echo $form->firstname?>">									
-						</div>
-					<br><br>
+					<div>
+						<center>
+							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->region:null?>" >
+						</center>
+							<label class="form-control-label mr-2">Region</label>
+						<center>
+							<center>
+							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->division:null?>" >
+						</center>
+							<label class="form-control-label mr-2">Division</label>
+						<center>
+						<center>
+							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->district:null?>" >
+						</center>
+							<label  class="form-control-label mr-2">District</label>
+						<center>
+							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->school_name:null?>">
+						</center>
+							<label  class="form-control-label mr-2">School</label>
+							
 					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<b>Age:</b>
-							<input class="form-control-sm" type="text" name="">									
-						</div>
-						<div class="col-md-3">
-							<b>Sex:</b>
-							<input class="form-control-sm" type="text" name="">									
-						</div>
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-6">
-							<b>Grade:</b>
-							<input class="form-control-sm" type="text" name="">									
-						</div>
-						<div class="col-md-3">
-							<b>Section:</b>
-							<input class="form-control-sm" type="text" name="">									
-						</div>
-					<br><br>
+					<div>
+						<h1>LEARNER'S PROGRESS REPORT CARD</h1>
 					</div>
 					<br>
+					<div style="text-align: justify;margin-left: 20%;">
+						<div>
+							<label  class="form-control-label mr-2">Name:</label>								
+							<input class="form-control-sm" type="text" name=""  value="<?php echo $form->firstname, $form->lastname?>">
+						</div>
+						<div>								
+							<label  class="form-control-label mr-2">Lerner's Reference Number:</label>
+							<input class="form-control-sm" type="text" name="" value="<?php echo $form->lrn?>">
+						</div>
+						<div>	
+							<label  class="form-control-label mr-2">Age:</label>										
+							<input class="form-control-sm" type="text" name="" value="<?php echo $form->age?>">
+							<label style="margin-left: 140px"  class="form-control-label mr-2">Sex:</label>	
+							<input class="form-control-sm" type="text" name="" value="<?php echo $form->gender?>">
+						</div>
+						<div >	
+							<label  class="form-control-label mr-2">Grade:</label>
+							<input class="form-control-sm" type="text" name="">
+							<label style="margin-left: 100px"  class="form-control-label mr-2">Section:</label>
+							<input class="form-control-sm" type="text" name="">		
+						</div>
+						<div>		
+							<label class="form-control-label mr-2">School Year:</label>	
+							<input class="form-control-sm" type="text" name="" >
+						</div>	
+					</div>	
 					<br>
-					<b>Dear Parents</p></b>
-					<br>
-								<b><center>This report card shows the ability and progress of your <br>child has made  in the different learning areas as well as his/her
-							    progress in character development.
+					<h2>Dear Parents,</h2>
+								<p style="text-align: center;">
+										This report card shows the ability and progress of your child has made  in the different learning areas as well as his/her
+									    core values.		
+								</p>
+								<p style="text-align: center;">
+									This school welcomes you if you desire to know more
+										about your child progress.
+								</p>
 								<br>
-								This school welcomes you if you desire to know more
-								about the progress of your cost.</center></b>
-								<br><br>
-								
+							<div>
+								<div >
+									<input class="form-control-sm" type="text" name="" placeholder="_____________________">
+									<input style="margin-left:100px" class="form-control-sm" type="text" name="" placeholder="_____________________">	
+								</div>	
+								<div>
+									<label class="form-control-label mr-2">Principal</label>						
+									<label style="margin-left: 240px"  class="form-control-label mr-2">Teacher</label>	
+								</div>
+							</div>
+							<br><br>
 							<div class="row">
-										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="">	
-																			
-										</div>
-										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="">							
-										</div>
-										<br><br>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<label for="" class="form-control-label mr-2">Principal</label>
-										</div>
-										<div class="col-md-6">
-											<label for="" class="form-control-label mr-2">Teacher</label>
-										</div>	
-									</div>	
+								<div class="col-md-12">
+									<h3>PARENT GUARDIAN'S SIGNATURE</h3>
+								</div>
+							<br><br>	
+							</div>
+							<div class="row">
+								<div class="col-md-10">1st Quarter ______________________</div>
+							</div><br>
+							<div class="row">
+								<div class="col-md-10">2nd Quarter ______________________</div>
+							</div><br>
+							<div class="row">
+								<div class="col-md-10">3rd Quarter ______________________</div>
+							</div><br>
+							<div class="row">
+								<div class="col-md-10">4th Quarter ______________________</div>
+							</div>
 							<br><br>
 										<h2>Certificate Of Transfer</h2>
-							<br><br>
 								<div class="row">
 									<div class="col-md-6">
 										<b>Admitted to Grade:</b>
-										<input class="form-control-sm" type="text" name="">									
+										<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
 									</div>
 									<div class="col-md-3">
 										<b>Section:</b>
-										<input class="form-control-sm" type="text" name="">									
+										<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
 									</div>
 								</div>
-								<br>
 								<div class="row">
 									<div class="col-md-7">
 										<b>Eligible for Administration to Grade:</b>
-										<input class="form-control-sm" type="text" name="">									
+										<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
 									</div>
 								</div>
 									<h2>Approved:</h2>
-										<br><br>
 									<div class="row">
 										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="">	
+											<input class="form-control-sm" type="text" name="" placeholder="_____________________">	
 																			
 										</div>
 										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="">							
+											<input class="form-control-sm" type="text" name="" placeholder="_____________________">							
 										</div>
-										<br><br>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
@@ -156,23 +186,20 @@ td, th{
 										</div>	
 									</div>
 									<h2>Certification of Eligibility to Transfer:</h2>
-									<br>
 									<div class="row">
 										<div class="col-md-7">
 											<b>Admitted in</b>
-											<input class="form-control-sm" type="text" name="">									
+											<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
 										</div>
-										<br><br>
 									</div>	
 									<div class="row">
 										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="">	
+											<input class="form-control-sm" type="text" name="" placeholder="_____________________">	
 																			
 										</div>
 										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="">							
+											<input class="form-control-sm" type="text" name="" placeholder="_____________________">							
 										</div>
-										<br><br>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
@@ -182,10 +209,7 @@ td, th{
 											<label for="" class="form-control-label mr-2">Principal</label>
 										</div>	
 									</div>
-							<br><br><br>
-							<b><center><h2>Periodic Rating</center></b></h2>
-							<br>
-							<br>
+							<b><center><h2>REPORT ON LEARNER'S OBSERVES VALUES</center></b></h2>
 							<table align="center">
 						  <tr>
 							<th >Character Traits</th>
@@ -301,12 +325,9 @@ td, th{
 						  
 						</table>
 							<br>
-							<br>
-							<br>
-							<br>
 							<table align="center">
 							
-						
+						<b><center><h2>REPORT ON LEARNING PROGRESS AND ACHIEVEMENT</center></b></h2>
 						<tr>
 							<th>Learning Areas</th>
 							<th>1</th>
@@ -337,29 +358,7 @@ td, th{
 							<br>
 							<br>
 							<br>
-							<div class="row">
-								<div class="col-md-12">
-									<h3>PARENT GUARDIAN'S SIGNATURE</h3>
-								</div>
-								
-							</div>
-							<br><br>
-							<div class="row">
-								<div class="col-md-10">1st Quarter ________________</div>
-								<br><br>
-							</div>
-							<div class="row">
-								<div class="col-md-10">2nd Quarter ________________</div>
-								<br><br>
-							</div>
-							<div class="row">
-								<div class="col-md-10">3rd Quarter ________________</div>
-								<br><br>
-							</div>
-							<div class="row">
-								<div class="col-md-10">4th Quarter ________________</div>
-								<br><br>
-							</div>
+							
 
 							<br><br><br>
 				</div>

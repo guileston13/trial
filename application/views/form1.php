@@ -9,17 +9,21 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <style>
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  border-radius: 100px;
 }
 
 td, th {
   border: 1px solid #1e4f8e;
   text-align: left;
   padding: 8px;
+  color: black;
+
 }
 
 tr:nth-child(even) {
@@ -91,41 +95,39 @@ tr:nth-child(even) {
                 </div> 
             </div>
             </div>
-
-            <table class="my-5 table table-bordered">
+            <br><br><br>
+            <table>
                 <thead>
                     <tr>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>#</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>LRN</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Name</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Sex</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Birth Date</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Age</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Birth Place</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Mother Tongue</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>IP</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Religion</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>House# / Street / Sitio / Purok</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Barangay</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Municipal / City</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Province</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Father</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Mother</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Guardian</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Relationship</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>Contact No.</th></h5>
-                        <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>REMARKS</th></h5>
+                        <th >LRN</th>
+                        <th >Name</th>
+                        <th >Sex</th>
+                        <th >Birth Date</th>
+                        <th >Age</th>
+                        <th >Birth Place</th>
+                        <th >Mother Tongue</th>
+                        <th >IP</th>
+                        <th >Religion</th>
+                        <th >House# / Street / Sitio / Purok</th>
+                        <th >Barangay</th>
+                        <th >Municipal / City</th>
+                        <th >Province</th>
+                        <th >Father</th>
+                        <th >Mother</th>
+                        <th >Guardian</th>
+                        <th >Relation ship</th>
+                        <th >Contact No.</th>
+                        <th >REMARKS</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $num = 1; foreach($form1 as $key) {?>
                     <tr>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $num; $num++;?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->lrn?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->gender?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->birthdate?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php  
+                        <td ><?php echo $key->lrn?></td>
+                        <td ><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
+                        <td ><?php echo $key->gender?></td>
+                        <td ><?php echo $key->birthdate?></td>
+                        <td ><?php  
                             $from = new DateTime($key->birthdate);
                             $to   = new DateTime('today');
                             echo $from->diff($to)->y;
@@ -133,25 +135,25 @@ tr:nth-child(even) {
                             # procedural
                             //echo date_diff(date_create($key->birthdate), date_create('today'))->y;
                         ?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->birthplace?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->mothertongue?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->ip?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->religion?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->house?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->barangay?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->city?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->province?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->fathersname?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->mothersname?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->guardiansname?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->relationship?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->contactnumber?></td>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $key->remarks?></td>
+                        <td ><?php echo $key->birthplace?></td>
+                        <td ><?php echo $key->mothertongue?></td>
+                        <td ><?php echo $key->ip?></td>
+                        <td ><?php echo $key->religion?></td>
+                        <td ><?php echo $key->house?></td>
+                        <td ><?php echo $key->barangay?></td>
+                        <td ><?php echo $key->city?></td>
+                        <td ><?php echo $key->province?></td>
+                        <td ><?php echo $key->fathersname?></td>
+                        <td ><?php echo $key->mothersname?></td>
+                        <td ><?php echo $key->guardiansname?></td>
+                        <td ><?php echo $key->relationship?></td>
+                        <td ><?php echo $key->contactnumber?></td>
+                        <td ><?php echo $key->remarks?></td>
                     </tr>
                     <?php }?>
                 </tbody>
             </table>
-            <br><br><br><br>
+            <br><br>
                 
             <table>
                 <tr>   
@@ -197,22 +199,18 @@ tr:nth-child(even) {
             </table>
 
             <br><br><br>
-            <div class="row">
-                    <div class="col-md-6">
+              <div class="row mb-3">
+                    <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-5">
-                                <label for="" class="form-control-label mr-2">Prepared by:</label>
+                            <div class="col-md-4">
+                                 <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
                             </div>
-                            <div class="col-md-5">
-                                <input  class = "form-control" type="text" name="" >
+                            <div class="col-md-8">
+                                <input style="text-decoration: underline; color: black" class="form-control " type="text" name="" class="w-100">
                             </div>
-                            <div class="col-md-10" style="margin-left: 305px">
-                                (Signature of Adviser Over Printed Name)
-                            </div>
-
-                        </div>  
-                    </div>
-                </div>    
+                        </div>
+                    </div> 
+              </div> 
 
             <br><br><br>
                 <button id="print_data" class="btn btn-success btn-print btn-rounded">

@@ -456,7 +456,7 @@ class Teacher_Dashboard extends CI_Controller
 		$data['female_twelve'] = $this->Instructor->female_promoted_twelve($school_year);
 
 		
-		$this->load->view('form6',$data);	
+		$this->load->view('form6',$data);
 	}
 
 	public function create_something($classid){
@@ -606,6 +606,7 @@ class Teacher_Dashboard extends CI_Controller
 			$data['form9']  = $this->db->query("SELECT * from tbl_studentunderclass,tbl_student,tbl_class 
 			where tbl_class.class_id = tbl_studentunderclass.class_id  AND  tbl_studentunderclass.class_id = '$id' 
 			AND tbl_studentunderclass.studentid  = tbl_student.studentid")->result();
+			$data['as'] = $this->db->query("SELECT * from tbl_school")->result();
 			$this->load->view('update/teacher/form9',$data);
 		}
 }

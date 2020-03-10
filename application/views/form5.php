@@ -9,7 +9,22 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 100px;
+}
+
+td, th {
+  border: 1px solid #1e4f8e;
+  text-align: left;
+  padding: 8px;
+  color: black;
+
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -19,7 +34,7 @@ tr:nth-child(even) {
 <body>
   <div class="container-fluid" id="print_container">
     <h3 class="text-center">School Form 5(SF5) Report on Promotion & Level of Proficiency</h3>
-    <br><br>
+    <br>
     <div class="row">
       <div class="col-md-3 offset-2">
         <div class="input-group form-inline">
@@ -76,16 +91,16 @@ tr:nth-child(even) {
         </div> 
       </div>
     </div>
-
-    <table class="my-5 table table-bordered">
+    <br>
+    <table style="width: 100%">
   <thead>
     <tr>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>#</th></h5>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>LRN</th></h5>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>LEARNERS NAME  </th></h5>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>GENERAL AVERAGE </th></h5>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>ACTION TAKEN: PROMOTED, *IRREGULAR or RETAINED</th></h5>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h5>INCOMPLETE SUBJECT/S </th></h5>
+      <th>#</th>
+      <th>LRN</th>
+      <th>LEARNERS NAME  </th>
+      <th>GENERAL AVERAGE </th>
+      <th>ACTION TAKEN: PROMOTED, *IRREGULAR or RETAINED</th>
+      <th>INCOMPLETE SUBJECT/S </th>
     </tr>
   </thead>
   <tbody>
@@ -117,11 +132,10 @@ tr:nth-child(even) {
       $num = 1;
     foreach($students as $st){?>
   <tr>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $num; $num++;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $st->lrn;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $st->firstname;?><?php echo $st->middlename;?><?php echo " "?><?php echo $st->lastname;?> </td>
-    
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
+    <td><?php echo $num; $num++;?></td>
+    <td><?php echo $st->lrn;?></td>
+    <td><?php echo $st->firstname;?><?php echo $st->middlename;?><?php echo " "?><?php echo $st->lastname;?> </td>
+    <td>
         <?php $student = $this->db->query("SELECT * from tbl_student where studentid = '$st->studentid'")->result();?>
         
         <?php 
@@ -168,15 +182,9 @@ tr:nth-child(even) {
         }else{
 
         }
-        
-        
-        
-        
-        ?>
-      
+        ?>      
     </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
-       
+    <td>       
       <?php 
       if(isset($tot)){
       if($tot>=75){
@@ -200,12 +208,7 @@ tr:nth-child(even) {
           $retained_female++;
         }
       }
-    
-     
-     
-      
-      
-      
+
       if( $student[0]->gender == 'male'){
         if($tot < 74.99 ){
           $beggining_male++;
@@ -247,7 +250,7 @@ tr:nth-child(even) {
       
       ?>
     </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">
+    <td>
       <?php $retaines =  $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$st->studentid' AND tbl_subject.subj_id = tbl_finalgrade.subj_id")->result();
         
        if($retaines){
@@ -272,77 +275,77 @@ tr:nth-child(even) {
   
   
     <tr>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>  
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
+    <td>-</td>  
+    <td>-</td>
+    <td></td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
     </tr> 
     <tr>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
+      <td>-</td>
+    <td>-</td>
+    <td></td>
+    <td></td>
+    <td> </td>
+    <td> </td>
   </tr> 
     <tr>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">-</td>
+      <td>-</td>
+    <td>-</td>
     
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr> 
 
   </table>
-  
-  <table class="mb-5 table table-bordered w-50">
+  <br>
+  <table style="width: 50%;">
   <thead>
     <tr>
-        <th colspan="4" style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">SUMMARY TABLE</th>
+        <th colspan="4">SUMMARY TABLE</th>
     </tr>
     <tr>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">STATUS</th>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">FEMALE</th>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">TOTAL</th>
+      <th>STATUS</th>
+      <th>MALE</th>
+      <th>FEMALE</th>
+      <th>TOTAL</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">PROMOTED</td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $promote_male;?></td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $promote_female;?></td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $promote;?></td>
+      <td>PROMOTED</td>
+      <td><?php echo $promote_male;?></td>
+      <td><?php echo $promote_female;?></td>
+      <td><?php echo $promote;?></td>
    </tr>
     <tr>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">IRREGULAR</td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">0</td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">0</td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">0</td>
+      <td>IRREGULAR</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">RETAINED</td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $retained_male;?></td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $retained_female;?></td>
-      <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $retained;?></td>
+      <td>RETAINED</td>
+      <td><?php echo $retained_male;?></td>
+      <td><?php echo $retained_female;?></td>
+      <td><?php echo $retained;?></td>
     </tr>
   </tbody>
 </table>
-
-<table class="mb-5 table table-bordered w-50">
+<br>
+<table style="width: 50%;">
   <thead>
     <tr>
-     <th colspan="4" style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">LEVEL OF PROFICIENCY</th>
+     <th colspan="4">LEVEL OF PROFICIENCY</th>
     </tr>
     <tr>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"></th>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">MALE</th>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">FEMALE</th>
-      <th style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">TOTAL</th>
+      <th></th>
+      <th>MALE</th>
+      <th>FEMALE</th>
+      <th>TOTAL</th>
    </tr>
   </thead>
   <tbody>
@@ -350,42 +353,43 @@ tr:nth-child(even) {
    
      
      
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">BEGINNING  (B: 74% and below)</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $beggining_male;?> </td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $beggining_female;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $beggining;?></td>
+    <td>BEGINNING  (B: 74% and below)</td>
+    <td><?php echo $beggining_male;?> </td>
+    <td><?php echo $beggining_female;?></td>
+    <td><?php echo $beggining;?></td>
  </tr>
   <tr>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">DEVELOPING (D: 75%-79%)</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $developing_male;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $developing_female;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $developing;?></td>
+    <td>DEVELOPING (D: 75%-79%)</td>
+    <td><?php echo $developing_male;?></td>
+    <td><?php echo $developing_female;?></td>
+    <td><?php echo $developing;?></td>
   </tr>
   <tr>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">APPROACHING PROFICIENCY (AP: 80%-84%)</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $approaching_male;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $approaching_female;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $approaching;?></td>
+    <td>APPROACHING PROFICIENCY (AP: 80%-84%)</td>
+    <td><?php echo $approaching_male;?></td>
+    <td><?php echo $approaching_female;?></td>
+    <td><?php echo $approaching;?></td>
   </tr>
   <tr>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">PROFOCIENT (P: 85% -89%)</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $profocient_male;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $profocient_female;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $profocient;?></td>
+    <td>PROFOCIENT (P: 85% -89%)</td>
+    <td><?php echo $profocient_male;?></td>
+    <td><?php echo $profocient_female;?></td>
+    <td><?php echo $profocient;?></td>
   </tr> 
   <tr>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;">ADVANCED (A: 90%  and above)</td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $advanced_male;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $advanced_female;?></td>
-    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $advanced;?></td>
+    <td>ADVANCED (A: 90%  and above)</td>
+    <td><?php echo $advanced_male;?></td>
+    <td><?php echo $advanced_female;?></td>
+    <td><?php echo $advanced;?></td>
   </tr> 
   </tbody>
 </table>
+<br>
 
-<div class="row mb-3">
-        <div class="col-md-3">
+<div style="width: 50%">
+        <div >
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                      <label for="" class="form-control-label mr-2">Prepared by:</label>
                 </div>
                 <div class="col-md-8">
@@ -393,9 +397,9 @@ tr:nth-child(even) {
                 </div>
             </div>
         </div> 
-        <div class="col-md-3">
+        <div >
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label for="" class="form-control-label mr-2">Certified Correct and Submitted:</label>
                 </div>
                 <div class="col-md-8">
@@ -403,9 +407,9 @@ tr:nth-child(even) {
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
+        <div >
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label for="" class="form-control-label mr-2">Reviewed by:</label>
                 </div>
                 <div class="col-md-8">

@@ -47,6 +47,7 @@ class Dashboard extends CI_Controller
 				'school_name' 		=> $_POST['schoolname'][$i],
 				'region'   			=> $_POST['region'][$i],
 				'division'			=> $_POST['division'][$i],
+				'school_id'			=> $_POST['school_id'][$i],
 				'district'			=> $_POST['district'][$i]
 			);
 			$this->db->where('school_id',$_POST['id'][$i]);
