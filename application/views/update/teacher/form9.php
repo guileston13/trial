@@ -101,8 +101,11 @@ input{
 						<div >	
 							<label  class="form-control-label mr-2">Grade:</label>
 							<input class="form-control-sm" type="text" name="">
-							<label style="margin-left: 100px"  class="form-control-label mr-2">Section:</label>
-							<input class="form-control-sm" type="text" name="">		
+							<?php $query1 = $this->db->query("SELECT * from tbl_section where section_id = '$form->section_id'")->result();
+									
+							?>
+							<label style="margin-left: 100px"  class="form-control-label mr-2">Section: </label>
+							<input class="form-control-sm" type="text" value="<?php echo $query1[0]->section_name ?>" name="">		
 						</div>
 						<div>		
 							<label class="form-control-label mr-2">School Year:</label>	

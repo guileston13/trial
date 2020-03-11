@@ -96,7 +96,7 @@ tr:nth-child(even) {
                 <?php 
                     $subj_id = $this->uri->segment(5);
                     $section_id = $this->uri->segment(4);
-                    echo $subj_id;
+                    
                     $st = $students[0]->studentid;
                     $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st' AND subj_id = '$subj_id' AND section_id  ='$section_id' ")->result();?>
                 <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){ ?>

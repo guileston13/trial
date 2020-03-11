@@ -26,10 +26,12 @@ $.ajax({
 
 
 
-$('#querter_id2').change(function () {
-    var quarter_id = $('#quarter2').text();
+$('#querter_id23').change(function () {
+    var quarter_id = $('#querter_id23').val();
     var subject_id = $('#subject_id').text();
     var event = $('#event').text();
+    console.log(quarter_id);
+    console.log(subject_id);
     console.log(event);
     $.ajax({
         type: "POST",
@@ -42,9 +44,9 @@ $('#querter_id2').change(function () {
         },
         dataType: 'json',
         success: function (data) {
-            //console.log(data);
-            $("#quiz_nu").append(html);
 
+            console.log(data);
+            $("#quiz_nu").text(data);
         },
     });
 });
@@ -68,7 +70,7 @@ $("#school_year1").change(function () {
             html = [];
             for (var i = 0; i <= data.length; i++) {
                 if (data[i]) {
-                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_id + data[i].section_name + "</option>";
+                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_name + "</option>";
                 }
             }
             $("#section1").append(html);
@@ -95,7 +97,7 @@ $("#grade_level1").change(function () {
             html = [];
             for (var i = 0; i <= data.length; i++) {
                 if (data[i]) {
-                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_id + data[i].section_name + "</option>";
+                    html[i] = "<option value=" + data[i].section_id + ">" + data[i].section_name + "</option>";
                 }
             }
             $("#section1").append(html);

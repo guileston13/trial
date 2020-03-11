@@ -470,7 +470,7 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'quiz_item' =>  $this->input->post('quiz_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id2'),
+					'quarter_id'=> $this->input->post('querter_id23'),
 					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_quiz',$data_quiz);
@@ -494,7 +494,7 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'assignment_item' =>  $this->input->post('assignment_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id'),
+					'quarter_id'=> $this->input->post('querter_id23'),
 					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_assignment',$data_quiz);
@@ -517,7 +517,7 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'project_item' =>  $this->input->post('project_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id'),
+					'quarter_id'=> $this->input->post('querter_id23'),
 					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_project',$data_quiz);
@@ -540,7 +540,7 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'exam_item' =>  $this->input->post('exam_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id'),
+					'quarter_id'=> $this->input->post('querter_id23'),
 					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_exam',$data_quiz);
@@ -563,7 +563,7 @@ class Teacher_Dashboard extends CI_Controller
 				$data_quiz = array(
 					'recitation_item' =>  $this->input->post('recitation_item'),
 					'subj_id'	=> $subj_id,
-					'quarter_id'=> $this->input->post('quarter_id'),
+					'quarter_id'=> $this->input->post('querter_id23'),
 					'teacher_id'=> $this->session->userdata('user_id')
 				);
 				$this->db->insert('tbl_recitation',$data_quiz);

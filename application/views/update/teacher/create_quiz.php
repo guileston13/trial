@@ -96,7 +96,7 @@
                 <label>Quarter</label>
                 <div class="row">
                     <div class="col-md-4">
-                        <select name="quarter_id2" id="querter_id2" class="form-control" >  
+                        <select name="querter_id23" id="querter_id23" class="form-control" >  
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -105,9 +105,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="">
-                          <h3>Quiz #: <span class="hide" id="subject_id"><?php echo $this->uri->segment(5);?></span>
+                          <h3>Quiz #: <span style="display:none" class="hide" id="subject_id"><?php echo $this->uri->segment(5);?></span>
                                       <span class="hide" id="event"><?php echo $this->uri->segment(4);?></span>
-                                      <span id="quiz_nu">1</span></h3>
+                                      <span id="quiz_nu">0</span></h3>
                         </div>
                     </div>
                 </div>

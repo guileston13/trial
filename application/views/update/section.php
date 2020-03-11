@@ -142,7 +142,7 @@
                                               <div class="col-md-3">
                                                   <div class="form-group">
                                                       <h5><label class="form-control-label">School Year</label></h5>
-                                                      
+                                                        
                                                       <select name="schoolyear_id" ng-model="schoolyear_id" class="form-control">
                                                           <?php  foreach($schoolyear as $sy){?>
                                                           <option value="<?php echo $sy->schoolyear_id?>"><?php echo $sy->schoolyear_start?></option>
