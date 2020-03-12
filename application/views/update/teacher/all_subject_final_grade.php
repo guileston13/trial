@@ -17,6 +17,20 @@
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+td, th{
+  color: black;
+  padding: 15px !important;
+  border: 1px solid #1e4f8e !important;
+  text-align: left !important;
+  padding: 8px !important;
+  font-size: 17px !important;
+}
 </style>
 </head>
 <body>
@@ -26,16 +40,16 @@ tr:nth-child(even) {
     
     <div class="row">
 
-      <div class="col-md-3 offset-3">
+      <div class="col-md-4 offset-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School ID:</label>
-            <input class="form-control-sm" type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
+            <input  type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
           </div> 
       </div>
       <div class="col-md-4">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School Year:</label>
-            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->schoolyear_start:null?>">
+            <input  type="text" name="" value="<?php echo $info?$info[0]->schoolyear_start:null?>">
           </div> 
       </div>
 
@@ -46,33 +60,33 @@ tr:nth-child(even) {
       <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Name of School:</label>
-           <input class="form-control-sm" type="text" name="" value="<?php echo $form3?$form3[0]->school_name:null?>">
+           <input  type="text" name="" value="<?php echo $form3?$form3[0]->school_name:null?>">
           </div> 
       </div>
       <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Grade Level:</label>
-            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->grade_level:null?>">
+            <input  type="text" name="" value="<?php echo $info?$info[0]->grade_level:null?>">
           </div> 
       </div>
       
       <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Section:</label>
-            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->section_name:null?>">
+            <input  type="text" name="" value="<?php echo $info?$info[0]->section_name:null?>">
         </div> 
       </div>
 
     </div>
         <h1>Final Grade </h1>
-        <a class="btn" style = "background-color: #2F4F4F; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/1/<?php echo $this->uri->segment(5)?>">First Quarter</a>
-        <a class="btn" style = "background-color: #696969; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/2/<?php echo $this->uri->segment(5)?>">Second Quarter</a>
-        <a class="btn" style = "background-color: #C0C0C0; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/3/<?php echo $this->uri->segment(5)?>">Third Quarter</a>
-        <a class="btn" style = "background-color: #3CB371; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/4/<?php echo $this->uri->segment(5)?>">Fourth Quarter</a>
+        <a class="btn" style = "background-color: royalblue; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/1/<?php echo $this->uri->segment(5)?>">First Quarter</a>
+        <a class="btn" style = "background-color: indianred; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/2/<?php echo $this->uri->segment(5)?>">Second Quarter</a>
+        <a class="btn" style = "background-color: #3CB371; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/3/<?php echo $this->uri->segment(5)?>">Third Quarter</a>
+        <a class="btn" style = "background-color: #778899; color: white" href="<?php echo base_url()?>teacher_dashboard/all_subject_final_grade/<?php echo $this->uri->segment(3)?>/4/<?php echo $this->uri->segment(5)?>">Fourth Quarter</a>
             <?php if(isset($student[0])){ ?>
             <table class="my-5 table table-bordered">
                 <tr>
-                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h4>Student</td></h4>
+                    <td><h2>Student</td></h2>
                     <?php 
                     $ss = $student[0]->studentid;
                     $quarter = $this->uri->segment(4);
@@ -85,12 +99,12 @@ tr:nth-child(even) {
                                                 AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                 order by tbl_finalgrade.subj_id")->result();?>
                     <?php foreach($stud as $st){ ?>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h4><?php echo $st->subj_code?></h4></td>
+                        <td><h2><?php echo $st->subj_code?></h2></td>
                     <?php }?>
                 </tr>
                 <?php foreach($student as $st) { ?>
                 <tr>
-                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php
+                    <td><?php
                         $student_f = $this->db->query("SELECT * from tbl_student where studentid = '$st->studentid'")->result();
                     echo $student_f[0]->firstname.' '.$student_f[0]->lastname?></td>
                     <?php
@@ -101,11 +115,37 @@ tr:nth-child(even) {
                                                             AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id")->result();
                     foreach($query as $q){ ?>
-                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $q->finalgrade;?> </td>
+                    <td><?php echo $q->finalgrade;?> </td>
                     <?php }?>
                 </tr>
                 <?php }?>
             </table>
+
+            <button id="print_data" class="btn btn-success btn-print btn-rounded" onClick = "this.style.visibility= 'hidden';">
+                <i class="fas fa-print"></i>
+            </button>
+            <br><br><br><br><br>
+            <script>
+      function printData() {
+        var printContents = document.getElementById("print_container")
+          .innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          printContents +
+          "</body>";
+        window.print();
+        document.body.innerHTML = originalContents;
+        location.reload();
+      }
+
+      document
+        .getElementById("print_data")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          printData();
+        });
+</script>
                     <?php }else{
 
                       

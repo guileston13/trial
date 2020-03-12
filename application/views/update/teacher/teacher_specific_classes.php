@@ -101,7 +101,7 @@
                                 <a class="btn btn-secondary" href="<?php echo base_url()?>teacher_dashboard/create_quiz/<?php echo $this->uri->segment(3); ?>/assignment/<?php echo $this->uri->segment(5); ?>">Create Assignment</a>
                                 <a class="btn btn-info" href="<?php echo base_url()?>teacher_dashboard/create_quiz/<?php echo $this->uri->segment(3); ?>/recitation/<?php echo $this->uri->segment(5); ?>">Recitation</a>
                                 <a class="btn btn-warning" href="<?php echo base_url()?>teacher_dashboard/create_quiz/<?php echo $this->uri->segment(3); ?>/project/<?php echo $this->uri->segment(5); ?>">Create Project</a>
-                                <a class="btn btn-warning" href="<?php echo base_url()?>teacher_dashboard/create_quiz/<?php echo $this->uri->segment(3); ?>/exam/<?php echo $this->uri->segment(5); ?>">Create Exam</a>
+                                <a class="btn btn-success" href="<?php echo base_url()?>teacher_dashboard/create_quiz/<?php echo $this->uri->segment(3); ?>/exam/<?php echo $this->uri->segment(5); ?>">Create Exam</a>
                             </div>  
 
                             <?php }else{ ?>

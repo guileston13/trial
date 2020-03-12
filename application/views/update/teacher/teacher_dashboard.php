@@ -107,8 +107,8 @@
                                     <td><?php echo $class->subj_code?></td>
                                     <td><a target = "_blank" class="btn btn-primary btn-block" href="<?php echo base_url()?>teacher_dashboard/teacher_specific_classes/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">View</a> </td>
                                     <td><a target = "_blank" class="btn btn-info btn-block" href="<?php echo base_url()?>teacher_dashboard/add_list_attendance/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">Daily Attendance</a></td>
-                                    <td><a target = "_blank" class="btn btn-info btn-block" href="<?php echo base_url()?>teacher_dashboard/form2/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">School Form 2</a></td>
-                                    <td><a target = "_blank" class="btn" style="background-color: #29dc27; color: white" href="<?php echo base_url()?>teacher_dashboard/add_book/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>/<?php echo $classes[0]->schoolyear_id; ?>"> Add Book</a></td>
+                                    <td><a target = "_blank" class="btn btn-secondary btn-block" style="color: white"   href="<?php echo base_url()?>teacher_dashboard/form2/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">School Form 2</a></td>
+                                    <td><a target = "_blank" class="btn btn-success btn-block" style="color: white" href="<?php echo base_url()?>teacher_dashboard/add_book/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>/<?php echo $classes[0]->schoolyear_id; ?>"> Add Book</a></td>
                                 </tr>
                             <?php }?>
                         </tbody> 

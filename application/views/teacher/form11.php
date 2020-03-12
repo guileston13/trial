@@ -12,6 +12,33 @@
 		<script src="<?php echo base_url(); ?>assets/js/angular-1.6.4/angular.min.js"></script>
 	  <script src="<?php echo base_url(); ?>assets/js/angularjs/main.js?"></script>
 
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
+<style>
+	th, td{
+		color: black !important;
+		padding: auto !important;
+		font-size: 15px !important;
+		border: 1px solid black !important;
+		padding: 10px !important;
+		text-align: center;
+	}
+	input{
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size:18px
+	}
+	table{
+		width: 100% !important;
+	}
+	tr:nth-child(even):hover {
+  	background-color: #dddddd;
+	}
+	tr:nth-child(odd):hover {
+  	background-color: #dddddd ;
+	}
+
+</style>
 	
 </head>
 <body>
@@ -35,50 +62,84 @@
 			
 			<div class="card-body">
 			<form action="<?php echo base_url()?>teacher_dashboard/submit_final_grade/" method="POST">
-				<input type="submit" class="btn btn-primary btn-print">
+				<input style="color: white !important" type="submit" class="btn btn-primary btn-print">
 				<a class="btn btn-info btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/1">First</a>
 				<a class="btn btn-warning btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/2">Second</a>
 				<a class="btn btn-success btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/3">Third</a>
 				<a class="btn btn-light btn-print" href="<?php echo base_url()?>teacher_dashboard/trial/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/4">Fourth</a>
-				
-					<table class="table table-record">
-						<thead>
-							<tr>
-								<th class="text-right">School ID</th>
-								<th><input class="form-control form-control-sm" value="<?php echo $school_info?$school_info[0]->school_id:null?>" type="text" name=""></th>
-								<th class="text-right">Region</th>
-								<th><input class="form-control form-control-sm" value="<?php echo $school_info?$school_info[0]->region:null?>" type="text" name=""></th>
-								<th class="text-right">Division</th>
-								<th><input class="form-control form-control-sm" value="<?php echo $school_info?$school_info[0]->division:null?>" type="text" name=""></th>
-								<th class="text-right">District</th>
-								<th><input class="form-control form-control-sm" value="<?php echo $school_info?$school_info[0]->district:null?>" type="text" name=""></th>
-							</tr>
-							<tr>
-								<th class="text-right">School Name</th>
-								<th><input class="form-control form-control-sm" value="<?php echo $school_info?$school_info[0]->school_name:null?>" type="text" name=""></th>
-								<th class="text-right">School Year</th>
-								<th><input class="form-control form-control-sm" type="text" value="<?php echo $infos[0]->schoolyear_start?>" name=""></th>
-								<th class="text-right">Grade Level</th>
-								<th><input class="form-control form-control-sm" type="text" value="<?php echo $infos[0]->grade_level?>" name=""></th>
-								<th class="text-right">Section</th>
-								<th><input class="form-control form-control-sm" type="text" value="<?php echo $section[0]->section_name;?>" name=""></th>
-							</tr>
-						</thead>
-					</table>
-
-					<table class="table table-record mt-3">
-						<thead>
-							<tr>
-								<th class="text-right">Grading Period</th>
-								<th><input class="form-control form-control-sm" value="<?php echo $quarter;?>" type="text" name=""></th>
-								<th class="text-right">Subject</th>
-								<th><input class="form-control form-control-sm" type="text" value="<?php echo $subject[0]->subj_code?>" name=""></th>
-								<th class="text-right">Teacher</th>
-								<th><input class="form-control form-control-sm" type="text" value="<?php echo $teacher[0]->firstname.' '.$teacher[0]->lastname?>"></th>
-							</tr>
-						</thead>
-					</table>
-
+				<br><br>
+					<div class="row mt-3">
+						<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">School ID:</label>
+                    			<input size="10"  value="<?php echo $school_info?$school_info[0]->school_id:null?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Region:</label>
+                    			<input  size="10" value="<?php echo $school_info?$school_info[0]->region:null?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Division:</label>
+                    			<input size="10" value="<?php echo $school_info?$school_info[0]->division:null?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">District:</label>
+                    			<input size="10" value="<?php echo $school_info?$school_info[0]->district:null?>" type="text" name="">
+                    		</div>
+                    	</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">School Name:</label>
+                    			<input  size="10" value="<?php echo $school_info?$school_info[0]->school_name:null?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">School Year:</label>
+                    			<input size="10" value="<?php echo $infos[0]->schoolyear_start?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Grade Level:</label>
+                    			<input size="10" value="<?php echo $infos[0]->grade_level?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Section:</label>
+                    			<input size="10" value="<?php echo $section[0]->section_name;?>" type="text" name="">
+                    		</div>
+                    	</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Grading Period:</label>
+                    			<input size="10" value="<?php echo $quarter;?> Quarter" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Subject:</label>
+                    			<input size="10"  value="<?php echo $subject[0]->subj_code?>" type="text" name="">
+                    		</div>
+                    	</div>
+                    	<div class="col-md-3">
+                    		<div class="input-group form-inline">
+                    			<label  for="" class="form-control-label mr-2">Teacher:</label>
+                    			<input value="<?php echo $teacher[0]->firstname.' '.$teacher[0]->lastname?>"type="text" name="">
+                    		</div>
+                    	</div>	
+					</div>
 					<!-- table-start -->
 					<?php foreach($student as $st) { ?>
 					<?php
@@ -163,18 +224,18 @@
 									
 					?>
 					<?php }?>
-					<div class="row my-5">
-						<div class="col table-data">
-						<table class="table table-bordered" ng-controller="alertCtrl">
+					<br><br>
+					<div >
+						<div >
+						<table class="table " ng-controller="alertCtrl">
 						<thead class="text-center">
-							<tr>
+							<tr >
 								<th rowspan="3" colspan="10">Name of The Students</th>
 								<th colspan="<?php echo $cout_written_work+3?>" >Written Work</th>
 								<th colspan="<?php echo $count_performance+3?>">Performance Task</th>
 								<th colspan="<?php echo $count_exam+3?>">Quarterly Assessment</th>
 								<th rowspan="3">Initial Grade</th>
 								<th rowspan="3">Quarterly Grade</th>
-								<th rowspan="4" colspan="4" >Description</th>
 							</tr>
 							
 							<tr>
@@ -271,21 +332,21 @@
 							<?php ($cout_written_work); for($id = 1;$id<= $cout_written_work;$id++) {	 ?>
 								<td><?php echo $id;?></td>
 							<?php } ?>
-								<td>Total</td>
-								<td>PS</td>
-								<td>WS</td>
+								<td style="background-color: lightskyblue !important">Total</td>
+								<td style="background-color: aquamarine !important">PS</td>
+								<td style="background-color: navajowhite !important">WS</td>
 							<?php for($id = 1;$id<= $count_performance;$id++) {	 ?>
 								<td><?php echo $id;?></td>
 							<?php } ?>
-								<td>Total</td>
-								<td>PS</td>
-								<td>WS</td>
+								<td style="background-color: lightskyblue !important">Total</td>
+								<td style="background-color: aquamarine !important">PS</td>
+								<td style="background-color: navajowhite !important">WS</td>
 							<?php for($id = 1;$id<= $count_exam;$id++) {	 ?>
 								<td><?php echo $id;?></td>
 								<?php } ?>
-								<td>Total</td>
-								<td>PS</td>
-								<td>WS</td>
+								<td style="background-color: lightskyblue !important">Total</td>
+								<td style="background-color: aquamarine !important">PS</td>
+								<td style="background-color: navajowhite !important">WS</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -361,34 +422,34 @@
 											foreach($qt as $key){
 								?>
 								
-								<td><?php echo $key->assignment_item;
+								<td ><?php echo $key->assignment_item;
 									$need = $need + $key->assignment_item;
 									$cout_written_work_total++;
 								?></td>
 											<?php }?>
-								<td><?php echo $need;?></td>
-								<td>100</td>
-								<td><?php echo $qu[0]->written?> </td>
+								<td style="background-color: lightskyblue !important"><?php echo $need;?></td>
+								<td style="background-color: 	aquamarine !important">100</td>
+								<td style="background-color: navajowhite !important"><?php echo $qu[0]->written?> </td>
 								<?php foreach($recitation_project as $rp){?>
 									<td><?php echo $rp->project_item;
 									$recitation_project_need = $recitation_project_need + $rp->project_item;
 									$count_performance++;
 								?></td>
 								<?php }?>
-								<td><?php echo $recitation_project_need;?></td>
-								<td>100</td>
-								<td><?php echo $qu[0]->performance_task?></td>
+								<td style="background-color: lightskyblue !important"><?php echo $recitation_project_need;?></td>
+								<td style="background-color: aquamarine !important">100</td>
+								<td style="background-color: navajowhite !important"><?php echo $qu[0]->performance_task?></td>
 								<?php foreach($quarter_exam as $qe){?>
 									<td><?php echo $qe->exam_item;
 									$need_exam = $need_exam + $qe->exam_item;
 									$count_exam++;
 								?></td>
 								<?php }?>
-								<td><?php echo $need_exam?></td>
-								<td>100</td>
-								<td><?php echo $qu[0]->quarterly_assessment?></td>
-								<td>100</td>
-								<td>100</td>
+								<td style="background-color: lightskyblue !important"><?php echo $need_exam?></td>
+								<td style="background-color: aquamarine !important">100</td>
+								<td style="background-color: navajowhite !important"><?php echo $qu[0]->quarterly_assessment?></td>
+								<td style="background-color: silver !important">100</td>
+								<td style="background-color: gold !important">100</td>
 							</tr>
 							<?php foreach($student as $st) { ?>
 							<tr>
@@ -462,15 +523,15 @@
 													
 													foreach($assignment_quiz as $key){
 								?>
-								<td>
+								<td >
 									<?php echo $key->assignment_score;
 									$need = $need + $key->assignment_score;
 									$cout_written_work_total = $cout_written_work_total + $key->assignment_item;
 									$cout_written_work++;
 								?></td>
 													<?php  } ?>
-								<td><?php echo $need?></td>
-								<td><?php  
+								<td style="background-color: lightskyblue !important"><?php echo $need?></td>
+								<td style="background-color: aquamarine !important"><?php  
 									if($cout_written_work_total){
 										$total_AQ = $need / $cout_written_work_total * 100;  
 										$total = number_format((float)$total_AQ, 2, '.', ''); echo $total?$total:null; 
@@ -480,7 +541,7 @@
 									}
 									?>
 								</td>
-								<td><?php  $nii = $qu[0]->written / 100	 ;$nee =	$total * $nii; echo $total_need_quiz = number_format((float)$nee, 2, '.', '');?></td>
+								<td style="background-color: navajowhite !important"><?php  $nii = $qu[0]->written / 100	 ;$nee =	$total * $nii; echo $total_need_quiz = number_format((float)$nee, 2, '.', '');?></td>
 								
 										<?php $pro_score = 0;
 													$pro_score_task_total = 0;
@@ -493,8 +554,8 @@
 												$pro_score_task++;
 											?></td>
 										<?php }	?>
-										<td><?php echo $pro_score?> </td>
-								<td><?php 
+										<td style="background-color: lightskyblue !important"><?php echo $pro_score?> </td>
+								<td style="background-color: aquamarine !important"><?php 
 									if($pro_score_task_total){
 										$total_PS = $pro_score / $pro_score_task_total * 100; 
 										echo $total = number_format((float)$total_PS, 2, '.', '');
@@ -503,7 +564,7 @@
 										$total_PS;
 									}
 								?> </td>
-								<td><?php  $nii = $qu[0]->performance_task / 100	 ;$nee =	$total * $nii; echo $total_need_project = number_format((float)$nee, 2, '.', '');?></td>
+								<td style="background-color: navajowhite !important"><?php  $nii = $qu[0]->performance_task / 100	 ;$nee =	$total * $nii; echo $total_need_project = number_format((float)$nee, 2, '.', '');?></td>
 								<?php 	
 									$exam_s = 0;
 									$need_exam = 0;
@@ -517,8 +578,8 @@
 												$count_exam++; 
 											?></td>
 								<?php }?>		
-								<td><?php echo $exam_s ;?> </td>
-								<td><?php 
+								<td style="background-color: lightskyblue !important"><?php echo $exam_s ;?> </td>
+								<td style="background-color: aquamarine !important"><?php 
 									if($need_exam){
 										$total_PS = $exam_s / $need_exam * 100; 
 										echo $total = number_format((float)$total_PS, 2, '.', '');
@@ -527,9 +588,9 @@
 										$total = 0;
 									}
 								?> </td>
-								<td><?php  $nii = $qu[0]->quarterly_assessment / 100	 ;$nee =	$total * $nii; echo $total_need_exam = number_format((float)$nee, 2, '.', '');?></td>				
-								<td><?php echo $final_total =  $total_need_exam + $total_need_project + $total_need_quiz  ?></td>
-								<td>
+								<td style="background-color: navajowhite !important"><?php  $nii = $qu[0]->quarterly_assessment / 100	 ;$nee =	$total * $nii; echo $total_need_exam = number_format((float)$nee, 2, '.', '');?></td>				
+								<td style="background-color: silver !important"><?php echo $final_total =  $total_need_exam + $total_need_project + $total_need_quiz  ?></td>
+								<td style="background-color: gold !important">
 								
 							<?php	switch ($final_total) { // malihog kog edit gaw or tiwas gaw
 							case $final_total == 100:
@@ -659,14 +720,13 @@
 									$last = "ff";
 					} ?>
 								<?php echo $last;?>	
-								<input type="hidden" name="quarter" value="<?php echo $this->uri->segment(6)?>">'
+								<input type="hidden" name="quarter" value="<?php echo $this->uri->segment(6)?>">
 								<input type="hidden" name="section_id" value="<?php echo $section[0]->section_id;?>">
 								<input type="hidden" name="subj_id_id" value="<?php echo $subject[0]->subj_id?>">
 								<input type="hidden" name="studentid[]" value="<?php echo $st->studentid;?>">
 								<input type="hidden" name="finalgrade[]" value="<?php echo $last;?>">
 								<input type="hidden" name="schoolyear_id" value="<?php echo $infos[0]->schoolyear_id?>">
 								</td>
-								<td></td>
 							<?php }?>
 							</tbody>
 						</table>	
@@ -676,76 +736,69 @@
 					<!-- table-end -->
 					</form>
 					<!-- remarks start -->
+					<br><br>
 					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group">
-								<label class="form-control-label">REMARKS: </label>
-								<input class="form-control" type="text" name="">
-							</div>
-						</div>
-					</div>
-					<!-- remarks end -->
+      <div class="col-md-4">
+          <div class="row">
+              <div class="col-md-4">
+                   <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared by:</label>
+              </div>
+              <div class="col-md-4">
+                  <input   type="text" name="" size="20"  >
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="row">
+              <div class="col-md-4">
+                   <label class="form-control-sm" for="" class="form-control-label mr-2">Certified Correct and Submitted:</label>
+              </div>
+              <div class="col-md-4">
+                  <input type="text" name="" size="20">
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="row">
+              <div class="col-md-4">
+                   <label class="form-control-sm" for="" class="form-control-label mr-2">Reviewed by:</label>
+              </div>
+              <div class="col-md-4">
+                  <input type="text" name="" size="20">
+              </div>
+          </div>
+      </div> 
+    </div> 
+      <br><br>
+                <button id="print_data" class="btn btn-success btn-print btn-rounded"
+                           onClick = "this.style.visibility= 'hidden';">
+                  <i class="fas fa-print"></i>
+                </button>   
+    <br><br><br><br><br>
 
-					<div class="row mb-3">	
-						<div class="col-md-4">
-							Prepared by: 
-							<hr>
-							<p class="text-center">Subject teacher:</p><input type="hidden" name=""></div>		
-						<div class="col-md-4">
-							Certified True and Correct: 
-							<hr>
-							<p class="text-center">Department Coordinator:</p><input type="hidden" name=""></div>
-						<div class="col-md-4">
-							Date Checked (MM/DD/YYYY): 
-							<hr>
-							<p class="text-center">Date Checked (MM/DD/YYYY):</p><input type="hidden" name=""></div>
-					</div>
-
-					<div class="row">	
-						<div class="col-md-6 text-center">Signature of adviser overprinted name</div>
-						<div class="col-md-6 text-center">Signature of Authorized Person Over Printed Name, Designation</div>
-					</div>
-			</div>
-		</div>
-	<div>
-	<button id="print_data" class="btn btn-success btn-print btn-rounded">
-      <i class="fas fa-print"></i>
-    </button>
 </div>
 
 <script>
-	function printData() {
-        //var printContents = document.getElementById("print_container")
-		//	.innerHTML;
-		// var dprintContents = document.getElementById("dprint_container")
-		// .innerHTML;
-		// var printContents =  document.documentElement.outerHTML
-		// console.log(printContents);
-        // var originalContents = document.body.innerHTML;
-        // document.body.innerHTML = printContents;
-			// "<html><head><title></title></head><body>" +
-			// printContents +
-			// "</body>";
-	  mywindow.document.write('<link rel="stylesheet" href="css/midday_receipt.css" type="text/css" />');
-      mywindow.document.write('</head><body >');
-      mywindow.document.write(data);
-      mywindow.document.write('</body></html>');
-      mywindow.document.close();
-      mywindow.focus();
-      setTimeout(function(){mywindow.print();},1000);
-      mywindow.close();
-
+      function printData() {
+        var printContents = document.getElementById("print_container")
+          .innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          printContents +
+          "</body>";
         window.print();
         document.body.innerHTML = originalContents;
         location.reload();
-		}
+      }
 
-		document
+      document
         .getElementById("print_data")
         .addEventListener("click", function(e) {
-			e.preventDefault();
-			printData();
+          e.preventDefault();
+          printData();
         });
 </script>
+
 </body>
 </html>

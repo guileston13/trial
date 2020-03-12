@@ -350,7 +350,7 @@ class Teacher_Dashboard extends CI_Controller
 		}else{
 			
 			$qq = $q[0]->subj_id;
-			echo $qq;
+			
 			$data['qu'] = $this->db->query("SELECT * from tbl_subject,tbl_percentage 
 			where tbl_subject.subj_id = '$qq' AND 
 			tbl_percentage.acad_id = tbl_subject.acad_id

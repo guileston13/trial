@@ -20,82 +20,82 @@ table {
 
 td, th {
   border: 1px solid #1e4f8e;
-  text-align: left;
-  padding: 8px;
+  text-align: center;
+  padding: 2px;
   color: black;
 
+}
+th{
+    color: #29487d
 }
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
 }
 </style>
 </head>
     <body>
         <div class="container-fluid" id="print_container" >
             <h3 class="text-center">School Form 1(SF1)School Register</h3>
-            <br><br>
-            
-            <div class="row">
-            <div class="col-md-3 offset-2">
-                <div class="input-group form-inline">
-                <label  for="" class="form-control-label mr-2">School ID:</label>
-                <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->school_id?>">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <div class="input-group form-inline">
+                        <label  for="" class="form-control-label mr-2">School ID:</label>
+                        <input type="text" name="" value="<?php echo $form[0]->school_id?>">
+                    </div>
                 </div>
-                
-                </div>
+                <div class="col-md-3">           
+                    <div class="input-group form-inline">
+                        <label for="" class="form-control-label mr-2">Region:</label>
+                        <input  type="text" name="" value="<?php echo $form[0]->region?>">
+                    </div>  
+                </div>              
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">Division:</label>
-                        <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->division?>" >
+                        <input   type="text" name="" value="<?php echo $form[0]->division?>" >
                     </div> 
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">District:</label>
-                        <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->district?>">
+                        <input  type="text" name="" value="<?php echo $form[0]->district?>">
                     </div> 
                 </div>
             </div>
 
             <div class="row mt-3">
-            <div class="col-md-3 offset-3">
-                
-                <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">Region:</label>
-                <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->region?>">
-                </div>  
-            </div>
-            <div class="col-md-3">
-                <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">Grade Level:</label>
-                <input  class = "form-control-sm" type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
+                <div class="col-md-3">
+                    <div class="input-group form-inline">
+                        <label for="" class="form-control-label mr-2">School Name:</label>
+                        <input   type="text" name="" value="<?php echo $form[0]->school_name?>">
+                    </div> 
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group form-inline">
+                        <label for="" class="form-control-label mr-2">School Year:</label>
+                        <input  type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
+                    </div>  
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group form-inline">
+                        <label for="" class="form-control-label mr-2">Grade Level:</label>
+                        <input  type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group form-inline">
+                        <label for="" class="form-control-label mr-2">Section:</label>
+                        <input  type="text" name="" value="<?php echo $infos[0]->section_name?>">
+                    </div> 
                 </div>
             </div>
-            </div>
-
-            <div class="row mt-3">
-            <div class="col-md-3 offset-2">
-                <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">School Name:</label>
-                <input  class = "form-control-sm" type="text" name="" value="<?php echo $form[0]->school_name?>">
-                </div> 
-            </div>
-            <div class="col-md-3">
-                
-                <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">School Year:</label>
-                <input  class = "form-control-sm" type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
-                </div>  
-            </div>
-            <div class="col-md-3">
-                <div class="input-group form-inline">
-                <label for="" class="form-control-label mr-2">Section:</label>
-                <input  class = "form-control-sm" type="text" name="" value="<?php echo $infos[0]->section_name?>">
-                </div> 
-            </div>
-            </div>
-            <br><br><br>
+            <br>
             <table>
                 <thead>
                     <tr>
@@ -157,12 +157,12 @@ tr:nth-child(even) {
                 
             <table>
                 <tr>   
-                    <th>Indicator</th>
-                    <th>Code</th>
-                    <th>Required Information</th>
-                    <th>Indicator</th>
-                    <th>Code</th>
-                    <th>Required Information</th>
+                    <th style="color: red">Indicator</th>
+                    <th style="color: blue">Code</th>
+                    <th style="color: green">Required Information</th>
+                    <th style="color: red">Indicator</th>
+                    <th style="color: blue">Code</th>
+                    <th style="color: green">Required Information</th>
                 </tr>
                 <tr>
                     <td>Transferred Out</td>
@@ -197,26 +197,35 @@ tr:nth-child(even) {
                     <td>Specify Level & Effectivity Data</td>
                 </tr>
             </table>
-
-            <br><br><br>
-              <div class="row mb-3">
+            <br><br>
+              <div class="row">
                     <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-4">
-                                 <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared and Submitted by:</label>
+                            <div class="col-md-2">
+                                 <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared by:</label>
                             </div>
-                            <div class="col-md-8">
-                                <input style="text-decoration: underline; color: black" class="form-control " type="text" name="" class="w-100">
+                            <div class="col-md-4">
+                                <input   type="text" name="" size="30"  >
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-2">
+                                 <label class="form-control-sm" for="" class="form-control-label mr-2">Certified by:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="" size="30">
+                            </div>
+                        </div>
+                    </div>  
               </div> 
 
             <br><br><br>
-                <button id="print_data" class="btn btn-success btn-print btn-rounded">
+                <button id="print_data" class="btn btn-success btn-print btn-rounded" onClick = "this.style.visibility= 'hidden';">
                 <i class="fas fa-print"></i>
                 </button>
-                
+                <br><br><br><br><br>   
         </div>
 
         <script>

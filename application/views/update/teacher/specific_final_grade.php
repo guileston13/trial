@@ -63,10 +63,10 @@ tr:nth-child(even) {
 
     </div>
         <h1>Final Grade</h1>
-        <a class="btn" style = "background-color: #2F4F4F; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/1">First Quarter</a>
-        <a class="btn" style = "background-color: #696969; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/2">Second Quarter</a>
-        <a class="btn" style = "background-color: #C0C0C0; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/3">Third Quarter</a>
-        <a class="btn" style = "background-color: #3CB371; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/4">Fourth Quarter</a>
+        <a class="btn" style = "background-color: royalblue; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/1">First Quarter</a>
+        <a class="btn" style = "background-color: indianred; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/2">Second Quarter</a>
+        <a class="btn" style = "background-color: #3CB371; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/3">Third Quarter</a>
+        <a class="btn" style = "background-color: #778899; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/4">Fourth Quarter</a>
         <?php if($student){?>
             <table class="my-5 table table-bordered">
                 <tr>
