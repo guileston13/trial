@@ -13,6 +13,14 @@
    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
        <style>
 
+body{
+  margin:2% 10% 2% 10% ;
+}
+
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -21,8 +29,8 @@ table {
 }
 
 td, th {
-  border: 1px solid #1e4f8e !important;
-  text-align: left;
+  border: 1px solid #1e4f8e;
+  text-align: justify;
   padding: 8px;
   color: black;
 
@@ -35,34 +43,40 @@ input{
     border-bottom: 1px solid black;
     text-align: center;
 }
+h2{
+  color: black
+}
 
-tr:nth-child(even) {
+tr:nth-child(2n+3) {
   background-color: #dddddd;
+}
+h2{
+  color: black
 }
 </style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
-    <h3 class="text-center">School Form 2 (SF2) Daily Attendance Report of Learners</h3>
+    <h2 class="text-center">School Form 2 (SF2) Daily Attendance Report of Learners</h2>
     <br><br>
     
     <div class="row">
       <div class="col-md-3 offset-1">
         <div class="input-group form-inline">
           <label for="" class="form-control-label mr-2">School ID:</label>
-          <input  type="text" value="<?php echo $form2?$form2[0]->school_id:null ?>" name="">
+          <input size="10"  type="text" value="<?php echo $form2?$form2[0]->school_id:null ?>" name="">
         </div>  
       </div>
       <div class="col-md-3">
         <div class="input-group form-inline">
           <label for="" class="form-control-label mr-2">School Year:</label>
-          <input  type="text" value="<?php echo $info?$info[0]->schoolyear_start:null;?>" name="">
+          <input size="10"   type="text" value="<?php echo $info?$info[0]->schoolyear_start:null;?>" name="">
         </div>  
       </div>
       <div class="col-md-4">
         <div class="input-group form-inline">
           <label for="" class="form-control-label mr-2">Report of the Month of:</label>
-          <input  type="text" name="">
+          <input size="10"   type="text" name="">
         </div> 
       </div>
     </div>
@@ -70,24 +84,25 @@ tr:nth-child(even) {
       <div class="col-md-4 offset-1">
             <div class="input-group form-inline">
                 <label for="" class="form-control-label mr-2">Name of School:</label>
-                <input  type="text" class="w-50" name="" value="<?php echo $form2?$form2[0]->school_name:null ?>">
+                <input size="10"   type="text" class="w-50" name="" value="<?php echo $form2?$form2[0]->school_name:null ?>">
             </div>  
       </div>
       <div class="col-md-3">
             <div class="input-group form-inline">
                 <label for="" class="form-control-label mr-2">Grade Level:</label>
-                <input  type="text" name="" value="<?php echo $top_info?$top_info[0]->grade_level:null ?>" >
+                <input size="10"   type="text" name="" value="<?php echo $top_info?$top_info[0]->grade_level:null ?>" >
             </div> 
       </div>
       <div class="col-md-3">
             <div class="input-group form-inline">
                 <label for="" class="form-control-label mr-2">Section:</label>
-                <input  type="text" name=""  value="<?php echo $top_info?$top_info[0]->section_name:null ?>">
+                <input size="10"   type="text" name=""  value="<?php echo $top_info?$top_info[0]->section_name:null ?>">
             </div> 
       </div>
   </div>
+  <br><br>
   <?php if($students){?>
-    <table class="my-5 table table-bordered">
+    <table >
       <?php  $st = $students[0]->studentid;
         $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st'")->result();
         $i = 0;
@@ -105,17 +120,17 @@ tr:nth-child(even) {
         ?>
         <thead class="text-center">
             <tr>
-                <th rowspan="3"  ><h5>LEARNER'S NAME </th></h5>
-                <th colspan="<?php echo $a;?>"><h5>(1st row for date, 2nd row for Day: M,T,W,TH,F)</th></h5> 
+                <th></th>
+                <th  colspan="<?php echo $a;?>"><h5>(1st row for date, 2nd row for Day: M,T,W,TH,F)</th></h5> 
                 <th colspan="2"><h5>Total for the month</th></h5>
-                <th colspan="1"><h5>REMARK/S</th></h5>
+                <th colspan="1"><h5>REMARKS</th></h5>
             </tr>
         </thead>
   
         <tbody>
               <tr>
               
-              <td></td>
+              <td rowspan="2">Learner's Name</td>
                 <?php 
                     $subj_id = $this->uri->segment(5);
                     $section_id = $this->uri->segment(4);
@@ -123,33 +138,32 @@ tr:nth-child(even) {
                     $st = $students[0]->studentid;
                     $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st' AND subj_id = '$subj_id' AND section_id  ='$section_id' ")->result();?>
                 <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){ ?>
-                <td >
+                <td style="background-color: #364f6b; color: white">
                   <?php echo date("F-d-Y", strtotime(  $key->date_attendance ))?>
                 </td>
                 
                 <?php }?>
-                <td></td>
-               <td></td>
+                <td ></td>
+               <td ></td>
                <td></td>
               </tr>
 
               <tr>
-                  <td></td>
                 <?php 
                     $st = $students[0]->studentid;
                     $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st' AND subj_id = '$subj_id' AND section_id  ='$section_id'")->result();?>
                 <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){?>
-                <td colspan="1"><h5>
+                <td style="background-color: #3fc1c9" colspan="1"><h5>
                   <?php echo date("l", strtotime(  $key->date_attendance ))?>
                 </td></h5>
                 <?php }?>
-                <td><h5>ABSENT</td></h5>
-                <td><h5>TARDY</td></h5>
+                <td style="background-color:lightcoral "><h5>ABSENT</td></h5>
+                <td style="background-color:mediumseagreen "><h5>TARDY</td></h5>
                 <td></td>
               </tr>
               <?php foreach($students as $st){ ?>
               <tr>
-                <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><?php echo $st->firstname.' '.$st->lastname?></td>
+                <td><?php echo $st->firstname.' '.$st->lastname?></td>
                    <?php $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st->studentid' AND subj_id = '$subj_id' AND section_id  ='$section_id' ")->result();?>
                   <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){?>
                 <td>
@@ -162,8 +176,8 @@ tr:nth-child(even) {
                     }?>
                 </td>
                   <?php }?>
-                  <td><?php echo $A?></td>
-                  <td><?php echo $La?></td> 
+                  <td ><?php echo $A?></td>
+                  <td ><?php echo $La?></td> 
                   <td></td>
               </tr>
              <?php }?> 

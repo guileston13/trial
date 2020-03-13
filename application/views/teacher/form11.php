@@ -14,38 +14,49 @@
 
     <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
 <style>
-	th, td{
-		color: black !important;
-		padding: auto !important;
-		font-size: 15px !important;
-		border: 1px solid black !important;
-		padding: 10px !important;
-		text-align: center;
-	}
-	input{
+body{
+  margin:2% 3% ;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border-radius: 100px;
+  width: 100%
+}
+
+td, th {
+  border: 1px solid #1e4f8e;
+  text-align: justify;
+  padding: 8px;
+  color: black;
+
+}
+
+input{
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
-    font-size:18px
-	}
-	table{
-		width: 100% !important;
-	}
-	tr:nth-child(even):hover {
-  	background-color: #dddddd;
-	}
-	tr:nth-child(odd):hover {
-  	background-color: #dddddd ;
-	}
-
+}
+h2{
+  color: black
+}
+tr:nth-child(even){
+  background-color: #dddddd;
+}
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+h2{
+  color: black
+}
 </style>
 	
 </head>
 <body>
 	<div class="container-fluid" ng-app="starter" id="print_container">
 		<div class="card my-3">
-			<div class="card-title pt-2">
-				<h1 class="text-center">CLASS RECORD</h1>
+			<div>
+				<h2 class="text-center">CLASS RECORD</h2>
 			</div>
 			<?php
 			$quarter = $this->uri->segment(6);
@@ -227,10 +238,10 @@
 					<br><br>
 					<div >
 						<div >
-						<table class="table " ng-controller="alertCtrl">
-						<thead class="text-center">
+						<table>
+						<thead >
 							<tr >
-								<th rowspan="3" colspan="10">Name of The Students</th>
+								<th rowspan="3" colspan="10">Name of Students</th>
 								<th colspan="<?php echo $cout_written_work+3?>" >Written Work</th>
 								<th colspan="<?php echo $count_performance+3?>">Performance Task</th>
 								<th colspan="<?php echo $count_exam+3?>">Quarterly Assessment</th>
@@ -448,8 +459,8 @@
 								<td style="background-color: lightskyblue !important"><?php echo $need_exam?></td>
 								<td style="background-color: aquamarine !important">100</td>
 								<td style="background-color: navajowhite !important"><?php echo $qu[0]->quarterly_assessment?></td>
-								<td style="background-color: silver !important">100</td>
-								<td style="background-color: gold !important">100</td>
+								<td >100</td>
+								<td >100</td>
 							</tr>
 							<?php foreach($student as $st) { ?>
 							<tr>
@@ -589,8 +600,8 @@
 									}
 								?> </td>
 								<td style="background-color: navajowhite !important"><?php  $nii = $qu[0]->quarterly_assessment / 100	 ;$nee =	$total * $nii; echo $total_need_exam = number_format((float)$nee, 2, '.', '');?></td>				
-								<td style="background-color: silver !important"><?php echo $final_total =  $total_need_exam + $total_need_project + $total_need_quiz  ?></td>
-								<td style="background-color: gold !important">
+								<td ><?php echo $final_total =  $total_need_exam + $total_need_project + $total_need_quiz  ?></td>
+								<td >
 								
 							<?php	switch ($final_total) { // malihog kog edit gaw or tiwas gaw
 							case $final_total == 100:

@@ -12,27 +12,51 @@
     <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <style>
 
+body{
+  margin:2% 0%;
+}
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 100px;
+}
+
+td, th {
+  border: 1px solid #1e4f8e;
+  padding: 4px;
+  color: black;
+
+}
+th{
+  color: white;
+  background-color: dodgerblue;
+  text-align: center;
 }
 input{
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
 }
-td, th{
-  color: black;
-  padding: 15px !important;
-  border: 1px solid #1e4f8e !important;
-  text-align: left !important;
-  padding: 8px !important;
+h2{
+  color: black
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+h2{
+  color: black
 }
 </style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
-     <h3 class="text-center">School Form 6 (SF6) Summarized Report on Promotion <br> and Level of Proficiency</h3>
+     <h2 class="text-center">School Form 6 (SF6) Summarized Report on Promotion <br> and Level of Proficiency</h2>
      <div class="row ">
        <div class="col-md-4 ">
           <div class="input-group form-inline">
@@ -73,29 +97,30 @@ td, th{
           </div> 
        </div>
      </div>
-<table class="my-5 table table-bordered" style="width: 100%">
+     <br><br>
+<table>
   <thead>
   <tr >
-    <th ><h5>SUMMARY TABLE</th></h5>
-    <th colspan="3" ><h5>Grade 7</th></h5>  
-    <th colspan="3" ><h5>Grade 8</th></h5>  
-    <th colspan="3 " ><h5>Grade 9</th></h5> 
-    <th colspan="3 " ><h5>Grade 10</th></h5> 
+    <th rowspan="2" >SUMMARY TABLE</th>
+    <th colspan="3" >Grade 7</th>  
+    <th colspan="3" >Grade 8</th>  
+    <th colspan="3 " >Grade 9</th> 
+    <th colspan="3 " >Grade 10</th> 
   </tr>
   <tr>
-    <th >SUMMARY TABLE</th>
-    <th >MALE</th>
-    <th >FEMALE</th>
-    <th >TOTAL</th>
-    <th >MALE</th>
-    <th >FEMALE</th>
-    <th >TOTAL</th>
-    <th >MALE</th>
-    <th >FEMALE</th>
-    <th >TOTAL</th>
-    <th >MALE</th>
-    <th >FEMALE</th>
-    <th >TOTAL</th>
+    
+    <th style="background-color: #364f6b">MALE</th>
+    <th style="background-color: #3fc1c9">FEMALE</th>
+    <th style="background-color: lightcoral">TOTAL</th>
+    <th style="background-color: #364f6b">MALE</th>
+    <th style="background-color: #3fc1c9">FEMALE</th>
+    <th style="background-color: lightcoral">TOTAL</th>
+    <th style="background-color: #364f6b">MALE</th>
+    <th style="background-color: #3fc1c9">FEMALE</th>
+    <th style="background-color: lightcoral">TOTAL</th>
+    <th style="background-color: #364f6b">MALE</th>
+    <th style="background-color: #3fc1c9">FEMALE</th>
+    <th style="background-color: lightcoral">TOTAL</th>
  </tr>
 </thead>
 <tbody>
@@ -954,6 +979,7 @@ td, th{
   </tr>
 </tbody>
   </table>
+  <br><br>
     <div class="row">
       <div class="col-md-4">
           <div class="row">

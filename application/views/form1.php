@@ -11,22 +11,24 @@
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  border-radius: 100px;
+body{
+    margin:2% 3% 2% 2%;
 }
 
-td, th {
+td {
   border: 1px solid #1e4f8e;
   text-align: center;
-  padding: 2px;
+  padding: 5px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   color: black;
 
 }
 th{
-    color: #29487d
+    color: white !important;
+    background-color: dodgerblue;
+    text-align: center;
+    border: 1px solid #1e4f8e;
 }
 
 tr:nth-child(even) {
@@ -37,34 +39,41 @@ input{
     border-bottom: 1px solid black;
     text-align: center;
 }
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+h2{
+    color: black;
+}
+
 </style>
 </head>
     <body>
         <div class="container-fluid" id="print_container" >
-            <h3 class="text-center">School Form 1(SF1)School Register</h3>
+            <h2 class="text-center">School Form 1(SF1)School Register</h2>
             <div class="row mt-3">
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label  for="" class="form-control-label mr-2">School ID:</label>
-                        <input type="text" name="" value="<?php echo $form[0]->school_id?>">
+                        <input size="10" type="text" name="" value="<?php echo $form[0]->school_id?>">
                     </div>
                 </div>
                 <div class="col-md-3">           
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">Region:</label>
-                        <input  type="text" name="" value="<?php echo $form[0]->region?>">
+                        <input size="10"  type="text" name="" value="<?php echo $form[0]->region?>">
                     </div>  
                 </div>              
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">Division:</label>
-                        <input   type="text" name="" value="<?php echo $form[0]->division?>" >
+                        <input size="10"  type="text" name="" value="<?php echo $form[0]->division?>" >
                     </div> 
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">District:</label>
-                        <input  type="text" name="" value="<?php echo $form[0]->district?>">
+                        <input size="10" type="text" name="" value="<?php echo $form[0]->district?>">
                     </div> 
                 </div>
             </div>
@@ -73,25 +82,25 @@ input{
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">School Name:</label>
-                        <input   type="text" name="" value="<?php echo $form[0]->school_name?>">
+                        <input size="10"  type="text" name="" value="<?php echo $form[0]->school_name?>">
                     </div> 
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">School Year:</label>
-                        <input  type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
+                        <input size="10" type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
                     </div>  
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">Grade Level:</label>
-                        <input  type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
+                        <input size="10" type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group form-inline">
                         <label for="" class="form-control-label mr-2">Section:</label>
-                        <input  type="text" name="" value="<?php echo $infos[0]->section_name?>">
+                        <input size="10" type="text" name="" value="<?php echo $infos[0]->section_name?>">
                     </div> 
                 </div>
             </div>
@@ -157,12 +166,12 @@ input{
                 
             <table>
                 <tr>   
-                    <th style="color: red">Indicator</th>
-                    <th style="color: blue">Code</th>
-                    <th style="color: green">Required Information</th>
-                    <th style="color: red">Indicator</th>
-                    <th style="color: blue">Code</th>
-                    <th style="color: green">Required Information</th>
+                    <th style="color: red !important ; background-color: white">Indicator</th>
+                    <th style="color: blue !important ; background-color: white">Code</th>
+                    <th style="color: green !important ; background-color: white">Required Information</th>
+                    <th style="color: red !important ; background-color: white">Indicator</th>
+                    <th style="color: blue !important ; background-color: white">Code</th>
+                    <th style="color: green !important ; background-color: white">Required Information</th>
                 </tr>
                 <tr>
                     <td>Transferred Out</td>

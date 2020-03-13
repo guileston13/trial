@@ -11,6 +11,9 @@
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <style>
+body{
+  margin:2% 10% ;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -20,46 +23,56 @@ table {
 
 td, th {
   border: 1px solid #1e4f8e;
-  text-align: left;
+  text-align: justify;
   padding: 8px;
   color: black;
 
 }
 th{
-  text-align: center;
+  color: white;
+  background-color: dodgerblue
 }
 input{
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
 }
+h2{
+  color: black
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+h2{
+  color: black
 }
 </style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
-    <h3 class="text-center">School Form 5(SF5) Report on Promotion & Level of Proficiency</h3>
+    <h2 class="text-center">School Form 5(SF5) Report on Promotion & Level of Proficiency</h2>
     <br>
     <div class="row">
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">Region:</label>
-          <input  type="text" name="" value="<?php echo $form5[0]->region?>">
+          <input size="10"  type="text" name="" value="<?php echo $form5[0]->region?>">
         </div> 
       </div>
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">Division:</label>
-          <input  type="text" name="" value="<?php echo $form5[0]->division?>" >
+          <input size="10"  type="text" name="" value="<?php echo $form5[0]->division?>" >
         </div> 
       </div>
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">District:</label>
-          <input  type="text" name="" value="<?php echo $form5[0]->district?>">
+          <input size="10"  type="text" name="" value="<?php echo $form5[0]->district?>">
         </div> 
       </div>
     </div>
@@ -68,13 +81,13 @@ tr:nth-child(even) {
       <div class="col-md-4 ">
         <div >
           <label for="" class="form-control-label mr-2">School ID:</label>
-          <input  type="text" name="" value="<?php echo $form5[0]->school_id?>">
+          <input size="10"  type="text" name="" value="<?php echo $form5[0]->school_id?>">
         </div> 
       </div>
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">School Year:</label>
-          <input  type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
+          <input size="10" type="text" name="" value="<?php echo $infos[0]->schoolyear_start?>">
         </div> 
       </div>
     </div>
@@ -83,19 +96,19 @@ tr:nth-child(even) {
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">School Name:</label>
-          <input  type="text" name="" value="<?php echo $form5[0]->school_name?>">
+          <input size="10" type="text" name="" value="<?php echo $form5[0]->school_name?>">
         </div> 
       </div>
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">Grade Level:</label>
-          <input  type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
+          <input size="10" type="text" name="" value="<?php echo $infos[0]->grade_level?>" >
         </div> 
       </div>
       <div class="col-md-4">
         <div >
           <label for="" class="form-control-label mr-2">Section:</label>
-          <input  type="text" name="" value="<?php echo $infos[0]->section_name?>">
+          <input size="10" type="text" name="" value="<?php echo $infos[0]->section_name?>">
         </div> 
       </div>
     </div>
@@ -294,9 +307,9 @@ tr:nth-child(even) {
       </tr>
       <tr>
         <th>STATUS</th>
-        <th>MALE</th>
-        <th>FEMALE</th>
-        <th>TOTAL</th>
+        <th style="background-color: #364f6b">MALE</th>
+        <th style="background-color: #3fc1c9">FEMALE</th>
+        <th style="background-color: lightcoral">TOTAL</th>
       </tr>
     </thead>
     <tbody>
@@ -330,9 +343,9 @@ tr:nth-child(even) {
     </tr>
     <tr>
       <th></th>
-      <th>MALE</th>
-      <th>FEMALE</th>
-      <th>TOTAL</th>
+      <th style="background-color: #364f6b">MALE</th>
+      <th style="background-color: #3fc1c9">FEMALE</th>
+      <th style="background-color: lightcoral">TOTAL</th>
    </tr>
   </thead>
   <tbody>
@@ -379,7 +392,7 @@ tr:nth-child(even) {
                    <label class="form-control-sm" for="" class="form-control-label mr-2">Prepared by:</label>
               </div>
               <div class="col-md-4">
-                  <input   type="text" name="" size="30"  >
+                  <input   type="text" name="" size="20"  >
               </div>
           </div>
       </div>
@@ -389,7 +402,7 @@ tr:nth-child(even) {
                    <label class="form-control-sm" for="" class="form-control-label mr-2">Certified Correct and Submitted:</label>
               </div>
               <div class="col-md-4">
-                  <input type="text" name="" size="30">
+                  <input type="text" name="" size="20">
               </div>
           </div>
       </div>
@@ -399,7 +412,7 @@ tr:nth-child(even) {
                    <label class="form-control-sm" for="" class="form-control-label mr-2">Reviewed by:</label>
               </div>
               <div class="col-md-4">
-                  <input type="text" name="" size="30">
+                  <input type="text" name="" size="20">
               </div>
           </div>
       </div> 

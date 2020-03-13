@@ -12,6 +12,9 @@
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
+body{
+  margin:2% 4% ;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -26,20 +29,31 @@ td, th {
   color: black;
 
 }
+th{
+  color: white;
+  background-color: dodgerblue
+}
 input{
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
 }
+h2{
+  color: black
+}
 
-tr:nth-child(even) {
+tr:nth-child(2n+3) {
   background-color: #dddddd;
 }
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+
 </style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
-     <h3 class="text-center">School Form 3 (SF3) Books Issued and Returned</h3>
+     <h2 class="text-center">School Form 3 (SF3) Books Issued and Returned</h3>
      <br>
     <div class="row">
       <div class="col-md-4">
@@ -134,15 +148,15 @@ tr:nth-child(even) {
               <th  rowspan="2" >#</th>
               <th  rowspan="2" >Learner's Name</th>
           <?php foreach($subjects as $subj){?> 
-              <th colspan=2 ><?php echo $subj->subj_code?></th>
+              <th  colspan=2 ><?php echo $subj->subj_code?></th>
           <?php }?>
       </tr>
     
       <tr>
               
           <?php foreach($subjects as $subj){?> 
-              <th >Issued</th>
-              <th >Returned</th>
+              <th style="background-color: #364f6b">Issued</th>
+              <th style="background-color: #3fc1c9">Returned</th>
           <?php }?>
       </tr> 
         <?php $num = 1; foreach($students as $st){ ?>

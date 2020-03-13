@@ -12,21 +12,57 @@
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
+body{
+	margin:1%;
+  font-size: 12px;
+  color: black !important;
+  text-align: center;
+}
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+td, th {
+  border: 1px solid #1e4f8e;
+  text-align: justify;
+  padding: 8px;
+  color: black;
+
 }
-td, th{
-	border: 1px solid #1e4f8e;text-align: left;padding: 8px;
-}
-body , h2 , h1 {
-	color:black;
+th{
+  color: white;
+  background-color: dodgerblue
 }
 input{
-	text-decoration: underline;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
 }
-
-
+h2,h3,h4{
+  color: black;
+  text-align: center;
+}
+label{
+	color: black !important;
+}
+td {
+    border: 1px black solid;
+    padding: 5px;
+}
+.rotate {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  width: 1.5em;
+  padding: 20px 11px 20px 20px;
+  font-size: 11px;
+}
+.rotate div {
+     -moz-transform: rotate(-90.0deg);  /* FF3.5+ */
+       -o-transform: rotate(-90.0deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(-90.0deg);  /* Saf3.1+, Chrome */
+             filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */
+         -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */
+         margin-left: -10em;
+         margin-right: -10em;
+}
 </style>
 	<body>
 		<?php foreach($form9 as $form){ 
@@ -46,94 +82,83 @@ input{
 			from tbl_finalgrade where studentid = '$form->studentid' AND schoolyear_id = '$form->schoolyear_id' GROUP by subj_id")->result();
 		
 		?>
-
-		<div class="container-fluid" id="print_container" style="text-align: center;">
-
+	<div class="container-fluid" id="print_container">
 			<div class="row">
-				
-				<div class="col-md-2" style="background-color: silver">
-					
-				</div>
-			
-				<div class="col-md-8">
-					<b><h2>Republic of the Philippines</h2></b>		
-					<b><h2>Department of Education</h2></b>
-					<div>
-						<center>
-							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->region:null?>" >
-						</center>
-							<label class="form-control-label mr-2">Region</label>
-						<center>
-							<center>
-							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->division:null?>" >
-						</center>
-							<label class="form-control-label mr-2">Division</label>
-						<center>
-						<center>
-							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->district:null?>" >
-						</center>
-							<label  class="form-control-label mr-2">District</label>
-						<center>
-							<input style="text-align: center;" class="form-control-sm" type="text" name="" value="<?php echo $as?$as[0]->school_name:null?>">
-						</center>
-							<label  class="form-control-label mr-2">School</label>
-							
-					</div>
-					<div>
-						<h1>LEARNER'S PROGRESS REPORT CARD</h1>
-					</div>
-					<br>
-					<div style="text-align: justify;margin-left: 20%;">
-						<div>
-							<label  class="form-control-label mr-2">Name:</label>								
-							<input class="form-control-sm" type="text" name=""  value="<?php echo $form->firstname, $form->lastname?>">
-						</div>
-						<div>								
-							<label  class="form-control-label mr-2">Lerner's Reference Number:</label>
-							<input class="form-control-sm" type="text" name="" value="<?php echo $form->lrn?>">
-						</div>
-						<div>	
-							<label  class="form-control-label mr-2">Age:</label>										
-							<input class="form-control-sm" type="text" name="" value="<?php echo $form->age?>">
-							<label style="margin-left: 140px"  class="form-control-label mr-2">Sex:</label>	
-							<input class="form-control-sm" type="text" name="" value="<?php echo $form->gender?>">
-						</div>
-						<div >	
-							<label  class="form-control-label mr-2">Grade:</label>
-							<input class="form-control-sm" type="text" name="">
-							<?php $query1 = $this->db->query("SELECT * from tbl_section where section_id = '$form->section_id'")->result();
-									
-							?>
-							<label style="margin-left: 100px"  class="form-control-label mr-2">Section: </label>
-							<input class="form-control-sm" type="text" value="<?php echo $query1[0]->section_name ?>" name="">		
-						</div>
-						<div>		
-							<label class="form-control-label mr-2">School Year:</label>	
-							<input class="form-control-sm" type="text" name="" >
-						</div>	
-					</div>	
-					<br>
-					<h2>Dear Parents,</h2>
-								<p style="text-align: center;">
-										This report card shows the ability and progress of your child has made  in the different learning areas as well as his/her
-									    core values.		
-								</p>
-								<p style="text-align: center;">
-									This school welcomes you if you desire to know more
-										about your child progress.
-								</p>
-								<br>
-							<div>
-								<div >
-									<input class="form-control-sm" type="text" name="" placeholder="_____________________">
-									<input style="margin-left:100px" class="form-control-sm" type="text" name="" placeholder="_____________________">	
-								</div>	
-								<div>
-									<label class="form-control-label mr-2">Principal</label>						
-									<label style="margin-left: 240px"  class="form-control-label mr-2">Teacher</label>	
-								</div>
+				<div class="col-md-6">
+					<h2>ATTENDANCE RECORD</h2>
+							<div class="row">
+
+								<table>
+
+								    <tr>
+								        <td></td>
+								        <td class="rotate "><div>June</div></td>
+								        <td class="rotate "><div>July</div></td>
+								        <td class="rotate "><div>August</div></td>
+								        <td class="rotate "><div>September</div></td>
+								        <td class="rotate "><div>October</div></td>
+								        <td class="rotate "><div>November</div></td>
+								        <td class="rotate "><div>December</div></td>
+								        <td class="rotate "><div>January</div></td>
+								        <td class="rotate "><div>February</div></td>
+								        <td class="rotate "><div>March</div></td>
+								        <td class="rotate "><div>April</div></td>
+								        <td class="rotate "><div>May</div></td>
+								        <td class="rotate "><b><div>TOTAL</div></td></b>
+								    </tr>
+								    <tr>
+								        <td>School Days</td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								    </tr>
+								    <tr>
+								        <td>No. of Days Present</td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								    </tr>
+								    <tr>
+								        <td>No. of Days Present</td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								        <td></td>
+								    </tr>
+								    
+								   
+								</table>
 							</div>
-							<br><br>
+							<br>
 							<div class="row">
 								<div class="col-md-12">
 									<h3>PARENT GUARDIAN'S SIGNATURE</h3>
@@ -141,79 +166,210 @@ input{
 							<br><br>	
 							</div>
 							<div class="row">
-								<div class="col-md-10">1st Quarter ______________________</div>
+								<div class="col-md-10">1st Quarter:
+									<input type="" name="">
+								</div>
 							</div><br>
 							<div class="row">
-								<div class="col-md-10">2nd Quarter ______________________</div>
-							</div><br>
-							<div class="row">
-								<div class="col-md-10">3rd Quarter ______________________</div>
-							</div><br>
-							<div class="row">
-								<div class="col-md-10">4th Quarter ______________________</div>
+								<div class="col-md-10">2nd Quarter
+								<input type="" name="">
 							</div>
-							<br><br>
-										<h2>Certificate Of Transfer</h2>
-								<div class="row">
-									<div class="col-md-6">
-										<b>Admitted to Grade:</b>
-										<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
-									</div>
-									<div class="col-md-3">
-										<b>Section:</b>
-										<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
+							</div><br>
+							<div class="row">
+								<div class="col-md-10">3rd Quarter
+								<input type="" name="">
+							</div>
+							</div><br>
+							<div class="row">
+								<div class="col-md-10">4th Quarter
+								<input type="" name="">
+							</div>
+							</div>
+							<br>
+							<div >
+							<h3>Certificate Of Transfer</h3>
+								<div <div style="text-align: left;">	
+									<label >Admitted to Grade:</label>										
+									<input size="20" type="text" name="" >
+									<label>Section:</label>	
+									<input size="24" type="text" name="" >
+								</div>
+								<div>
+									<div <div style="text-align: left;"> 
+										<label><b>Eligible for Administration to Grade:</b></label>
+										<input size="39" type="text" name="" >								
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-7">
-										<b>Eligible for Administration to Grade:</b>
-										<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
-									</div>
+								<div style="text-align: left;">
+									<label >Approved:</label>
 								</div>
-									<h2>Approved:</h2>
-									<div class="row">
-										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="" placeholder="_____________________">	
-																			
+									<div class="row">	
+										<div class="col-md-6" >
+											<input size="30" type="text" name="" >
 										</div>
 										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="" placeholder="_____________________">							
+											<input size="30" type="text" name="" >	
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
-											<label for="" class="form-control-label mr-2">Principal</label>
+											<label>Principal</label>
 										</div>
-										<div class="col-md-6">
-											<label for="" class="form-control-label mr-2">Teacher</label>
-										</div>	
+										<div class="col-md-6" >
+											<label >Teacher</label>
+										</div>								
 									</div>
-									<h2>Certification of Eligibility to Transfer:</h2>
+									<h3>Certification of Eligibility to Transfer:</h3>
 									<div class="row">
-										<div class="col-md-7">
-											<b>Admitted in</b>
-											<input class="form-control-sm" type="text" name="" placeholder="_____________________">									
+										<div class="col-md-12" style="text-align: left;"
+											<b>Admitted in:</b>
+											<input size="23" type="text" name="">									
 										</div>
 									</div>	
-									<div class="row">
-										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="" placeholder="_____________________">	
-																			
-										</div>
-										<div class="col-md-6">
-											<input class="form-control-sm" type="text" name="" placeholder="_____________________">							
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<label for="" class="form-control-label mr-2">Date</label>
-										</div>
-										<div class="col-md-6">
-											<label for="" class="form-control-label mr-2">Principal</label>
+									<div class="row">	
+										<div class="col-md-2" >
+											<label >Date:</label>
 										</div>	
+										<div class="col-md-4" >
+											<input size="20" type="text" name="" >
+										</div>
+										<div class="col-md-6">
+											<input size="30" type="text" name="" >	
+										</div>
 									</div>
-							<b><center><h2>REPORT ON LEARNER'S OBSERVES VALUES</center></b></h2>
-							<table align="center">
+									<div class="row">
+										<div class="col-md-6">
+											<label></label>
+										</div>
+										<div class="col-md-6" >
+											<label >Teacher</label>
+										</div>								
+									</div>
+					</div>
+				</div>			
+			<div class="col-md-6">
+					<b><p>Republic of the Philippines</p></b>		
+					<b><p>Department of Education</p></b>
+					<div>
+						<div>
+							<label>Region</label>
+							<input style="border-bottom: 0px" size="2" type="text" name="" value="<?php echo $as?$as[0]->region:null?>" >
+						</div>
+						<div>
+							<label >Division of</label>
+							<input size="3" type="text" name="" value="<?php echo $as?$as[0]->division:null?>" >
+						</div>
+						<div>
+							<input size="15" type="text" name="" value="<?php echo $as?$as[0]->district:null?>" >
+						</div>
+						<div>
+							<label  >District</label>
+						</div>
+						<div>
+							<input type="text" name="" value="<?php echo $as?$as[0]->school_name:null?>">
+						</div>
+						<div>
+							<label  >School</label>
+						</div>
+					</div>
+					<br>
+					<div>
+						<h2>LEARNER'S PROGRESS REPORT CARD</h2>
+					</div>
+					<br>
+					<div style="text-align: left">
+						<div>
+							<label >Name:</label>								
+							<input size="65"  type="text" name=""  value="<?php echo $form->firstname, $form->lastname?>">
+						</div>
+						<div>								
+							<label >Lerner's Reference Number:</label>
+							<input size="45" type="text" name="" value="<?php echo $form->lrn?>">
+						</div>
+						<div>	
+							<label >Age:</label>										
+							<input size="30" type="text" name="" value="<?php echo $form->age?>">
+							<label>Sex:</label>	
+							<input size="30" type="text" name="" value="<?php echo $form->gender?>">
+						</div>
+						<div >	
+							<label >Grade:</label>
+							<input type="text" name="">
+							<?php $query1 = $this->db->query("SELECT * from tbl_section where section_id = '$form->section_id'")->result();
+									
+							?>
+							<label >Section: </label>
+							<input size="35" type="text" value="<?php echo $query1[0]->section_name ?>" name="">		
+						</div>
+						<div>		
+							<label>School Year:</label>	
+							<input type="text" name="" >
+						</div>	
+					</div>	
+					<br>
+					<p style="text-align: justify;">Dear Parent,</p>
+								<p style="text-align: center;">
+										This report card shows the ability and progress of your child has made  in the different learning areas as well as his/her
+									    core values.
+									    This school welcomes you if you desire to know more
+										about your child progress.		
+
+								<br>
+							<div class="row">	
+								<div class="col-md-6">
+									<input size="20" type="text" name="" >
+								</div>
+								<div class="col-md-6">
+									<input size="20" type="text" name="" >	
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Principal</label>
+								</div>
+								<div class="col-md-6">
+									<label >Teacher</label>
+								</div>								
+							</div>
+				</div>
+			</div>
+							<br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<table align="center">			
+						<h2>REPORT ON LEARNING PROGRESS AND ACHIEVEMENT</h2>
+						<tr>
+							<th>Learning Areas</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>Final Rating</th>
+						</tr>
+						<?php 
+						$average_grade = 0;
+						$count = 1;
+						foreach($query as $key){?>
+						<tr>
+							<td><?php echo $key->subj_code?></td>
+							<td><?php echo $key->quarter1?></td>
+							<td><?php echo $key->quarter2?></td>
+							<td><?php echo $key->quarter3?></td>
+							<td><?php echo $key->quarter4?></td>
+							<td><?php echo $key->totalall?></td>
+						</tr>
+
+						<?php $average_grade += $key->totalall;
+								$con = $count++;
+						?>
+						<?php } ?>
+
+							</table>
+											</div>
+
+				<div class="col-md-6">
+					<b><center><h2>REPORT ON LEARNER'S OBSERVES VALUES</center></b></h2>
+							<table align="center" >
 						  <tr>
 							<th >Character Traits</th>
 							<th>1</th>
@@ -327,49 +483,10 @@ input{
 						  </tr>
 						  
 						</table>
-							<br>
-							<table align="center">
+
 							
-						<b><center><h2>REPORT ON LEARNING PROGRESS AND ACHIEVEMENT</center></b></h2>
-						<tr>
-							<th>Learning Areas</th>
-							<th>1</th>
-							<th>2</th>
-							<th>3</th>
-							<th>4</th>
-							<th>Final Rating</th>
-						</tr>
-						<?php 
-						$average_grade = 0;
-						$count = 1;
-						foreach($query as $key){?>
-						<tr>
-							<td><?php echo $key->subj_code?></td>
-							<td><?php echo $key->quarter1?></td>
-							<td><?php echo $key->quarter2?></td>
-							<td><?php echo $key->quarter3?></td>
-							<td><?php echo $key->quarter4?></td>
-							<td><?php echo $key->totalall?></td>
-						</tr>
-
-						<?php $average_grade += $key->totalall;
-								$con = $count++;
-						?>
-						<?php } ?>
-
-							</table>
-							<br>
-							<br>
-							<br>
-							
-
-							<br><br><br>
-				</div>
-
-				<div class="col-md-2" style="background-color: silver">
-				</div>
-			</div>
 		</div>
+	</div>				
 		<?php }?>
 </body>
 </html>

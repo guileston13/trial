@@ -12,28 +12,59 @@
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
+body{
+  margin:2% 10% ;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #1e4f8e;
+  text-align: justify;
+  padding: 8px;
+  color: black;
+
+}
+th{
+  color: white;
+  background-color: dodgerblue !important
+}
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
+}
+h2{
+  color: black
 }
 </style>
 </head>
 <body>
   <div class="container-fluid" id="print_container">
-     <h3 class="text-center">Final Grade</h3>
+     <h2 class="text-center">Final Grade</h2>
     
     <div class="row">
 
       <div class="col-md-3 offset-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School ID:</label>
-            <input class="form-control-sm" type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
+            <input size = "10"  type="text" name=""  value="<?php echo $form3?$form3[0]->school_id:null?>">
           </div> 
       </div>
       <div class="col-md-4">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">School Year:</label>
-            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->schoolyear_start:null?>">
+            <input size = "10"  type="text" name="" value="<?php echo $info?$info[0]->schoolyear_start:null?>">
           </div> 
       </div>
 
@@ -44,20 +75,20 @@ tr:nth-child(even) {
       <div class="col-md-3 offset-2">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Name of School:</label>
-           <input class="form-control-sm" type="text" name="" value="<?php echo $form3?$form3[0]->school_name:null?>">
+           <input size = "10"  type="text" name="" value="<?php echo $form3?$form3[0]->school_name:null?>">
           </div> 
       </div>
       <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Grade Level:</label>
-            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->grade_level:null?>">
+            <input size = "10"  type="text" name="" value="<?php echo $info?$info[0]->grade_level:null?>">
           </div> 
       </div>
       
       <div class="col-md-3">
           <div class="input-group form-inline">
             <label for="" class="form-control-label mr-2">Section:</label>
-            <input class="form-control-sm" type="text" name="" value="<?php echo $info?$info[0]->section_name:null?>">
+            <input size = "10"  type="text" name="" value="<?php echo $info?$info[0]->section_name:null?>">
         </div>  
       </div>
 
@@ -68,9 +99,10 @@ tr:nth-child(even) {
         <a class="btn" style = "background-color: #3CB371; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/3">Third Quarter</a>
         <a class="btn" style = "background-color: #778899; color: white" href="<?php echo base_url()?>teacher_dashboard/specific_final_grade/<?php echo $this->uri->segment(3)?>/<?php echo $this->uri->segment(4)?>/<?php echo $this->uri->segment(5)?>/4">Fourth Quarter</a>
         <?php if($student){?>
-            <table class="my-5 table table-bordered">
+        <br><br>
+            <table>
                 <tr>
-                    <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h4>Student</td></h4>
+                    <th>Student</th>
                     <?php 
                     $ss = $student[0]->studentid;
                     $quarter = $this->uri->segment(6);
@@ -82,7 +114,7 @@ tr:nth-child(even) {
                                                 AND tbl_subject.subj_id = '$subj_id'
                                                 order by tbl_finalgrade.subj_id")->result();?>
                     <?php foreach($stud as $st){ ?>
-                        <td style="padding: 15px;border: 1px solid #1e4f8e;text-align: left;padding: 8px;"><h4><?php echo $st->subj_code?></td></h4>
+                        <th><?php echo $st->subj_code?></th>
                     <?php }?>
                 </tr>
                 <?php foreach($student as $st) { ?>
@@ -106,6 +138,32 @@ tr:nth-child(even) {
                 </tr>
                 <?php }?>
             </table>
+            <br><br>
+            <button id="print_data" class="btn btn-success btn-print btn-rounded" onClick = "this.style.visibility= 'hidden';">
+                <i class="fas fa-print"></i>
+            </button>
+            <br><br><br><br><br>
+            <script>
+      function printData() {
+        var printContents = document.getElementById("print_container")
+          .innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          printContents +
+          "</body>";
+        window.print();
+        document.body.innerHTML = originalContents;
+        location.reload();
+      }
+
+      document
+        .getElementById("print_data")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          printData();
+        });
+</script>
         <?php }else{?>
           No Student
         <?php }?>
