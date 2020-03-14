@@ -13,22 +13,19 @@
    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
 body{
-	margin:1%;
+	margin:2% 15% 2% 13%;
   font-size: 12px;
   color: black !important;
   text-align: center;
-}
-
-td, th {
-  border: 1px solid #1e4f8e;
+}td, th {
   text-align: justify;
   padding: 8px;
   color: black;
+  border: 1px black solid;
 
 }
 th{
-  color: white;
-  background-color: dodgerblue
+  text-align: center;
 }
 input{
     border: none;
@@ -41,10 +38,6 @@ h2,h3,h4{
 }
 label{
 	color: black !important;
-}
-td {
-    border: 1px black solid;
-    padding: 5px;
 }
 .rotate {
   text-align: center;
@@ -82,8 +75,8 @@ td {
 			from tbl_finalgrade where studentid = '$form->studentid' AND schoolyear_id = '$form->schoolyear_id' GROUP by subj_id")->result();
 		
 		?>
-	<div class="container-fluid" id="print_container">
-			<div class="row">
+	<div  id="print_container">
+			<div class="row" style="min-height: 750px;max-height: 750">
 				<div class="col-md-6">
 					<h2>ATTENDANCE RECORD</h2>
 							<div class="row">
@@ -161,7 +154,8 @@ td {
 							<br>
 							<div class="row">
 								<div class="col-md-12">
-									<h3>PARENT GUARDIAN'S SIGNATURE</h3>
+									<br>
+									<h3>PARENT / GUARDIAN'S SIGNATURE</h3>
 								</div>
 							<br><br>	
 							</div>
@@ -169,17 +163,17 @@ td {
 								<div class="col-md-10">1st Quarter:
 									<input type="" name="">
 								</div>
-							</div><br>
+							</div>
 							<div class="row">
 								<div class="col-md-10">2nd Quarter
 								<input type="" name="">
 							</div>
-							</div><br>
+							</div>
 							<div class="row">
 								<div class="col-md-10">3rd Quarter
 								<input type="" name="">
 							</div>
-							</div><br>
+							</div>
 							<div class="row">
 								<div class="col-md-10">4th Quarter
 								<input type="" name="">
@@ -192,12 +186,12 @@ td {
 									<label >Admitted to Grade:</label>										
 									<input size="20" type="text" name="" >
 									<label>Section:</label>	
-									<input size="24" type="text" name="" >
+									<input size="20" type="text" name="" >
 								</div>
 								<div>
 									<div <div style="text-align: left;"> 
 										<label><b>Eligible for Administration to Grade:</b></label>
-										<input size="39" type="text" name="" >								
+										<input size="35" type="text" name="" >								
 									</div>
 								</div>
 								<div style="text-align: left;">
@@ -221,16 +215,14 @@ td {
 									</div>
 									<h3>Certification of Eligibility to Transfer:</h3>
 									<div class="row">
-										<div class="col-md-12" style="text-align: left;"
+										<div class="col-md-6" style="text-align: left;"
 											<b>Admitted in:</b>
-											<input size="23" type="text" name="">									
+											<input size="15" type="text" name="">									
 										</div>
 									</div>	
-									<div class="row">	
-										<div class="col-md-2" >
+									<div class="row">
+										<div class="col-md-6" >
 											<label >Date:</label>
-										</div>	
-										<div class="col-md-4" >
 											<input size="20" type="text" name="" >
 										</div>
 										<div class="col-md-6">
@@ -242,7 +234,7 @@ td {
 											<label></label>
 										</div>
 										<div class="col-md-6" >
-											<label >Teacher</label>
+											<label >Principal</label>
 										</div>								
 									</div>
 					</div>
@@ -290,20 +282,29 @@ td {
 							<label >Age:</label>										
 							<input size="30" type="text" name="" value="<?php echo $form->age?>">
 							<label>Sex:</label>	
-							<input size="30" type="text" name="" value="<?php echo $form->gender?>">
+							<input size="25" type="text" name="" value="<?php echo $form->gender?>">
 						</div>
-						<div >	
+						<div >
+
 							<label >Grade:</label>
-							<input type="text" name="">
+							<?php $query1 = $this->db->query("SELECT * from tbl_section where section_id = '$form->section_id'")->result();
+									
+							?>
+							<input type="text" name="" value="<?php echo $query1[0]->subj_grade_level ?>">
 							<?php $query1 = $this->db->query("SELECT * from tbl_section where section_id = '$form->section_id'")->result();
 									
 							?>
 							<label >Section: </label>
-							<input size="35" type="text" value="<?php echo $query1[0]->section_name ?>" name="">		
+							<input size="30" type="text" value="<?php echo $query1[0]->section_name ?>" name="">		
 						</div>
-						<div>		
+						<div>
+							<?php $query1 = $this->db->query("SELECT * from tbl_schoolyear 
+							where schoolyear_id = '$form->schoolyear_id'
+							
+							")->result();
+							?>		
 							<label>School Year:</label>	
-							<input type="text" name="" >
+							<input type="text" name="" value="<?php echo $query1[0]->schoolyear_start ?>">
 						</div>	
 					</div>	
 					<br>
@@ -317,10 +318,16 @@ td {
 								<br>
 							<div class="row">	
 								<div class="col-md-6">
+									<?php $query1 = $this->db->query("SELECT * from tbl_instructor 
+									where teacher_id = '$form->teacher_id'
+							
+									")->result();
+								?>
 									<input size="20" type="text" name="" >
 								</div>
+									
 								<div class="col-md-6">
-									<input size="20" type="text" name="" >	
+									<input size="20" type="text" name="" value="<?php echo $query1[0]->firstname?>">	
 								</div>
 							</div>
 							<div class="row">
@@ -334,17 +341,21 @@ td {
 				</div>
 			</div>
 							<br><br>
-			<div class="row">
+			<div class="row" style="min-height: 750px;max-height: 750">
 				<div class="col-md-6">
-					<table align="center">			
-						<h2>REPORT ON LEARNING PROGRESS AND ACHIEVEMENT</h2>
+					<table align="center" style="width: 100%;margin-bottom: 10%">			
+						<h3>REPORT ON LEARNING PROGRESS AND ACHIEVEMENT</h3>
 						<tr>
-							<th>Learning Areas</th>
-							<th>1</th>
-							<th>2</th>
-							<th>3</th>
-							<th>4</th>
-							<th>Final Rating</th>
+							<th rowspan="2">Learning Areas</th>
+							<th colspan="4">Quarter</th>
+							<th rowspan="2">Final Rating</th>
+							<th rowspan="2">Remarks</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
 						</tr>
 						<?php 
 						$average_grade = 0;
@@ -357,131 +368,141 @@ td {
 							<td><?php echo $key->quarter3?></td>
 							<td><?php echo $key->quarter4?></td>
 							<td><?php echo $key->totalall?></td>
+							<td></td>
 						</tr>
 
 						<?php $average_grade += $key->totalall;
 								$con = $count++;
 						?>
 						<?php } ?>
-
-							</table>
-											</div>
+						<tr>
+							<td colspan="5" style="text-align: center;">General Average</td>
+							<td></td>
+						</tr>
+					</table>
+					<table align="center">
+						<tr>
+							<th>Descriptors</th>
+							<th>Grading Scale</th>
+							<th>Remarks</th>
+						</tr>
+						<tr>
+							<td>Outstanding</td>
+							<td>90-100</td>
+							<td>Passed</td>
+						</tr>
+						<tr>
+							<td>Very Satisfactory</td>
+							<td>85-89</td>
+							<td>Passed</td>
+						</tr>
+						<tr>
+							<td>Satisfactory</td>
+							<td>80-84</td>
+							<td>Passed</td>
+						</tr>
+						<tr>
+							<td>Fairly Satisfactory</td>
+							<td>75-79</td>
+							<td>Passed</td>
+						</tr>
+						<tr>
+							<td>Did Not Meet Expectations</td>
+							<td>Below 75</td>
+							<td>Failed</td>
+						</tr>
+					</table>
+				</div>
 
 				<div class="col-md-6">
-					<b><center><h2>REPORT ON LEARNER'S OBSERVES VALUES</center></b></h2>
-							<table align="center" >
-						  <tr>
-							<th >Character Traits</th>
-							<th>1</th>
-							<th>2</th>
-							<th>3</th>
-							<th>4</th>
-						  </tr>
-						  <tr>
-							<td>1. Honesty</td>
-							<td>a</td>
-							<td>b</td>
-							<td>c</td>
-							<td>d</td>
-						  </tr>
-						  <tr>
-							 <td>2. Courtesy</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						   <tr>
-							 <td>3. Helpfulness & Cooperation</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>  <tr>
-							 <td>4. Resourcefulness & Creativity</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td> 
-						  </tr>
-						  <tr>
-							 <td>5. Consideration for Others</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>6. Sportsmanship</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>7. Obedience</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>8. Self-Reliance</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>9. Industry</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>10. Cleanliness & Orderliness</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>11. Promptness & Punctuality</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>12. Sense of Responsibility</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>13. Love of God</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>14. Patience & Love of Country</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  <tr>
-							 <td>Average</td>
-							 <td>a</td>
-							 <td>b</td>
-							 <td>c</td>
-							 <td>d</td>
-						  </tr>
-						  
+					<b><center><h3>REPORT ON LEARNER'S OBSERVES VALUES</center></b></h3>
+						<table align="center" style="width: 100%;margin-bottom: 10% ">
+							<tr>
+								<th rowspan="2">Core Values</th>
+								<th rowspan="2">Behavior Statements</th>
+								<th colspan="4">Quarter</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td rowspan="2">1.Maka-diyos</td>
+								<td>Expresses one’s spiritual beliefs while respecting the spiritual beliefs of others.</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Shows adherence to ethical principles by upholding truth in all undertakings.</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>  
+						  	<tr>
+								<td rowspan="2">2.Maka-tao</td>
+								<td>In sensitive to individual, social, and cultural diffrences;</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Demonstrates contributions towards solidarity.</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>3.Makakalikasan</td>
+								<td>Cares for environment and utilizes resources wisely, judiciosly and economically. </td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="2">4.Makabansa</td>
+								<td>Demonstrates pride in being a Filipino;exercises the rights and responsibilities of a Filipino citizen.</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Demonstrate appropriate behavior in carrying out activities in school, community and country.</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>  
+						</table>
+						<table align="center" style="margin-bottom: 5%">
+							<tr>
+								<th>Marking</th>
+								<th>Non-Numerical Rating</th>
+							</tr>
+							<tr>
+								<td>AO</td>
+								<td>Always Observed</td>
+							</tr>
+							<tr>
+								<td>SO</td>
+								<td>Sometimes Observed</td>
+							</tr>
+							<tr>
+								<td>RO</td>
+								<td>Rarely Observed</td>
+							</tr>
+							<tr>
+								<td>NO</td>
+								<td>Not Observed</td>
+							</tr>
 						</table>
 
 							

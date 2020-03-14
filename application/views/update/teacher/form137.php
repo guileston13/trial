@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>School form 10</title>
 <link href="<?php echo base_url(); ?>/assets/img/brand/favicon.png" rel="icon" type="image/png">
     <!-- Icons -->
     <link href="<?php echo base_url(); ?>/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
@@ -7,382 +8,464 @@
     <!-- Argon CSS -->
     <link type="text/css" href="<?php echo base_url(); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
    <link type="text/css" href="<?php echo base_url(); ?>/assets/css/custom_css.css" rel="stylesheet">
+   <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
 <style>
-h4{
-  margin-top: 0px;
-  margin-bottom: 0px;
+
+body{
+  margin:3%;
+  color: black
 }
-.learner{
-	background-color: #90949C;
-	text:bold;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 100px;
+}
+
+td, th {
+  border: 1px solid #1e4f8e;
+  text-align: center;
+  padding: 8px;
+  color: black;
+
+}
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+h1{
+  text-align: center;
+  color: black
+}
+h2{
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  margin: 2% 0% 2% 0%;
+}
+tr:nth-child(2n+3) {
+  background-color: #dddddd;
+}
+tr:nth-child(n):hover {
+  background-color: lemonchiffon;
 }
 p{
-
-  margin-left: 10px;
-}
-.city {
-  background-color: #90949C;
   text-align: center;
-}
-.scholastic{
-		background-color: #90949C;
-	text:bold;
-}
-table, th, td {
-border: 1px solid black;
-}
-.letters { 
-  word-spacing: 2cm;
-}
-.letter1{
-
-}
-.letter22{
-	text-align:center;
-	margin-top: -23;
-}
-.letter2{
-	text-align:center;
-	margin-top: -23;
-}
-.letter3{
-	margin-top: -23;
-	text-align:right;
-}
-.letter33{
-	margin-top: -23;
-	text-align:right;
-}
-.letter11{
-	padding-right:1800;
-}
-.letter22{
-	text-align:center;
-	margin-top: -23;
-}
-.letter33{
-	margin-top: -23;
-	text-align:right;
-}
-.underline11{
-padding-right:1800;
-}
-.underline2{
-	text-align:center;
-	margin-top: -23;
-}
-.underline3{
-	margin-top: -23;
-	text-align:right;
-}
-.w{
-	text-align:center;
-	margin-top: -22;
-}
-}
-.ww{
-	text-align:center;
-	margin-top: -22;
-}
-.qq{
-	padding-right:1600;
+  color: black;
 }
 </style>
 </head>
 <body>
-		<center><h4>REPUBLIC OF THE PHILIPPINES</h4></center>
-		<center><h4>DEPARTMENT OF EDUCATION</h4></center>
-		
-		<center><h1>SENIOR HIGH SCHOOL STUIDENT PERMANENT RECORD</h1></center>
-		
-		<h4><center><div class="learner">LEARNER'S INFORMATION</div></center></h4>
-		<strong><p>LAST NAME:______________________________________________________________FIRST NAME:______________________________________________________________MIDDLE NAME:________________________________________________________________________</p></strong>
-		<strong><p>LRN:___________________________________DATE OF BIRTH(MM/DD/YYYY):______________________________________________________________SEX:______________________________Date of SHS (MM/DD/YYYY):____________________________________________
-		<h2 class="city">ELIGIBITY FOR SHS ENROLMENT</h2>
-		 <input type="checkbox"> High school Complete* Gen Ave:___________________________<input type="checkbox"> Junior High school Complete Gen Ave:___________________________
-		<p>Date of Graduation/Completion (MM/DD/YY):__________________________________________________Name of School:________________________________________________________School Address:_______________________________________________________________
-		<input type="checkbox">PEPT PASSER* RATING:___________________________<input type="checkbox">ALS A&E PASSER      RATING:___________________________ <input type="checkbox">Others (Pls. Specify)__________________________________________________
-		<p>Date of Examination/Assesment (MM/DD/YYYY)_____________________________ Name and Address of Community Learning Center:________________________________________________________________________________
-		<h6><p>*High School Completers are students who graduated from secondary school under the old curriculum</h6>  
+  <div  id="print_container" >
+    <div style="min-height: 750px;max-height: 750">
+      <div>
+  		  <p>REPUBLIC OF THE PHILIPPINES</p>
+      </div>
+      <div>
+  		  <p>DEPARTMENT OF EDUCATION</p>
+      </div>
+      <div>
+  		  <h1>Learner Permanent Record for Junior High School (SF10-JHS)</h1>
+      </div>
+      <div>
+  		  <h2>LEARNER'S INFORMATION</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>LAST NAME:</label>
+          <input size="10" type="" name="">
+        </div>
+        <div class="col-md-3">
+          <label>FIRST NAME</label>
+          <input size="10" type="" name="">
+        </div>
+        <div class="col-md-3">
+          <label>NAME(Jr,I,II):</label>
+          <input size="10" type="" name="">
+        </div>
+        <div class="col-md-3">
+          <label>MID NAME:</label>
+          <input size="10" type="" name="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <label>Learner Reference Number:</label>
+          <input size="15" type="" name="">
+        </div>
+        <div class="col-md-3">
+          <label>Birthdate:</label>
+          <input size="10" type="" name="">
+        </div>
+        <div class="col-md-3">
+          <label>Sex:</label>
+          <input size="15" type="" name="">
+        </div>
+      </div>
+      <div>
+  		  <h2>ELIGIBITY FOR JHS ENROLMENT</h2>
+      </div>
+      <div class="row">
+        <hr>
+        <div class="col-md-4">
+          <input type="checkbox" name="">
+          <label>Elementary School Completer</label>
+        </div>
+        <div class="col-md-3">
+          <label>General Ave:</label>
+          <input size="10" type="" name="">        
+        </div>
+        <div class="col-md-5">
+          <label>Citation: (if Any)</label>
+          <input type="" name="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label>Other Credential Presented</label>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-2">
+            <input type="checkbox" name="">
+            <label>PEPT Passer</label>    
+          </div>
+          <div class="col-md-2">
+            <label>Rating:</label>
+            <input size="5" type="" name="">
+          </div>
+          <div class="col-md-2">
+            <input type="checkbox" name="">
+            <label>ALS A & E Passer</label>    
+          </div>
+          <div class="col-md-2">
+            <label>Rating:</label>
+            <input size="5" type="" name="">
+          </div>
+          <div class="col-md-4">
+            <input type="checkbox" name="">
+            <label>Others(Pls. Specify):</label> 
+            <input  type="" name="">   
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-md-5">
+          <label>Date of Examination/Assessment:</label>
+          <input size="13" type="" name="">
+        </div>
+        <div class="col-md-6">
+          <label>Name and Address of Testing Center:</label>
+          <input size="20" type="" name="">
+        </div>
+      </div>
+      <div>
+        <h2>Scholastic Record</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>School:</label>
+          <input size="15" type="" name="">    
+        </div>
+        <div class="col-md-3">
+          <label>School ID:</label>
+          <input size="10" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>District:</label>
+          <input size="5" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>Division:</label>
+          <input size="5" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>Region:</label>
+          <input size="3" type="" name="">  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Classified as Grade:</label>
+          <input size="2" type="" name="">    
+        </div>
+        <div class="col-md-2">
+          <label>Section:</label>
+          <input size="5" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>School Year:</label>
+          <input size="10" type="" name="">  
+        </div>
+        <div class="col-md-3">
+          <label>Name of Adviser/Teacher:</label>
+          <input size="20" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>Signature:</label>
+          <input size="10" type="" name="">  
+        </div>
+      </div>
+    <br>
+    </div>
+		<table align="center">     
+            <tr>
+              <th rowspan="2">Learning Areas</th>
+              <th colspan="4">Quarterly Rating</th>
+              <th rowspan="2">Final Rating</th>
+              <th rowspan="2">Remarks</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td colspan="5" style="text-align: center;">General Average</td>
+              <td></td>
+            </tr>
+    </table>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-2">
+        <label>Remedial Classes</label>
+      </div>
+      <div class="col-md-9">
+        <label>Conducted from (mm/dd/yyyy)</label>
+        <input type="" name="">
+        <label>to(mm/dd/yyyy)</label>
+        <input type="" name="">
+      </div> 
+    </div>
+    <table>
+      <tr>
+        <th>Learning Areas</th>
+        <th>Final Rating</th>
+        <th>Remedial Class Mark</th>
+        <th>Recomputed Final Grade</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>School:</label>
+        <input size="10" type="" name="">    
+      </div>
+      <div class="col-md-3">
+        <label>School ID:</label>
+        <input size="10" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>District:</label>
+        <input size="3" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>Division:</label>
+        <input size="3" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>Region:</label>
+        <input size="3" type="" name="">  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Classified as Grade:</label>
+        <input size="2" type="" name="">    
+      </div>
+      <div class="col-md-2">
+        <label>Section:</label>
+        <input size="5" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>School Year:</label>
+        <input size="10" type="" name="">  
+      </div>
+      <div class="col-md-3">
+        <label>Name of Adviser/Teacher:</label>
+        <input size="20" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>Signature:</label>
+        <input size="10" type="" name="">  
+      </div>
+    </div>
+    <br>
+    <table align="center">     
+            <tr>
+              <th rowspan="2">Learning Areas</th>
+              <th colspan="4">Quarterly Rating</th>
+              <th rowspan="2">Final Rating</th>
+              <th rowspan="2">Remarks</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td colspan="5" style="text-align: center;">General Average</td>
+              <td></td>
+            </tr>
+    </table>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-2">
+        <label>Remedial Classes</label>
+      </div>
+      <div class="col-md-9">
+        <label>Conducted from (mm/dd/yyyy)</label>
+        <input type="" name="">
+        <label>to(mm/dd/yyyy)</label>
+        <input type="" name="">
+      </div> 
+    </div>
+    <table>
+      <tr>
+        <th>Learning Areas</th>
+        <th>Final Rating</th>
+        <th>Remedial Class Mark</th>
+        <th>Recomputed Final Grade</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <div>
+      <h2>CERTIFICATION</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>I CERTIFY that this is a true record of</label>
+          <input type="" name="">
+        <label>with LRN</label>
+          <input type="" name="">
+        <label>and that he/she is eligible for admission to Grade</label>
+          <input size="26" type="" name="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Name of School:</label>
+        <input type="" name="">
+      </div>
+      <div class="col-md-3">
+        <label>School Id:</label>
+        <input type="" name="">
+      </div>
+      <div class="col-md-6">
+        <label>Last School Year Attended:</label>
+        <input type="" name="">
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <input type="" name="">
+      </div>
+      <div class="col-md-3">
+        <input size="45" type="" name="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Date</label>
+      </div>
+      <div class="col-md-6">
+        <label>Signature of Principal/School Head over Printed Name</label>
+      </div>
+      <div class="col-md-3">
+        <label>(Affix School Seal Here)</label>
+      </div>
+    </div>
 
-	    	<h4><center><div class ="scholastic">SCHOLASTIC RECORD</div></center></h4>
-			<br>
-			<h4>SCHOOL:______________________________________________________________________________________________ SCHOOL ID:_________________________________________ GRADE LEVEL:________________________________ SY:___________ SEM_____________
-			<h4>TRACK/STRAND:____________________________________________________________________________________________ SECTION:_____________________________________________________________________________________________________________________
-			<br>
-			<center>
-			<table>
-	<div class="bobo">		
-  <tr>
-    <th>Indicate if Subjects is CORE, APPLIED, or SPECIALIZED</th>
-    <th>SUBJECTS</th>
-  <td colspan="3"><center>Quarter</center></td>
-    <th>Semi Final Grade</th>
-     <th>Action Taken</th>
-  </tr>
+
   </div>
-  <tr>
-    <td>January1</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	  <th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-    <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-    <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-    <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  
-  
-</table>
-</center>
-	<p>REMARKS:________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
-	   <div class="letter1">Prepared by:</div>                                         <div class="letter2">Certified True and Correct:</div>     <div class="letter3">Date Check(MM/DD/YYYY:</div> 
-	  <br>
-	  <br>
-	  <div class="underline1">_________________________________________________</div>                                         <div class="underline2">__________________________________________________</div>     <div class="underline3">________________________________________</div> 
-	  <div class="q">Signature of Advicer over Printed Name</div>                                         <div class="w">Signature of Authorized Person over Printed Name, Designation</div>   
-	   <br>
-	   <br>
-	   <br>
-	   <br>
-	   <strong>REMEDIAL CLASS   Conducted From (MM/DD/YYYY):___________________________________   to(MM/DD/YYYY):________________________________ SCHOOL:___________________________________________ SCHOOL ID:____________________________________</strong>
- <center><table border="1"></center>
-  <tr>
-    <th>Indicate if Subject is CORE, APPLIED, or SPECIALIZED</th>
-    <th>SUBJECTS</th>
-	<th>SEM FINAL</th>
-    <th>REMEDIAL CLASS MARK</th>
-	<th>RECOMPUTED FINAL GRADE</th>
-	<th>ACTION TAKE</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>
-  <tr>
-     <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>
-   <tr>
-     <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>  <tr>
-     <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>
-</table>
-<strong>Name of Teacher/Adviser</strong>: _____________________________________________________________________________________________________________________ Signature: ______________________________________________________
-<br>
-<br>
-<br>
-<h4>SCHOOL:______________________________________________________________________________________________ SCHOOL ID:_________________________________________ GRADE LEVEL:________________________________ SY:___________ SEM_____________
-			<h4>TRACK/STRAND:____________________________________________________________________________________________ SECTION:_____________________________________________________________________________________________________________________	
-   
-   <center><table border="1"></center>
-   <tr>
-    <th>Indicate if Subjects is CORE, APPLIED, or SPECIALIZED</th>
-    <th>SUBJECTS</th>
-  <td colspan="3"><center>Quarter</center></td>
-    <th>Semi Final Grade</th>
-     <th>Action Taken</th>
-  </tr>
-  <tr>
-    <td>January1</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	  <th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-    <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-    <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-    <tr>
-    <td>February</td>
-    <td>$80</td> <td>February</td>
-    <td>$80</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td> <td>January</td>
-    <td>$100</td>
-	<th colspan="2">Grade 7</th>
-	  <th colspan="3">Grade 7</th>
-  </tr>
-  </table>
-  <p>REMARKS:________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
-  <div class="letter11">Prepared by:</div>  <div class="letter22">Certified True and Correct:</div>    <div class="letter33">Date Check(MM/DD/YYYY:</div>
-  <br>
-  <br>
-   <div class="underline11">_________________________________________________</div>    <div class="underline2">__________________________________________________</div>   <div class="underline3">________________________________________</div>
-   <div class="qq">Signature of Advicer over Printed Name</div>                         <div class="ww">Signature of Authorized Person over Printed Name, Designation</div> 
-	<br>
-	<strong>REMEDIAL CLASS   Conducted From (MM/DD/YYYY):___________________________________   to(MM/DD/YYYY):________________________________ SCHOOL:___________________________________________ SCHOOL ID:____________________________________</strong>
- <center><table border="1"></center>
-  <tr>
-    <th>Indicate if Subject is CORE, APPLIED, or SPECIALIZED</th>
-    <th>SUBJECTS</th>
-	<th>SEM FINAL</th>
-    <th>REMEDIAL CLASS MARK</th>
-	<th>RECOMPUTED FINAL GRADE</th>
-	<th>ACTION TAKE</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>
-  <tr>
-     <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>
-   <tr>
-     <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>  <tr>
-     <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-    <td>$100</td>
-	 <td>January</td>
-	  <td>January</td>
-  </tr>
-</table>
-
-<p>Name of Teacher/Adviser: __________________________________________________________________________________________________________________________________________________ Signature: _____________________________________________
 </body>	
 </html>
