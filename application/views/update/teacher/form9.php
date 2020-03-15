@@ -360,6 +360,8 @@ label{
 						<?php 
 						$average_grade = 0;
 						$count = 1;
+						$generalAve = 0;
+						$subject_number = 0;
 						foreach($query as $key){?>
 						<tr>
 							<td><?php echo $key->subj_code?></td>
@@ -373,11 +375,13 @@ label{
 
 						<?php $average_grade += $key->totalall;
 								$con = $count++;
+								$subject_number++;
+							$generalAve = $generalAve  += $key->totalall;	
 						?>
 						<?php } ?>
 						<tr>
 							<td colspan="5" style="text-align: center;">General Average</td>
-							<td></td>
+							<td><?php echo round($generalAve/$subject_number, 2);?></td>
 						</tr>
 					</table>
 					<table align="center">
