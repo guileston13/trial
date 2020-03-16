@@ -13,19 +13,18 @@
    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
    <style>
 body{
-  margin:2% 4% ;
+  margin:2% 2% ;
 }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  border-radius: 100px;
 }
 
 td, th {
   border: 1px solid #1e4f8e;
   text-align: justify;
-  padding: 8px;
+  padding: 2px;
   color: black;
 
 }

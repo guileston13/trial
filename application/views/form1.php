@@ -135,7 +135,11 @@ h2{
                         <td ><?php echo $key->lrn?></td>
                         <td ><?php echo $key->firstname?><?php echo $key->middlename?><?php echo " "?><?php echo $key->lastname?></td>
                         <td ><?php echo $key->gender?></td>
-                        <td ><?php echo $key->birthdate?></td>
+                        <td ><?php
+                                $date = new DateTime($key->birthdate);
+                                echo $date->format('M-d-Y ');
+                                ?>  
+                        </td>
                         <td ><?php  
                             $from = new DateTime($key->birthdate);
                             $to   = new DateTime('today');

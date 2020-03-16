@@ -44,9 +44,6 @@ h2{
   text-align: center;
   margin: 2% 0% 2% 0%;
 }
-tr:nth-child(2n+3) {
-  background-color: #dddddd;
-}
 tr:nth-child(n):hover {
   background-color: lemonchiffon;
 }
@@ -222,31 +219,31 @@ p{
               <td>4</td>
             </tr>
             <tr>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
             </tr>
             <tr>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
             </tr>
             <tr>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
             </tr>
             <tr>
               <td colspan="5" style="text-align: center;">General Average</td>
@@ -275,18 +272,20 @@ p{
         <th>Remarks</th>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
       </tr>
     </table>
     </div>
@@ -349,31 +348,31 @@ p{
               <td>4</td>
             </tr>
             <tr>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
             </tr>
             <tr>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
             </tr>
             <tr>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
             </tr>
             <tr>
               <td colspan="5" style="text-align: center;">General Average</td>
@@ -402,18 +401,276 @@ p{
         <th>Remarks</th>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
+      </tr>
+    </table>
+    <div class="row">
+        <div class="col-md-3">
+          <label>School:</label>
+          <input size="15" type="" name="">    
+        </div>
+        <div class="col-md-3">
+          <label>School ID:</label>
+          <input size="10" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>District:</label>
+          <input size="5" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>Division:</label>
+          <input size="5" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>Region:</label>
+          <input size="3" type="" name="">  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Classified as Grade:</label>
+          <input size="2" type="" name="">    
+        </div>
+        <div class="col-md-2">
+          <label>Section:</label>
+          <input size="5" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>School Year:</label>
+          <input size="10" type="" name="">  
+        </div>
+        <div class="col-md-3">
+          <label>Name of Adviser/Teacher:</label>
+          <input size="20" type="" name="">  
+        </div>
+        <div class="col-md-2">
+          <label>Signature:</label>
+          <input size="10" type="" name="">  
+        </div>
+      </div>
+    <br>
+    </div>
+    <table align="center">     
+            <tr>
+              <th rowspan="2">Learning Areas</th>
+              <th colspan="4">Quarterly Rating</th>
+              <th rowspan="2">Final Rating</th>
+              <th rowspan="2">Remarks</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
+            </tr>
+            <tr>
+              <td colspan="5" style="text-align: center;">General Average</td>
+              <td></td>
+            </tr>
+    </table>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-2">
+        <label>Remedial Classes</label>
+      </div>
+      <div class="col-md-9">
+        <label>Conducted from (mm/dd/yyyy)</label>
+        <input type="" name="">
+        <label>to(mm/dd/yyyy)</label>
+        <input type="" name="">
+      </div> 
+    </div>
+    <table>
+      <tr>
+        <th>Learning Areas</th>
+        <th>Final Rating</th>
+        <th>Remedial Class Mark</th>
+        <th>Recomputed Final Grade</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>      </tr>
+    </table>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>School:</label>
+        <input size="10" type="" name="">    
+      </div>
+      <div class="col-md-3">
+        <label>School ID:</label>
+        <input size="10" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>District:</label>
+        <input size="3" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>Division:</label>
+        <input size="3" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>Region:</label>
+        <input size="3" type="" name="">  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Classified as Grade:</label>
+        <input size="2" type="" name="">    
+      </div>
+      <div class="col-md-2">
+        <label>Section:</label>
+        <input size="5" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>School Year:</label>
+        <input size="10" type="" name="">  
+      </div>
+      <div class="col-md-3">
+        <label>Name of Adviser/Teacher:</label>
+        <input size="20" type="" name="">  
+      </div>
+      <div class="col-md-2">
+        <label>Signature:</label>
+        <input size="10" type="" name="">  
+      </div>
+    </div>
+    <br>
+    <table align="center">     
+            <tr>
+              <th rowspan="2">Learning Areas</th>
+              <th colspan="4">Quarterly Rating</th>
+              <th rowspan="2">Final Rating</th>
+              <th rowspan="2">Remarks</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="4" type="" name=""></td>
+              <td><input size="6" type="" name=""></td>
+            </tr>
+            <tr>
+              <td colspan="5" style="text-align: center;">General Average</td>
+              <td></td>
+            </tr>
+    </table>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-2">
+        <label>Remedial Classes</label>
+      </div>
+      <div class="col-md-9">
+        <label>Conducted from (mm/dd/yyyy)</label>
+        <input type="" name="">
+        <label>to(mm/dd/yyyy)</label>
+        <input type="" name="">
+      </div> 
+    </div>
+    <table>
+      <tr>
+        <th>Learning Areas</th>
+        <th>Final Rating</th>
+        <th>Remedial Class Mark</th>
+        <th>Recomputed Final Grade</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="4" type="" name=""></td>
+        <td><input size="6" type="" name=""></td>
+      </tr>
       </tr>
     </table>
     <div>

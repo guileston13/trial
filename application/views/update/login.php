@@ -11,6 +11,7 @@
     <title>Formgen</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets3/img/logo-transparent-sm.png">
     <link rel="stylesheet" href="<?php echo base_url()?>assets_login/css/style.min.css" />
   </head>
   <body class="page-login">

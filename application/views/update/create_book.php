@@ -1,3 +1,9 @@
+<head>
+      <link type="text/css" href="<?php echo base_url(); ?>/assets/css/select2.min.css" rel="stylesheet">
+      <script src="<?php echo base_url(); ?>/assets/js/jquery.js/select2.min.js"></script>
+      <script src="<?php echo base_url(); ?>/assets/js/jquery.js/jquery.js"></script>
+</head>
+
 <body ng-app="starter">
   <div class="row no-gutters">
     <aside class="col-md-2 fixed-sidebar p-0 d-flex flex-column">
@@ -122,7 +128,7 @@
                         <div class="form-group">
                                 <div class="col-md-12">
                                     <label>Subject Name</label>
-                                        <select name="subj_id" class="form-control">
+                                        <select name="subj_id" class="myselect" style="width:100%; padding: 5px">
                                             <?php foreach($subj as $subject) { ?>
                                                 <option value="<?php echo $subject->subj_id?>"><?php echo $subject->subj_code?></option>
                                             <?php } ?>
@@ -142,3 +148,7 @@
                 </div>
             </div>
         </div>
+      <script type="text/javascript">
+      $(".myselect").select2();
+</script>
+</body>

@@ -18,7 +18,7 @@ body{
 }
 
 tr:nth-child(n):hover {
-  background-color: lemonchiffon;
+  background-color: #dddddd;
 }
 
 table {
@@ -30,8 +30,8 @@ table {
 
 td, th {
   border: 1px solid #1e4f8e;
-  text-align: justify;
-  padding: 8px;
+  text-align: center;
+  padding: 5px;
   color: black;
 
 }
@@ -47,9 +47,6 @@ h2{
   color: black
 }
 
-tr:nth-child(2n+3) {
-  background-color: #dddddd;
-}
 h2{
   color: black
 }
@@ -163,7 +160,7 @@ h2{
               </tr>
               <?php foreach($students as $st){ ?>
               <tr>
-                <td><?php echo $st->firstname.' '.$st->lastname?></td>
+                <td style="text-align: justify"><?php echo $st->firstname.' '.$st->lastname?></td>
                    <?php $q = $this->db->query("SELECT * from tbl_attendance where studentid = '$st->studentid' AND subj_id = '$subj_id' AND section_id  ='$section_id' ")->result();?>
                   <?php $Pa=0 ; $A=0; $La=0; foreach($q as $key){?>
                 <td>
@@ -178,7 +175,7 @@ h2{
                   <?php }?>
                   <td ><?php echo $A?></td>
                   <td ><?php echo $La?></td> 
-                  <td></td>
+                  <td><input size="10" type="" name="" style="border-bottom: none; padding:2px;"></td>
               </tr>
              <?php }?> 
         </tbody>

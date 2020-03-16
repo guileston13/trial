@@ -174,7 +174,7 @@
                                               <div class="col-md-3">
                                                   <div class="form-group">
                                                       <h5><label class="form-control-label">Section Name</label></h5>
-                                                      <input type="text" name="section_naming" class="form-control">
+                                                      <input type="text" name="section_naming" class="form-control" required>
                                                   </div>
                                               </div>
                                           </div>

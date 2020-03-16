@@ -215,7 +215,7 @@ label{
 									</div>
 									<h3>Certification of Eligibility to Transfer:</h3>
 									<div class="row">
-										<div class="col-md-6" style="text-align: left;"
+										<div class="col-md-6" style="text-align: left;">
 											<b>Admitted in:</b>
 											<input size="15" type="text" name="">									
 										</div>
@@ -223,7 +223,7 @@ label{
 									<div class="row">
 										<div class="col-md-6" >
 											<label >Date:</label>
-											<input size="20" type="text" name="" >
+											<input size="20" type="text" name="" value="<?php echo(date("M/d/Y"))?>" >
 										</div>
 										<div class="col-md-6">
 											<input size="30" type="text" name="" >	
