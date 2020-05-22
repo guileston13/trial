@@ -892,7 +892,7 @@ h2{
       <?php 
         $female_total_promoted_seven = 0;
         foreach($female_seven as $prom){
-          if($prom->nude <= 74 ){
+          if($prom->nude >= 90 ){
             $prom->nude;
             // $re =  count($prom->nude);
             $female_total_promoted_seven++;

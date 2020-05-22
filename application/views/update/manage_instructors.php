@@ -246,7 +246,7 @@
                                                         <?php if($instructor->status == 1){?>
                                                             <a class="btn btn-danger" href="<?php echo base_url()?>manage_instructors/update_status/<?php echo $instructor->teacher_id?>">Deactivate</a>
                                                         <?php }else{?>                           
-                                                                <a class="btn btn-danger" href="<?php echo base_url()?>manage_instructors/update_status/<?php echo $instructor->teacher_id?>">Active</a>
+                                                                <a class="btn btn-success" href="<?php echo base_url()?>manage_instructors/update_status/<?php echo $instructor->teacher_id?>">Activate</a>
                                                         <?php } ?> 
                                                         </td>
                                                     </tr>

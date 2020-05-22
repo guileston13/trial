@@ -220,30 +220,30 @@ p{
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td colspan="5" style="text-align: center;">General Average</td>
@@ -273,18 +273,18 @@ p{
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       </tr>
     </table>
@@ -349,30 +349,30 @@ p{
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td colspan="5" style="text-align: center;">General Average</td>
@@ -402,18 +402,18 @@ p{
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       </tr>
     </table>
@@ -478,30 +478,30 @@ p{
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td colspan="5" style="text-align: center;">General Average</td>
@@ -531,18 +531,18 @@ p{
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>      </tr>
     </table>
     </div>
@@ -606,30 +606,30 @@ p{
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td>z</td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="4" type="" name=""></td>
-              <td><input size="6" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+              <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
             </tr>
             <tr>
               <td colspan="5" style="text-align: center;">General Average</td>
@@ -659,17 +659,17 @@ p{
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       <tr>
         <td>z</td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="4" type="" name=""></td>
-        <td><input size="6" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="4" type="" name=""></td>
+        <td><input style="border-bottom: 0px" size="6" type="" name=""></td>
       </tr>
       </tr>
     </table>
