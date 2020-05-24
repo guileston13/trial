@@ -70,7 +70,7 @@
     <main class="col-md-10 offset-2">
       <!-- Content Start -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Academic</a>
+        <a class="navbar-brand">Form 137</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -80,45 +80,10 @@
         <div class="container-fluid mt-5 mb-5">
                 <div class="card-body">
                     <form action="<?php echo base_url()?>teacher_dashboard" method="POST">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <select name="school_year" id="school_year" class="form-control">
-                                    <?php foreach($class as $sy){?>
-                                        <option value="<?php echo $sy->schoolyear_id?>"><?php echo $sy->schoolyear_start?></option>
-                                    <?php }?>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <button type=submit class="btn"> Search</button>
-                            </div>
-                        </div>
+                        
                     </form>
                     <hr>
-                    <h3><?php echo $classes?$classes[0]->schoolyear_start:null;?></h3>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr style="text-align: center;">
-                                <th>Section</th> 
-                                <th>Subject Code</th> 
-                                <th>View Students</th> 
-                                <th>Add Attendance</th>
-                                <th>Attendance</th>
-                                <th>Book</th>
-                            </tr> 
-                        </thead>
-                        <tbody> 
-                            <?php foreach($classes as $class){?>
-                                <tr class="text-center">
-                                    <td><?php echo $class->section_name?></td>
-                                    <td><?php echo $class->subj_code?></td>
-                                    <td><a target = "_blank" class="btn btn-primary btn-block" href="<?php echo base_url()?>teacher_dashboard/teacher_specific_classes/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">View</a> </td>
-                                    <td><a target = "_blank" class="btn btn-info btn-block" href="<?php echo base_url()?>teacher_dashboard/add_list_attendance/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">Daily Attendance</a></td>
-                                    <td><a target = "_blank" class="btn btn-secondary btn-block" style="color: white"   href="<?php echo base_url()?>teacher_dashboard/form2/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>">School Form 2</a></td>
-                                    <td><a target = "_blank" class="btn btn-success btn-block" style="color: white" href="<?php echo base_url()?>teacher_dashboard/add_book/<?php echo $class->class_id?>/<?php echo $class->section_id?>/<?php echo $class->subj_id?>/<?php echo $classes[0]->schoolyear_id; ?>"> Add Book</a></td>
-                                </tr>
-                            <?php }?>
-                        </tbody> 
-                    </table>
+                                        
                 </div>
             </div>
         </div>

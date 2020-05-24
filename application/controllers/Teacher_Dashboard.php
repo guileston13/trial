@@ -609,4 +609,10 @@ class Teacher_Dashboard extends CI_Controller
 			$data['as'] = $this->db->query("SELECT * from tbl_school")->result();
 			$this->load->view('update/teacher/form9',$data);
 		}
+
+		public function view_form137(){
+			$this->load->view('template/latest/header');
+			$this->load->view('update/teacher/view_form137');
+			$this->load->view('template/latest/footer');
+		}
 }
