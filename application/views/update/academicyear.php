@@ -146,9 +146,9 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="form-control-label">Start Year</label>
-                                                        <input class="form-control" type="number" name="start" min="2020" max="2099" step="1" value="" placeholder="start" />
+                                                        <input class="form-control" type="number" name="start" min="2020" max="2099" step="1" value="<?php echo date("Y"); ?>" placeholder="start" />
                                                         <label class="form-control-label">End  Year</label>
-                                                        <input class="form-control" type="number" name="end" min="2020" max="2099" step="1" value="" placeholder="end" />
+                                                        <input class="form-control" type="number" name="end" min="2020" max="2099" step="1" value="<?php echo date("Y", strtotime('+1 year')); ?>" placeholder="end" />
                                                     </div>
                                                 </div>
                                             </div>

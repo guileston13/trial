@@ -1,7 +1,7 @@
 <head>
       <link type="text/css" href="<?php echo base_url(); ?>/assets/css/select2.min.css" rel="stylesheet">
-      <script src="<?php echo base_url(); ?>/assets/js/jquery.js/select2.min.js"></script>
       <script src="<?php echo base_url(); ?>/assets/js/jquery.js/jquery.js"></script>
+      <script src="<?php echo base_url(); ?>/assets/js/jquery.js/select2.min.js"></script>
 </head>
 
 <body ng-app="starter">

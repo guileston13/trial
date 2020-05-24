@@ -219,7 +219,7 @@ h2{
           $promote_female++;
         }
       }else{
-        echo "<p style=\"color: red\">RETAINED</p>";
+        echo "<p style=\"color: red\">IRREGULAR</p>";
         $retained++;
 
         $g = $first_quarter->result();
