@@ -135,7 +135,7 @@
                             <div class="card-body p-5">
                                 <div class="tab-content" id="myTabContent">
                                <span class="text-danger"> <?php echo $this->session->flashdata('narco'); ?></span>
-                                    <div class="tab-pane fade" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                                    <div class="tab-pane fade show " id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
                                       <!-- Add New Instructor Tab -->
                                       <form action="<?php echo base_url()?>Assign_Subject/add_section" method="POST">
                                           <div class="row">

@@ -130,6 +130,8 @@ h2{
       $promote_male = 0;
       $promote_female = 0;
       $irregular = 0;
+      $irregular_male = 0;
+      $irregular_female = 0;
       $retained = 0;
       $retained_male = 0;
       $retained_female = 0;
@@ -174,8 +176,22 @@ h2{
                                                             AND tbl_finalgrade.quarter = '2'
                                                             AND tbl_finalgrade.schoolyear_id = '$sy_id'
                                                             order by tbl_finalgrade.subj_id");
+        $third_quarter = $this->db->query("SELECT * from tbl_finalgrade,tbl_student 
+                                                            where tbl_finalgrade.studentid = '$st->studentid'
+                                                            AND tbl_student.studentid = tbl_finalgrade.studentid 
+                                                            AND tbl_finalgrade.quarter = '3'
+                                                            AND tbl_finalgrade.schoolyear_id = '$sy_id'
+                                                            order by tbl_finalgrade.subj_id");
+        $fourth_quarter = $this->db->query("SELECT * from tbl_finalgrade,tbl_student 
+                                                            where tbl_finalgrade.studentid = '$st->studentid'
+                                                            AND tbl_student.studentid = tbl_finalgrade.studentid 
+                                                            AND tbl_finalgrade.quarter = '4'
+                                                            AND tbl_finalgrade.schoolyear_id = '$sy_id'
+                                                            order by tbl_finalgrade.subj_id");
         $total_fq = 0;
         $total_sq = 0;
+        $total_tq = 0;
+        $total_foq = 0;
         $second_quarter->num_rows();
         foreach($first_quarter->result() as $fq){
            $total_fq = $total_fq + $fq->finalgrade;
@@ -190,10 +206,26 @@ h2{
         }else{
           $sq_t = 0;
         }
+        if($third_quarter->result()){
+        foreach($third_quarter->result() as $tq){
+           $total_tq = $total_tq + $tq->finalgrade;
+          $tq_t = $total_tq / $third_quarter->num_rows();
+        }
+        }else{
+          $tq_t = 0;
+        }
+        if($fourth_quarter->result()){
+        foreach($fourth_quarter->result() as $foq){
+           $total_foq = $total_foq + $foq->finalgrade;
+          $foq_t = $total_foq / $fourth_quarter->num_rows();
+        }
+        }else{
+          $foq_t = 0;
+        }
         
         if(isset($fq_t)){
-          $total = $fq_t + $sq_t;
-          $tot = $total /2 ;
+          $total = $fq_t + $sq_t + $tq_t + $foq_t;
+          $tot = $total /4 ;
           if($tot == 30){
             echo $tot = 0;
             
@@ -203,13 +235,14 @@ h2{
         }else{
 
         }
-        ?>      
+        ?>  
+
     </td>
     <td >       
       <?php 
       if(isset($tot)){
       if($tot>=75){
-        echo "<p style=\"color: darkblue\">PROMOTED</p>";
+        echo "<p style=\"color: darkblue\">Promoted</p>";
         $promote++;
        // $g = $first_quarter->result();
         
@@ -219,28 +252,29 @@ h2{
           $promote_female++;
         }
       }else{
-        echo "<p style=\"color: red\">IRREGULAR</p>";
-        $retained++;
+        echo "<p style=\"color: red\">Irregular / Retained</p>";
+        $irregular++;
 
-        $g = $first_quarter->result();
+       // $g = $first_quarter->result();
         if($student[0]->gender == 'male'){
-          $retained_male++;
+          $irregular_male++;
         }else{
-          $retained_female++;
+          $irregular_female++;
         }
       }
+
 
       if( $student[0]->gender == 'male'){
         if($tot < 74.99 ){
           $beggining_male++;
           $beggining++;
-        }else if($tot > 75 && $tot < 79.99){
+        }else if($tot >= 75 && $tot < 79.99){
           $developing_male++;
           $developing++;
-        }else if($tot > 80 && $tot < 84.99){
+        }else if($tot >= 80 && $tot < 84.99){
           $approaching_male++;
           $approaching++;
-        }else if($tot > 85 && $tot < 89.99){
+        }else if($tot >= 85 && $tot < 89.99){
           $profocient_male++;
           $profocient++;
         }else if($tot > 90){
@@ -251,13 +285,13 @@ h2{
         if($tot < 74.99 ){
           $beggining_female++;
           $beggining++;
-        }else if($tot > 75 && $tot < 79.99){
+        }else if($tot >= 75 && $tot < 79.99){
           $developing_female++;
           $developing++;
-        }else if($tot > 80 && $tot < 84.99){
+        }else if($tot >= 80 && $tot < 84.99){
           $approaching_female++;
           $approaching++;
-        }else if($tot > 85 && $tot < 89.99){
+        }else if($tot >= 85 && $tot < 89.99){
           $profocient_female++;
           $profocient++;
         }else if($tot > 90){
@@ -321,9 +355,9 @@ h2{
      </tr>
       <tr>
         <td>IRREGULAR</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
+        <td><?php echo $irregular_male;?></td>
+        <td><?php echo $irregular_female;?></td>
+        <td><?php echo $irregular;?></td>
       </tr>
       <tr>
         <td>RETAINED</td>

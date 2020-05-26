@@ -123,17 +123,17 @@
                         <div class="nav-wrapper">
                             <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link mb-sm-3 mb-md-0 " id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="false"><i class="fa fa-plus mr-2"></i>Add New Instructor</a>
+                                    <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="false"><i class="fa fa-plus mr-2"></i>Add New Instructor</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="true"><i class="fa fa-list mr-2"></i>View All Instructors</a>
+                                    <a class="nav-link mb-sm-3 mb-md-0 " id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="true"><i class="fa fa-list mr-2"></i>View All Instructors</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade " id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                                    <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
                                         <!-- Add New Instructor Tab -->
                                         <form action="<?php echo base_url()?>manage_instructors"  method="POST">
                                             <h3 class="text-danger"><?php echo$this->session->flashdata('message');?></h3>
@@ -201,11 +201,11 @@
                                                 </div>
                                             </div>
                                             <div class="clearfix mt-3">
-                                                <input class="btn btn-flat btn-success float-right" type="submit" name="submitinstructor"  onclick="return confirm('Are you sure Add?')" value="Add Instructor"/>
+                                                <input class="btn btn-flat btn-success float-right" type="submit" name="submitinstructor"  onclick="return confirm('Are you sure?')" value="Add Instructor"/>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tab-pane fade show active" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                                    <div class="tab-pane fade show " id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
                                     <?php if($error){  echo $error;}else{}?>
                                         <!-- Table Students -->
                                         <table class="table table-bordered table-striped table-custom" id="instructorTable">

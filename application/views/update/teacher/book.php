@@ -62,7 +62,7 @@
         </li>
       </ul>
       <footer class="footer mt-auto text-center text-light py-2">
-        &copy; 2018-2019
+
       </footer>
     </aside>
     <main class="col-md-10 offset-2">

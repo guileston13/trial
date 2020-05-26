@@ -161,6 +161,7 @@
                         <th style="font-size: 12px"><h4>Division</th></h4>
                         <th style="font-size: 12px"><h4>District</th></h4>
                         <th style="font-size: 12px"><h4>School ID</th></h4>
+                        <th style="font-size: 12px"><h4>Principal</th></h4>
                       </tr>
                   </thead>
                   <tbody>
@@ -171,6 +172,7 @@
                         <td><input class="input-trans" name="division[]" type="text" value="<?php echo $perc->division?>"></td>
                         <td><input class="input-trans" name="district[]" type="text" value="<?php echo $perc->district?>"></td>
                         <td><input class="input-trans" name="school_id[]" type="text" value="<?php echo $perc->school_id?>"></td>
+                        <td><input class="input-trans" name="principal[]" type="text" value="<?php echo $perc->principal?>"></td>
                       </tr>
                     <?php }?>
                   </tbody>
