@@ -40,10 +40,13 @@ class Manage_Students extends CI_Controller
 			
 			
 				$que=$this->db->query("select * from tbl_user where username='".$username."'");
+				$que_t=$this->db->query("SELECT * from tbl_student where firstname= '$firstname' AND lastname='$lastname'");
 				$row = $que->num_rows();
-			if($row)
+				$row1 = $que_t->num_rows();
+			if($row || $row1)
 			{
-				$data['error']="<h3 style='color:red'>This user already exists</h3>";
+				//$data['error']="This user already exists";
+				$this->session->set_flashdata('message', 'This user already exists.');
 			}
 			else	
 			{
@@ -95,11 +98,10 @@ class Manage_Students extends CI_Controller
 				$this->load->view('template/latest/footer');	
 	}
 	public function AllStudent(){
-		$query = $this->db->query("SELECT * from tbl_user,
-												tbl_student
-											where 
-												tbl_user.user_id = tbl_student.user_id
-												AND tbl_student.status = 1")
+		$query = $this->db->query("SELECT * from tbl_student, tbl_user 
+
+									WHERE tbl_user.user_id = tbl_student.user_id
+									and tbl_student.status = 1")
 								->result();
 		$this->output->set_content_type('application/json')
 		->set_output(json_encode(array($query)));
@@ -156,7 +158,7 @@ class Manage_Students extends CI_Controller
 				$nc = $note[0]->section_name;
 				$firstname = $note[0]->firstname;
 				$lastname  = $note[0]->lastname;
-				$this->session->set_flashdata('narco','This student: '.$firstname.' '.$lastname.' is current enrolled '.$nc.' ');
+				$this->session->set_flashdata('narco','This student: '.$firstname.' '.$lastname.' is current enrolled at'.$nc.' ');
 				redirect('manage_students');
 			}
 		}		

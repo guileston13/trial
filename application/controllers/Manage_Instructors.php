@@ -31,7 +31,7 @@ class Manage_Instructors extends CI_Controller
 				$row1 = $que_t->num_rows();
 			if($row || $row1)
 			{
-			//	$data['error']="<h3 style='color:red'></h3>";
+				//$data['error']="<h3 style='color:red'></h3>";
 				$this->session->set_flashdata('message', 'This user already exists.');
 				
 			}

@@ -131,11 +131,13 @@
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade " id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                                    <div class="tab-pane fade show " id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
                                         <!-- Add New Instructor Tab -->
                                         <form  action="<?php echo base_url()?>manage_students" method="POST">
                                         
                                             <h1 class="border-bottom text-primary">Personal Information</h1>
+                                            <br><br>
+                                            <h3 class="text-danger"><?php echo$this->session->flashdata('message');?></h3>
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
@@ -189,7 +191,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label class="form-control-label">Sex</label><div style="color:red"> *required</div>
+                                                        <label class="form-control-label">Sex</label><br><br>
                                                         <select class="form-control" name="gender">
                                                             <option value="male">Male</option>
                                                             <option value="femail">Female</option>
@@ -308,7 +310,7 @@
                                             </div>
                     
                                             <div class="clearfix text-center">
-                                                <input class="btn btn-flat btn-success" type="submit" name="submitstudent"  onclick="return confirm('Are you sure Enroll?')" value="Add Students"/>
+                                                <input class="btn btn-flat btn-success" type="submit" name="submitstudent"  onclick="return confirm('Are you sure?')" value="Add Students"/>
                                             </div>
                                         </form>
                                     </div>
@@ -346,7 +348,7 @@
                                                         <option value="<?php echo $key->class_id?>"> <?php echo $key->section_name?></option>
                                                     <?php  } ?>
                                                 </select>
-                                                <input class="btn btn-primary" type="submit" name="" onclick="return confirm('Are you sure Enroll?')" value="Enroll">
+                                                <input class="btn btn-primary" type="submit" name="" onclick="return confirm('Are you sure?')" value="Enroll">
                                             </div>
                                         </div>
                                             <input type="text" placeholder="Input Student Name ..." ng-model="student_name" class="form-control"> <br>
@@ -356,6 +358,7 @@
                                                     <tr>
                                                         <th style="font-size: 18px">#</th>
                                                         <th style="font-size: 18px">LRN</th>
+                                                        <th style="font-size: 18px">Username</th>
                                                         <th style="font-size: 18px">Students Name</th>
                                                         <th style="font-size: 18px">Contact Number</th>
                                                         <th style="font-size: 18px">Action</th>
@@ -366,6 +369,7 @@
                                                         <tr ng-repeat="x in student | filter : student_name ">
                                                             <td>{{$index + 1}}</td>
                                                             <td>{{x.lrn}}</td>
+                                                            <td>{{x.username}}</td>
                                                             <td>{{x.firstname}} {{x.lastname}}  </td>
                                                             <td>{{x.contactnumber}}</td>
                                                             <td>

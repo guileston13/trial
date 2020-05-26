@@ -70,7 +70,6 @@ h2{
 			
 			}
 			?>
-			
 			<div class="card-body">
 			<form action="<?php echo base_url()?>teacher_dashboard/submit_final_grade/" method="POST">
 				<input style="color: white !important" type="submit" class="btn btn-primary btn-print">
@@ -467,7 +466,7 @@ h2{
 								
 								<td colspan="3"><?php echo $st->lastname?></td>
 								<td colspan="4" ><?php echo $st->firstname?></td>
-								<td colspan="3">M</td>
+								<td colspan="3"><?php echo $st->gender?></td>
 								
 								<?php
 									$d = $this->session->userdata('user_id');
@@ -715,10 +714,10 @@ h2{
 							case $final_total >= 16.00 && $final_total <= 19.99:
 							$last = "64"; // last = last_count
 							break;
-							case $final_total >= 12.20 && $final_total <= 15.99:
+							case $final_total >= 12.00 && $final_total <= 15.99:
 							$last = "63"; // last = last_count
 							break;
-							case $final_total >= 8.60 && $final_total <= 11.99:
+							case $final_total >= 8.00 && $final_total <= 11.99:
 							$last = "62"; // last = last_count
 							break;
 							case $final_total >= 4.00 && $final_total <= 7.99:

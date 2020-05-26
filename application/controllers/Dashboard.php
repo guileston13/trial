@@ -48,7 +48,8 @@ class Dashboard extends CI_Controller
 				'region'   			=> $_POST['region'][$i],
 				'division'			=> $_POST['division'][$i],
 				'school_id'			=> $_POST['school_id'][$i],
-				'district'			=> $_POST['district'][$i]
+				'district'			=> $_POST['district'][$i],
+				'principal'			=> $_POST['principal'][$i]
 			);
 			$this->db->where('school_id',$_POST['id'][$i]);
 			$this->db->update('tbl_school',$data);

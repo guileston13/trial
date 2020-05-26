@@ -199,7 +199,7 @@ label{
 								</div>
 									<div class="row">	
 										<div class="col-md-6" >
-											<input size="30" type="text" name="" >
+											<input size="30" type="text" name="" value="<?php echo $as?$as[0]->principal:null?>">
 										</div>
 										<div class="col-md-6">
 											<input size="30" type="text" name="" >	
@@ -226,7 +226,7 @@ label{
 											<input size="20" type="text" name="" value="<?php echo(date("M/d/Y"))?>" >
 										</div>
 										<div class="col-md-6">
-											<input size="30" type="text" name="" >	
+											<input size="30" type="text" name="" value="<?php echo $as?$as[0]->principal:null?>">	
 										</div>
 									</div>
 									<div class="row">
@@ -323,7 +323,7 @@ label{
 							
 									")->result();
 								?>
-									<input size="20" type="text" name="" >
+									<input size="20" type="text" name="" value="<?php echo $as?$as[0]->principal:null?>" >
 								</div>
 									
 								<div class="col-md-6">
@@ -370,7 +370,16 @@ label{
 							<td><?php echo $key->quarter3?></td>
 							<td><?php echo $key->quarter4?></td>
 							<td><?php echo $key->totalall?></td>
-							<td></td>
+							<td>
+							<?php
+								if ($key->totalall<75) {
+									echo "Failed";
+								} else {
+									echo "Passed";
+								}
+							?>	
+							 	
+							 </td>
 						</tr>
 
 						<?php $average_grade += $key->totalall;
