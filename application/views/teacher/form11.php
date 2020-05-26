@@ -146,7 +146,11 @@ h2{
                     	<div class="col-md-3">
                     		<div class="input-group form-inline">
                     			<label  for="" class="form-control-label mr-2">Teacher:</label>
-                    			<input value="<?php echo $teacher[0]->firstname.' '.$teacher[0]->lastname?>"type="text" name="">
+								<?php 
+								$user_id =  $this->session->userdata('user_id');
+								$teacher_info = $this->db->query("SELECT * from tbl_instructor where user_id = '$user_id'")->result();
+								?>
+                    			<input value="<?php echo $teacher_info[0]->firstname.' '.$teacher_info[0]->lastname?>"type="text" name="">
                     		</div>
                     	</div>	
 					</div>

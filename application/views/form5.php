@@ -153,7 +153,8 @@ h2{
       $advanced_male = 0;
       $advanced_female = 0;
       $num = 1;
-    foreach($students as $st){?>
+    foreach($students as $st){
+      ?>
   <tr>
     <td><?php echo $num; $num++;?></td>
     <td><?php echo $st->lrn;?></td>
@@ -306,13 +307,13 @@ h2{
       ?>
     </td>
     <td>
-      <?php $retaines =  $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$st->studentid' AND tbl_subject.subj_id = tbl_finalgrade.subj_id")->result();
+      <?php $retaines =  $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$st->studentid' AND tbl_subject.subj_id = tbl_finalgrade.subj_id GROUP BY tbl_finalgrade.subj_id")->result();
         
        if($retaines){
         foreach($retaines as $ret){
           
-          if($ret->fees < 75){
-            echo $ret->subj_code;
+          if($ret->fees < 74.99){
+            echo $ret->subj_code; echo " ,";
           }
           else{
             
@@ -320,11 +321,12 @@ h2{
         }
         }else{  
           if($tot >=75){
-             
+          
           }else{echo "No Final Grade";}
         }?>
         
     </td>    
+    
   </tr>
   <?php } ?>
 

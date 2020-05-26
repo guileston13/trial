@@ -390,7 +390,12 @@ label{
 						<?php } ?>
 						<tr>
 							<td colspan="5" style="text-align: center;">General Average</td>
-							<td><?php echo round($generalAve/$subject_number, 2);?></td>
+							<td><?php if($generalAve!=0){
+								echo round($generalAve/$subject_number, 2);
+								}else{
+									
+								}
+							?></td>
 						</tr>
 					</table>
 					<table align="center">

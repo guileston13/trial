@@ -112,12 +112,14 @@ class Manage_Students extends CI_Controller
 		$stud = $_POST['studentid'];
 		$class = $this->input->post('class_id');
 		$sy_di = $this->input->post("school_year_id");
+		echo $class;
+		
 		foreach($stud as $key){
-			$dat = date('Y -');
+			$dat = date('Y -');	
 			// echo $dat; echo "<br>";
 			// echo $class;echo "<br>";
 			// echo $key;echo "<br>";
-			
+			$sy_di = $this->input->post("school_year_id");
 			$ss = $this->db->query("SELECT * from tbl_studentunderclass,tbl_class,tbl_section,tbl_student where 
 							tbl_studentunderclass.class_id = '$class'
 							AND tbl_studentunderclass.studentid ='$key'
@@ -139,9 +141,21 @@ class Manage_Students extends CI_Controller
 			AND tbl_class.schoolyear_id = tbl_schoolyear.schoolyear_id
 			AND tbl_schoolyear.schoolyear_id = '$sy_di'
 				");
-			// var_dump("class=>".$class);
-			// var_dump("dat=>".$dat);
-			
+			$prev_sy_id = $sy_di - 1; 
+
+			$retained = $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$key' 
+										AND tbl_subject.subj_id = tbl_finalgrade.subj_id AND tbl_finalgrade.schoolyear_id = '$prev_sy_id' GROUP BY tbl_finalgrade.subj_id")->result();
+			foreach($retained as $ret){
+				
+				if($ret->fees < 74.99){
+					$this->session->set_flashdata('narco','A student you selected is currently retained');
+					redirect('manage_students');
+				
+				}
+				else{
+					
+				}
+			}
 			//exit();
 			$soo = $s->result();
 			var_dump("S =>".$s->num_rows());echo "<br>";
@@ -161,13 +175,15 @@ class Manage_Students extends CI_Controller
 				$this->session->set_flashdata('narco','This student: '.$firstname.' '.$lastname.' is current enrolled at'.$nc.' ');
 				redirect('manage_students');
 			}
+
+			
 		}		
 		foreach ($stud as $key) {
 		$data = array(
 			'class_id' => $class,
 			'studentid'=> $key
 		);
-		$this->db->insert('tbl_studentunderclass',$data);
+		//$this->db->insert('tbl_studentunderclass',$data);
 		}
 		$this->session->set_flashdata('success','Successfully Enrolled');
 		redirect('Manage_Students');
