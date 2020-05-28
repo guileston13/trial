@@ -50,12 +50,7 @@
             <span class="ml-2">View Grades</span>
           </a>
         </li>
-        <li class="nav-item py-1">
-          <a href="<?php echo base_url()?>teacher_dashboard/final_grade" class="nav-link" href="logs.html">
-            <i class="far fa-clock"></i>
-            <span class="ml-2">Form 137</span>
-          </a>
-        </li>
+        
         <!-- <-------------------Enrollment-------------------- --> 
         <li class="nav-item py-1">
           <a href="<?php echo base_url()?>logout" class="nav-link" href="#">

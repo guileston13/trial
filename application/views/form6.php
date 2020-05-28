@@ -234,7 +234,7 @@ h2{
         <?php 
           $male_total_promoted_seven = 0;
           foreach($male_seven as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_seven++;
@@ -245,7 +245,7 @@ h2{
         <?php 
           $female_total_promoted_seven = 0;
           foreach($female_seven as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_seven++;
@@ -259,7 +259,7 @@ h2{
         <?php 
           $male_total_promoted_eight = 0;
           foreach($male_eight as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_eight++;
@@ -270,7 +270,7 @@ h2{
         <?php 
           $female_total_promoted_eight = 0;
           foreach($female_eight as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_eight++;
@@ -284,7 +284,7 @@ h2{
         <?php 
           $male_total_promoted_nine = 0;
           foreach($male_nine as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_nine++;
@@ -295,7 +295,7 @@ h2{
         <?php 
           $female_total_promoted_nine = 0;
           foreach($female_nine as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_nine++;
@@ -309,7 +309,7 @@ h2{
         <?php 
           $male_total_promoted_ten = 0;
           foreach($male_ten as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_ten++;
@@ -320,7 +320,7 @@ h2{
         <?php 
           $female_total_promoted_ten = 0;
           foreach($female_ten as $prom){
-            if($prom->nude < 75 ){
+            if($prom->nude < 60 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_ten++;
@@ -338,7 +338,7 @@ h2{
         <?php 
           $male_total_promoted_seven = 0;
           foreach($male_seven as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_seven++;
@@ -349,7 +349,7 @@ h2{
         <?php 
           $female_total_promoted_seven = 0;
           foreach($female_seven as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_seven++;
@@ -363,7 +363,7 @@ h2{
         <?php 
           $male_total_promoted_eight = 0;
           foreach($male_eight as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_eight++;
@@ -374,7 +374,7 @@ h2{
         <?php 
           $female_total_promoted_eight = 0;
           foreach($female_eight as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_eight++;
@@ -388,7 +388,7 @@ h2{
         <?php 
           $male_total_promoted_nine = 0;
           foreach($male_nine as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_nine++;
@@ -399,7 +399,7 @@ h2{
         <?php 
           $female_total_promoted_nine = 0;
           foreach($female_nine as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_nine++;
@@ -413,7 +413,7 @@ h2{
         <?php 
           $male_total_promoted_ten = 0;
           foreach($male_ten as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $male_total_promoted_ten++;
@@ -424,7 +424,7 @@ h2{
         <?php 
           $female_total_promoted_ten = 0;
           foreach($female_ten as $prom){
-            if($prom->nude < 60 ){
+            if($prom->nude < 75 ){
               $prom->nude;
               // $re =  count($prom->nude);
               $female_total_promoted_ten++;

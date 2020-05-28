@@ -158,7 +158,7 @@ h2{
   <tr>
     <td><?php echo $num; $num++;?></td>
     <td><?php echo $st->lrn;?></td>
-    <td><?php echo $st->firstname;?><?php echo $st->middlename;?><?php echo " "?><?php echo $st->lastname;?> </td>
+    <td><?php echo $st->firstname;?><?php echo " "?><?php echo $st->lastname;?> </td>
     <td>
         <?php $student = $this->db->query("SELECT * from tbl_student where studentid = '$st->studentid'")->result();?>
         
@@ -253,14 +253,14 @@ h2{
           $promote_female++;
         }
       }else{
-        echo "<p style=\"color: red\">Irregular / Retained</p>";
-        $irregular++;
+        echo "<p style=\"color: red\"> Irregular / Retained</p>";
+        $retained++;
 
        // $g = $first_quarter->result();
         if($student[0]->gender == 'male'){
-          $irregular_male++;
+          $retained_male++;
         }else{
-          $irregular_female++;
+          $retained_female++;
         }
       }
 
@@ -312,7 +312,7 @@ h2{
        if($retaines){
         foreach($retaines as $ret){
           
-          if($ret->fees < 74.99){
+          if($ret->fees < 75){
             echo $ret->subj_code; echo " ,";
           }
           else{

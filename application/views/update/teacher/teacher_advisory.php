@@ -125,7 +125,7 @@
                                         <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form5/<?php echo $class->class_id?>/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #778899; color:white">School Form 5</button></a></td>
                                         <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form6/<?php echo $class->class_id?>/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #A9A9A9; color:white">School Form 6</button></a></td>
                                         <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form9/<?php echo $class->class_id?>"><button class="btn" style="background-color: #17a2b8; color:white">School Form 9</button></a></td>
-                                        <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/form137/<?php echo $class->class_id?>"><button class="btn" style="background-color: #BDB76B; color:white">School Form 10</button></a></td>
+                                        
                                         <td><a target = "_blank" class="btn btn-block btn-link" href="<?php echo base_url();?>teacher_dashboard/all_subject_final_grade/<?php echo $class->class_id?>/1/<?php echo $sy_id?$sy_id:''; ?>"><button class="btn" style="background-color: #5F9EA0; color:white">All Subect Grades </button></a></td>
 
                                         

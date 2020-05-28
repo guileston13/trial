@@ -183,7 +183,7 @@ class Manage_Students extends CI_Controller
 			'class_id' => $class,
 			'studentid'=> $key
 		);
-		//$this->db->insert('tbl_studentunderclass',$data);
+		$this->db->insert('tbl_studentunderclass',$data);
 		}
 		$this->session->set_flashdata('success','Successfully Enrolled');
 		redirect('Manage_Students');
