@@ -239,11 +239,28 @@ h2{
         ?>  
 
     </td>
-    <td >       
+    <td>       
       <?php 
+      $retaines =  $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$st->studentid' AND tbl_subject.subj_id = tbl_finalgrade.subj_id GROUP BY tbl_finalgrade.subj_id")->result();
+      $counts = 0;
       if(isset($tot)){
       if($tot>=75){
-        echo "<p style=\"color: darkblue\">Promoted</p>";
+        
+        if($retaines){
+        foreach($retaines as $ret){        
+          if($ret->fees < 75){
+            echo "<p style=\"color: green\">Irregular</p>";
+            $irregular++;
+          if($student[0]->gender == 'male'){
+            $irregular_male++;
+          }
+            else{
+            $irregular_female++;
+          }
+          break;
+          }
+          else{
+            echo "<p style=\"color: darkblue\">Promoted</p>";
         $promote++;
        // $g = $first_quarter->result();
         
@@ -252,8 +269,13 @@ h2{
         }else{
           $promote_female++;
         }
+        break;
+          }
+        }
+        }
       }else{
-        echo "<p style=\"color: red\"> Irregular / Retained</p>";
+        
+        echo "<p style=\"color: red\"> Retained</p>";
         $retained++;
 
        // $g = $first_quarter->result();

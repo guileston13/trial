@@ -454,6 +454,9 @@ class Teacher_Dashboard extends CI_Controller
 		$data['female_eleven'] = $this->Instructor->female_promoted_eleven($school_year);
 		$data['male_twelve'] = $this->Instructor->male_promoted_twelve($school_year);
 		$data['female_twelve'] = $this->Instructor->female_promoted_twelve($school_year);
+		
+		$data['infos']  = $this->Instructor->infos($classid);
+		$data['form5'] = $this->db->query("SELECT * from tbl_school")->result();
 
 		
 		$this->load->view('form6',$data);
