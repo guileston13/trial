@@ -143,20 +143,34 @@ class Manage_Students extends CI_Controller
 				");
 			$prev_sy_id = $sy_di - 1; 
 
-			$retained = $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code from tbl_finalgrade,tbl_subject where studentid = '$key' 
+			$retained = $this->db->query("SELECT (SUM(finalgrade)/4) AS fees,subj_code,subj_grade_level,studentid from tbl_finalgrade,tbl_subject where studentid = '$key' 
 										AND tbl_subject.subj_id = tbl_finalgrade.subj_id AND tbl_finalgrade.schoolyear_id = '$prev_sy_id' GROUP BY tbl_finalgrade.subj_id")->result();
+			
+			$class_get = $this->db->query("SELECT grade_level from tbl_class where class_id = '$class'")->result();
+			$grade_level_class_to_enroll = $class_get[0]->grade_level;
+				
 			foreach($retained as $ret){
 				
 				if($ret->fees < 74.99){
+					// 
+					if($grade_level_class_to_enroll == $ret->subj_grade_level){
+						
+						$data = array(
+							'class_id' => $class,
+							'studentid'=> $ret->studentid
+						);
+						$this->db->insert('tbl_studentunderclass',$data);
+						$this->session->set_flashdata('success','Successfully Enrolled');
+						redirect('Manage_Students');
+					}
 					$this->session->set_flashdata('narco','A student you selected is currently retained');
 					redirect('manage_students');
-				
 				}
 				else{
 					
 				}
 			}
-			//exit();
+			
 			$soo = $s->result();
 			var_dump("S =>".$s->num_rows());echo "<br>";
 

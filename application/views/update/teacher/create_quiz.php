@@ -107,6 +107,8 @@
                         <div class="">
                           <h3>Quiz #: <span style="display:none" class="hide" id="subject_id"><?php echo $this->uri->segment(5);?></span>
                                       <span class="hide" id="event"><?php echo $this->uri->segment(4);?></span>
+                                      <span style="display:none" id="year_level"><?php echo $q[0]->schoolyear_id;?></span>
+                                      <span style="display:none" id="sectionion"><?php echo $q[0]->section_id;?></span>
                                       <span id="quiz_nu">0</span></h3>
                         </div>
                     </div>

@@ -130,11 +130,20 @@ class Teacher_Dashboard extends CI_Controller
 		$subject_id = $this->input->post('subject_id');
 		$quarter_id = $this->input->post('quarter_id');
 		$user_id = $this->session->userdata('user_id');
+		$year_level = $this->input->post('year_level');
+		$sectionion =  $this->input->post('sectionion');
 		$new_event = 'tbl_'.$event;
-		$result = $this->db->query("SELECT * from $new_event where 
-			quarter_id = '$quarter_id' AND teacher_id = '$user_id' AND subj_id ='$subject_id'
-		")->num_rows();
+		$result = $this->db->query("SELECT * from tbl_assignteacher,$new_event,tbl_class where tbl_assignteacher.section_id = '$sectionion'
+			AND tbl_assignteacher.subj_id = '$subject_id'
+			AND $new_event.subj_id = tbl_assignteacher.subj_id
+			AND $new_event.quarter_id = '$quarter_id'
+			AND $new_event.section_id = '$sectionion'
+			AND tbl_class.class_id = tbl_assignteacher.class_id
+			AND tbl_class.schoolyear_id = '$year_level'
+			")->num_rows();
+			
 		echo json_encode($result);
+		
 	}
 
 	public function create_quiz($id,$section_id){
@@ -343,6 +352,7 @@ class Teacher_Dashboard extends CI_Controller
 	public function trial($class_id,$section_id,$subj_id){
 		
 		$data['student'] = $this->Instructor->trial($class_id,$section_id,$subj_id);
+	
 		$q = $this->Instructor->trial($class_id,$section_id,$subj_id);
 		//var_dump($q[0]->subj_id);
 		if(!$q){
@@ -474,7 +484,8 @@ class Teacher_Dashboard extends CI_Controller
 					'quiz_item' =>  $this->input->post('quiz_item'),
 					'subj_id'	=> $subj_id,
 					'quarter_id'=> $this->input->post('querter_id23'),
-					'teacher_id'=> $this->session->userdata('user_id')
+					'teacher_id'=> $this->session->userdata('user_id'),
+					'section_id'=> $section_id_s[0]->section_id
 				);
 				$this->db->insert('tbl_quiz',$data_quiz);
 				$id = $this->db->insert_id();
@@ -498,7 +509,8 @@ class Teacher_Dashboard extends CI_Controller
 					'assignment_item' =>  $this->input->post('assignment_item'),
 					'subj_id'	=> $subj_id,
 					'quarter_id'=> $this->input->post('querter_id23'),
-					'teacher_id'=> $this->session->userdata('user_id')
+					'teacher_id'=> $this->session->userdata('user_id'),
+					'section_id'=> $section_id_s[0]->section_id
 				);
 				$this->db->insert('tbl_assignment',$data_quiz);
 				$id = $this->db->insert_id();
@@ -521,7 +533,8 @@ class Teacher_Dashboard extends CI_Controller
 					'project_item' =>  $this->input->post('project_item'),
 					'subj_id'	=> $subj_id,
 					'quarter_id'=> $this->input->post('querter_id23'),
-					'teacher_id'=> $this->session->userdata('user_id')
+					'teacher_id'=> $this->session->userdata('user_id'),
+					'section_id'=> $section_id_s[0]->section_id
 				);
 				$this->db->insert('tbl_project',$data_quiz);
 				$id = $this->db->insert_id();
@@ -544,7 +557,8 @@ class Teacher_Dashboard extends CI_Controller
 					'exam_item' =>  $this->input->post('exam_item'),
 					'subj_id'	=> $subj_id,
 					'quarter_id'=> $this->input->post('querter_id23'),
-					'teacher_id'=> $this->session->userdata('user_id')
+					'teacher_id'=> $this->session->userdata('user_id'),
+					'section_id'=> $section_id_s[0]->section_id
 				);
 				$this->db->insert('tbl_exam',$data_quiz);
 				$id = $this->db->insert_id();
@@ -567,7 +581,8 @@ class Teacher_Dashboard extends CI_Controller
 					'recitation_item' =>  $this->input->post('recitation_item'),
 					'subj_id'	=> $subj_id,
 					'quarter_id'=> $this->input->post('querter_id23'),
-					'teacher_id'=> $this->session->userdata('user_id')
+					'teacher_id'=> $this->session->userdata('user_id'),
+					'section_id'=> $section_id_s[0]->section_id
 				);
 				$this->db->insert('tbl_recitation',$data_quiz);
 				$id = $this->db->insert_id();

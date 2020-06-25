@@ -30,9 +30,14 @@ $('#querter_id23').change(function () {
     var quarter_id = $('#querter_id23').val();
     var subject_id = $('#subject_id').text();
     var event = $('#event').text();
+    var year_level = $('#year_level').text();
+    var sectionion = $('#sectionion').text();
+
     console.log(quarter_id);
     console.log(subject_id);
     console.log(event);
+    console.log(year_level);
+    console.log(sectionion);
     $.ajax({
         type: "POST",
         cache: false,
@@ -40,7 +45,9 @@ $('#querter_id23').change(function () {
         data: {
             quarter_id: quarter_id,
             subject_id: subject_id,
-            event: event
+            event: event,
+            year_level: year_level,
+            sectionion: sectionion
         },
         dataType: 'json',
         success: function (data) {
